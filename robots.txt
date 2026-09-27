@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trebellcode.com/sitemap.xml
+Sitemap: https://trebellcode.pages.dev/sitemap.xml

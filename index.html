@@ -6,6 +6,10 @@
   <title>Trebell Code — The engineering layer for AI coding agents</title>
   <meta name="description" content="Trebell Code gives coding agents a dependable engineering environment: repository intelligence, deterministic tools under real policy, durable state, verification with evidence, and efficiency you can measure.">
   <meta name="theme-color" content="#090b12">
+  <link rel="icon" type="image/png" href="assets/trebell-logo.png">
+  <link rel="apple-touch-icon" href="assets/trebell-logo.png">
+  <meta property="og:image" content="https://trebellcode.com/assets/trebell-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Set theme before first paint to avoid a flash -->
   <script>
@@ -43,16 +47,7 @@
     <div class="shell nav-shell">
       <a class="brand" href="#">
         <span class="brand-mark">
-          <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="brand-grad" x1="4" y1="3" x2="24" y2="26" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#b794ff"/><stop offset="1" stop-color="#6c4df6"/>
-              </linearGradient>
-            </defs>
-            <path d="M14 2.8 24.5 8.6 14 14.4 3.5 8.6 14 2.8Z" fill="url(#brand-grad)"/>
-            <path d="m3.5 14.2 10.5 5.8 10.5-5.8" stroke="url(#brand-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="m3.5 19.6 10.5 5.8 10.5-5.8" stroke="url(#brand-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
-          </svg>
+          <img src="assets/trebell-logo.png" alt="">
         </span>
         Trebell Code
       </a>
@@ -407,78 +402,11 @@
           <p>Projects, source control, real terminal sessions, durable agent threads, verification evidence, usage accounting, and provider-independent runtime control in one desktop workspace.</p>
         </div>
 
-        <div class="app-window reveal">
-          <div class="app-titlebar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span>Trebell Code</span>
-            <div class="window-actions"><span>main</span> <b>● connected</b></div>
-          </div>
-
-          <div class="app-body">
-            <aside class="app-sidebar">
-              <div class="app-logo">
-                <span>
-                  <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="app-grad" x1="4" y1="3" x2="24" y2="26" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#b794ff"/><stop offset="1" stop-color="#6c4df6"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M14 2.8 24.5 8.6 14 14.4 3.5 8.6 14 2.8Z" fill="url(#app-grad)"/>
-                    <path d="m3.5 14.2 10.5 5.8 10.5-5.8" stroke="url(#app-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="m3.5 19.6 10.5 5.8 10.5-5.8" stroke="url(#app-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
-                  </svg>
-                </span>
-                <b>Trebell Code</b>
-              </div>
-              <nav>
-                <a class="active" href="#product"><i>⌁</i>Agent</a>
-                <a href="#product"><i>⌘</i>Files</a>
-                <a href="#product"><i>⌥</i>Source Control</a>
-                <a href="#product"><i>›_</i>Terminal</a>
-                <a href="#product"><i>◇</i>Context</a>
-                <a href="#product"><i>✓</i>Verification</a>
-              </nav>
-              <div class="sidebar-foot"><span>runtime</span><b>Trebell Native</b></div>
-            </aside>
-
-            <div class="app-main">
-              <div class="thread-head">
-                <div><small>THREAD</small><strong>Repair failing auth flow</strong></div>
-                <span class="verified-chip">✓ verified</span>
-              </div>
-
-              <div class="chat-line user">
-                <span>Y</span>
-                <p>Fix the auth regression, preserve existing behavior, and verify the affected flow.</p>
-              </div>
-
-              <div class="chat-line agent">
-                <span>T</span>
-                <div>
-                  <p>I found the regression in the token-refresh path. I’m patching the guard, then I’ll run focused verification before touching anything broader.</p>
-                  <div class="tool-call"><b>read</b><code>src/auth/refresh.ts</code><span>42 lines</span></div>
-                  <div class="tool-call"><b>patch</b><code>src/auth/refresh.ts</code><span>applied</span></div>
-                  <div class="tool-call"><b>verify</b><code>focused auth flow</code><span class="green-text">passed</span></div>
-                </div>
-              </div>
-
-              <div class="composer"><span>Ask Trebell Code to change, inspect, debug, or verify…</span><button type="button" aria-label="Send">↵</button></div>
-            </div>
-
-            <aside class="app-inspector">
-              <div class="inspector-tabs"><span class="active">Evidence</span><span>Context</span></div>
-              <div class="evidence-item"><small>MODIFIED</small><b>src/auth/refresh.ts</b><span>+8 −3</span></div>
-              <div class="evidence-item"><small>VERIFICATION</small><b>Auth refresh flow passed</b></div>
-              <div class="usage-box">
-                <small>THIS TURN</small>
-                <div><span>input</span><b>9,191</b></div>
-                <div><span>turns</span><b>4</b></div>
-                <div><span>tool calls</span><b>6</b></div>
-                <div><span>failed calls</span><b>0</b></div>
-              </div>
-            </aside>
-          </div>
+        <figure class="product-shot-frame reveal">
+          <img class="product-shot product-shot-dark" src="assets/trebell-app-dark.png" alt="Trebell Code desktop workspace in dark mode" width="1600" height="980" loading="lazy">
+          <img class="product-shot product-shot-light" src="assets/trebell-app-light.png" alt="Trebell Code desktop workspace in light mode" width="1600" height="980" loading="lazy">
+          <figcaption>Actual Trebell Code interface captured from the current desktop build.</figcaption>
+        </figure>
         </div>
       </div>
     </section>
@@ -503,7 +431,7 @@
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <span class="footer-brand">Trebell Code</span>
+      <a class="footer-brand" href="#" aria-label="Trebell Code home"><img src="assets/trebell-logo.png" alt="">Trebell Code</a>
       <p>Created by Trebell.</p>
       <div class="footer-links">
         <a href="#platform">Platform</a>

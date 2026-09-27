@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#090b12" />
+  <meta name="color-scheme" content="dark" />
+  <title>Trebell Code — The engineering layer for AI coding agents</title>
+  <meta name="description" content="Trebell Code is a provider-independent desktop engineering harness for AI coding agents: repository intelligence, deterministic tools, durable state, verification, recovery, and measured efficiency." />
+  <meta name="author" content="Trebell" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://trebellcode.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/trebell-logo.png" />
+  <link rel="apple-touch-icon" href="assets/trebell-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Trebell Code" />
+  <meta property="og:title" content="Trebell Code — The engineering layer for AI coding agents" />
+  <meta property="og:description" content="Provider-independent engineering infrastructure for AI coding agents." />
+  <meta property="og:url" content="https://trebellcode.com/" />
+  <meta property="og:image" content="https://trebellcode.com/assets/trebell-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://trebellcode.com/#organization",
+        "name":"Trebell",
+        "url":"https://trebellcode.com/",
+        "logo":"https://trebellcode.com/assets/trebell-logo.png",
+        "description":"Trebell creates Trebell Code, provider-independent engineering infrastructure for AI coding agents."
+      },
+      {
+        "@type":"SoftwareApplication",
+        "@id":"https://trebellcode.com/#software",
+        "name":"Trebell Code",
+        "applicationCategory":"DeveloperApplication",
+        "applicationSubCategory":"AI coding agent harness",
+        "softwareVersion":"1.3.6",
+        "operatingSystem":"Windows, macOS, Linux",
+        "license":"https://www.apache.org/licenses/LICENSE-2.0",
+        "publisher":{"@id":"https://trebellcode.com/#organization"},
+        "author":{"@id":"https://trebellcode.com/#organization"},
+        "description":"A provider-independent desktop coding-agent harness with repository intelligence, deterministic tools and policy, durable state, verification, recovery, and measured efficiency."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-glow ambient-glow-a"></div>
+    <div class="ambient-glow ambient-glow-b"></div>
+    <div class="ambient-scan"></div>
+    <div class="ambient-noise"></div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a class="brand" href="#top" aria-label="Trebell Code home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/trebell-logo.png" alt="" />
+        </span>
+        <span>Trebell Code</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#problem">Why Trebell</a>
+        <a href="#platform">Platform</a>
+        <a href="#proof">Proof</a>
+        <a href="#product">Product</a>
+      </nav>
+      <a class="nav-github" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener noreferrer" aria-label="View Trebell Code on GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.51-3.28-.63-3.5-1.22-.12-.3-.63-1.22-1.08-1.47-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.38.33.7.96.7 1.95l-.01 2.9c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8Z"/></svg>
+        <span>View on GitHub</span>
+      </a>
+      <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#problem">Why Trebell</a>
+      <a href="#platform">Platform</a>
+      <a href="#proof">Proof</a>
+      <a href="#product">Product</a>
+      <a href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="hero-badges">
+            <span class="pill pill-violet"><span class="pill-dot"></span>Provider-independent coding infrastructure</span>
+            <span class="pill pill-green"><span class="status-dot"></span>v1.3.6 shipped</span>
+          </div>
+          <h1>The engineering layer <span>for AI coding agents.</span></h1>
+          <p class="hero-lede">
+            Trebell Code gives capable models a dependable engineering environment: <strong>repository intelligence</strong>,
+            <strong>deterministic tools under real policy</strong>, <strong>durable state</strong>,
+            <strong>verification with evidence</strong>, recovery, and efficiency infrastructure measured in the things users
+            actually pay for — tokens, turns, tool calls, retries, and context.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.51-3.28-.63-3.5-1.22-.12-.3-.63-1.22-1.08-1.47-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.38.33.7.96.7 1.95l-.01 2.9c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8Z"/></svg>
+              View on GitHub
+              <span class="arrow">→</span>
+            </a>
+            <a class="button button-secondary" href="#platform">See how it works <span class="arrow">↓</span></a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Desktop</dt><dd>Windows · macOS · Linux</dd></div>
+            <div><dt>Apache-2.0</dt><dd>Open core</dd></div>
+            <div><dt>Multi-runtime</dt><dd>One engineering layer</dd></div>
+            <div><dt>Evidence-first</dt><dd>Verify before “done”</dd></div>
+          </dl>
+        </div>
+
+        <div class="benchmark-card reveal reveal-delay-1">
+          <div class="card-topline">
+            <div>
+              <span class="eyebrow">Failure-repair benchmark</span>
+              <h2>Same verified outcome.<br/>Far less agent overhead.</h2>
+            </div>
+            <span class="live-chip"><i></i>Measured</span>
+          </div>
+          <div class="benchmark-toggle" role="tablist" aria-label="Benchmark view">
+            <button class="active" data-benchmark="baseline" role="tab" aria-selected="true">Before</button>
+            <button data-benchmark="trebell" role="tab" aria-selected="false">Trebell</button>
+          </div>
+          <div class="ledger" aria-live="polite">
+            <div class="ledger-row">
+              <div class="ledger-label"><span>Provider input</span><b id="metric-input">31,920</b></div>
+              <div class="bar"><span id="bar-input" style="--w:100%"></span></div>
+            </div>
+            <div class="ledger-row">
+              <div class="ledger-label"><span>Model turns</span><b id="metric-turns">10</b></div>
+              <div class="bar"><span id="bar-turns" style="--w:100%"></span></div>
+            </div>
+            <div class="ledger-row">
+              <div class="ledger-label"><span>Tool calls</span><b id="metric-tools">17</b></div>
+              <div class="bar"><span id="bar-tools" style="--w:100%"></span></div>
+            </div>
+          </div>
+          <div class="ledger-result">
+            <span class="check">✓</span>
+            <div><strong>Independent verification passed</strong><small>Benchmark-specific result, not a universal guarantee.</small></div>
+          </div>
+          <div class="trace">
+            <span>repo/context</span><i></i><span>tool execution</span><i></i><span>verification</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-marquee" aria-label="Representative Trebell modules">
+        <div class="marquee-track">
+          <span>src/context</span><span>src/native-agent</span><span>src/tools</span><span>src/policy</span><span>src/source-control</span><span>src/state</span><span>src/verification</span><span>src/mcp</span><span>src/checkpoints</span>
+          <span>src/context</span><span>src/native-agent</span><span>src/tools</span><span>src/policy</span><span>src/source-control</span><span>src/state</span><span>src/verification</span><span>src/mcp</span><span>src/checkpoints</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="shell">
+        <div class="section-intro two-col reveal">
+          <div>
+            <div class="section-label"><span>01</span><i></i>The problem</div>
+            <h2>The models got better.<br/><span>The environment around them did not.</span></h2>
+          </div>
+          <p>
+            Most coding-agent frontends answer one question: <em>“How do I talk to this model?”</em>
+            Trebell is built around a harder one: <em>“How do I give different coding agents the same dependable
+            engineering environment without pretending they all support the same things?”</em>
+          </p>
+        </div>
+
+        <div class="problem-list">
+          <article class="problem-row reveal">
+            <div class="problem-title">
+              <span class="icon-box">⌘</span>
+              <small>01 / 03</small>
+              <h3>Context becomes a tax.</h3>
+            </div>
+            <div class="problem-body">
+              <p>Dumping more of a repository into every turn burns tokens, damages cache locality, and often gives the model less signal rather than more.</p>
+              <ul>
+                <li><span>IN TREBELL</span> Repository intelligence is retrievable instead of eagerly stuffed into every prompt.</li>
+                <li><span>IN TREBELL</span> Large outputs can be virtualized while keeping hot previews available to the model.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="problem-row reveal">
+            <div class="problem-title">
+              <span class="icon-box">◇</span>
+              <small>02 / 03</small>
+              <h3>Agents operate in brittle worlds.</h3>
+            </div>
+            <div class="problem-body">
+              <p>Files, terminals, Git, worktrees, credentials, processes, permissions, side effects, crashes, and provider differences all become part of the agent’s actual runtime.</p>
+              <ul>
+                <li><span>IN TREBELL</span> Deterministic tools sit behind shared policy instead of bespoke provider behavior.</li>
+                <li><span>IN TREBELL</span> State, source control, process handling, and recovery belong to the harness.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="problem-row reveal">
+            <div class="problem-title">
+              <span class="icon-box">✓</span>
+              <small>03 / 03</small>
+              <h3>Completion is not proof.</h3>
+            </div>
+            <div class="problem-body">
+              <p>An agent saying “done” is not the same as the software being correct. Real engineering needs evidence, not confidence theater.</p>
+              <ul>
+                <li><span>IN TREBELL</span> Verification evidence is part of the execution loop rather than an optional afterthought.</li>
+                <li><span>IN TREBELL</span> Repairs are measured end-to-end instead of celebrating isolated micro-metrics.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-platform" id="platform">
+      <div class="shell">
+        <div class="section-intro centered reveal">
+          <div class="section-label centered-label"><span>02</span><i></i>Platform</div>
+          <h2>One engineering control plane.<br/><span>Multiple capable agents.</span></h2>
+          <p>Trebell owns the durable environment around the model. Runtime adapters can change; the engineering substrate stays coherent.</p>
+        </div>
+
+        <div class="platform-stack reveal">
+          <div class="layer layer-top">
+            <div class="layer-index">01</div>
+            <div class="layer-icon">⌘</div>
+            <div class="layer-copy">
+              <h3>Repository &amp; Context Intelligence</h3>
+              <p>Understand what matters, keep the rest retrievable, and preserve stable prompt prefixes where possible.</p>
+            </div>
+            <div class="layer-tags"><span>repo graph</span><span>retrieval</span><span>virtualization</span><span>cache-aware</span></div>
+          </div>
+          <div class="layer">
+            <div class="layer-index">02</div>
+            <div class="layer-icon">◇</div>
+            <div class="layer-copy">
+              <h3>Tools, Policy &amp; Execution</h3>
+              <p>Deterministic engineering capabilities with permissions, process isolation, secrets, source control, and side-effect control.</p>
+            </div>
+            <div class="layer-tags"><span>terminal</span><span>files</span><span>git</span><span>policy</span><span>MCP</span></div>
+          </div>
+          <div class="layer layer-bottom">
+            <div class="layer-index">03</div>
+            <div class="layer-icon">✓</div>
+            <div class="layer-copy">
+              <h3>State, Trace &amp; Verification</h3>
+              <p>Durable threads, checkpoints, crash recovery, usage telemetry, evidence capture, and verification before completion.</p>
+            </div>
+            <div class="layer-tags"><span>state</span><span>trace</span><span>recovery</span><span>evidence</span></div>
+          </div>
+        </div>
+
+        <div class="runtime-strip reveal">
+          <span class="runtime-label">Runtime adapters</span>
+          <div class="runtime-list">
+            <span>Trebell Native</span><span>Codex</span><span>Claude Code</span><span>OpenCode</span><span>ACP</span><span>+ future agents</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="shell feature-grid">
+        <div class="feature-copy reveal">
+          <div class="section-label"><span>03</span><i></i>Context</div>
+          <h2>Give the model what matters.<br/><span>Keep the rest retrievable.</span></h2>
+          <p>
+            Bigger prompts are not automatically better prompts. Trebell treats context as an engineered resource:
+            expensive enough to measure, stable enough to cache, and selective enough to preserve signal.
+          </p>
+          <ul class="feature-points">
+            <li><b>Progressive discovery</b><span>Expose specialized tools and MCP capability only when the task needs them.</span></li>
+            <li><b>Large-output virtualization</b><span>Keep bulky command output retrievable instead of replaying it through every turn.</span></li>
+            <li><b>Stable identity</b><span>Keep project/thread state independent of whichever model provider is active.</span></li>
+          </ul>
+        </div>
+        <div class="context-visual reveal reveal-delay-1" aria-label="Context routing illustration">
+          <div class="visual-toolbar"><span></span><span></span><span></span><b>context inspector</b></div>
+          <div class="context-cols">
+            <div class="tree">
+              <small>REPOSITORY</small>
+              <div class="tree-item active">src/agent/runtime.ts</div>
+              <div class="tree-item">src/context/engine.ts</div>
+              <div class="tree-item">src/tools/gateway.ts</div>
+              <div class="tree-item faded">docs/architecture.md</div>
+              <div class="tree-item faded">logs/large-output.log</div>
+            </div>
+            <div class="context-core">
+              <div class="context-node violet">hot context <b>8.4k</b></div>
+              <div class="context-link"></div>
+              <div class="context-node">retrievable <b>92.7k</b></div>
+              <div class="context-link"></div>
+              <div class="context-node green">cache-stable prefix</div>
+            </div>
+          </div>
+          <div class="visual-status"><span><i></i> context budget healthy</span><span>token replay avoided</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section efficiency-section">
+      <div class="shell feature-grid reverse">
+        <div class="efficiency-visual reveal">
+          <div class="eff-head">
+            <div><small>PER-TURN TELEMETRY</small><strong>Useful work / provider input</strong></div>
+            <span>live accounting</span>
+          </div>
+          <div class="eff-chart">
+            <div class="eff-bar" style="--h:92%"><span>input</span><b>9.2k</b></div>
+            <div class="eff-bar" style="--h:40%"><span>cache</span><b>4.1k</b></div>
+            <div class="eff-bar" style="--h:28%"><span>output</span><b>2.8k</b></div>
+            <div class="eff-bar green" style="--h:18%"><span>retry</span><b>0</b></div>
+          </div>
+          <div class="eff-ledger">
+            <div><span>tool calls</span><b>6</b></div><div><span>failed calls</span><b>0</b></div><div><span>model turns</span><b>4</b></div>
+          </div>
+        </div>
+        <div class="feature-copy reveal reveal-delay-1">
+          <div class="section-label"><span>04</span><i></i>Efficiency</div>
+          <h2>Optimize useful coding work.<br/><span>Not vanity metrics.</span></h2>
+          <p>
+            Trebell measures the harness where it can actually control the result: provider input, cache behavior,
+            model turns, tool calls, failures, retries, and unnecessary inference. No pretending noisy upstream provider
+            latency is a harness breakthrough.
+          </p>
+          <ul class="feature-points">
+            <li><b>Token &amp; cache telemetry</b><span>See where context is paid for, reused, or wasted.</span></li>
+            <li><b>Tool/retry accounting</b><span>Measure how much orchestration the model needed to reach a verified result.</span></li>
+            <li><b>Regression discipline</b><span>An optimization only counts when the end-to-end task gets better.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="proof">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <div class="section-label"><span>05</span><i></i>Measured proof</div>
+          <h2>Benchmarks people actually care about.</h2>
+          <p>Workload-specific measurements from Trebell development. They are evidence of direction and engineering discipline, not universal promises.</p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card hero-metric reveal">
+            <small>Failure-repair benchmark</small>
+            <strong><span>31.9k</span><i>→</i><span>9.2k</span></strong>
+            <h3>Provider-input tokens</h3>
+            <p>Same independently verified outcome with dramatically less input replay.</p>
+            <div class="metric-delta">≈71% lower</div>
+          </article>
+          <article class="metric-card reveal reveal-delay-1">
+            <small>Same benchmark</small>
+            <strong><span>10</span><i>→</i><span>4</span></strong>
+            <h3>Model turns</h3>
+            <p>Fewer inference loops needed to recover and verify.</p>
+          </article>
+          <article class="metric-card reveal reveal-delay-2">
+            <small>Same benchmark</small>
+            <strong><span>17</span><i>→</i><span>6</span></strong>
+            <h3>Tool calls</h3>
+            <p>Less orchestration overhead around the actual engineering work.</p>
+          </article>
+          <article class="metric-card reveal">
+            <small>Noisy-output repair</small>
+            <strong class="single">≈18%</strong>
+            <h3>Lower provider input</h3>
+            <p>Reduced replay on a 92 KB noisy-output repair workload while preserving verification.</p>
+          </article>
+          <article class="metric-card reveal reveal-delay-1">
+            <small>Recipe-restricted request</small>
+            <strong><span>11</span><i>→</i><span>1</span></strong>
+            <h3>Initially visible tools</h3>
+            <p>Progressive capability exposure instead of dumping the full tool surface up front.</p>
+          </article>
+          <article class="metric-card rejected reveal reveal-delay-2">
+            <small>Optimization discipline</small>
+            <strong class="single">Rejected</strong>
+            <h3>Schema compression that regressed the full task</h3>
+            <p>A smaller schema looked better in isolation, but increased end-to-end model work. Trebell did not ship the “win.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-section" id="product">
+      <div class="shell">
+        <div class="section-intro centered reveal">
+          <div class="section-label centered-label"><span>06</span><i></i>Product surface</div>
+          <h2>A serious engineering environment.<br/><span>Not a chat box with a terminal bolted on.</span></h2>
+          <p>Projects, source control, real terminal sessions, durable agent threads, verification evidence, usage accounting, and provider-independent runtime control in one desktop workspace.</p>
+        </div>
+
+        <div class="app-window reveal">
+          <div class="app-titlebar">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>Trebell Code</span>
+            <div class="window-actions"><span>main</span><b>● connected</b></div>
+          </div>
+          <div class="app-body">
+            <aside class="app-sidebar">
+              <div class="app-logo"><span><img src="assets/trebell-logo.png" alt="" /></span><b>trebell</b></div>
+              <nav>
+                <a class="active"><i>⌁</i> Agent</a>
+                <a><i>⌘</i> Files</a>
+                <a><i>⌥</i> Source Control</a>
+                <a><i>›_</i> Terminal</a>
+                <a><i>◇</i> Context</a>
+                <a><i>✓</i> Verification</a>
+              </nav>
+              <div class="sidebar-foot"><span>runtime</span><b>Trebell Native</b></div>
+            </aside>
+            <section class="app-main">
+              <div class="thread-head">
+                <div><small>THREAD</small><strong>Repair failing auth flow</strong></div>
+                <span class="verified-chip">✓ verified</span>
+              </div>
+              <div class="chat-line user"><span>You</span><p>Fix the auth regression, preserve existing behavior, and verify the affected flow.</p></div>
+              <div class="chat-line agent">
+                <span>T</span>
+                <div>
+                  <p>I found the regression in the token-refresh path. I’m patching the guard, then I’ll run focused verification before touching anything broader.</p>
+                  <div class="tool-call"><b>read</b><code>src/auth/refresh.ts</code><span>42 lines</span></div>
+                  <div class="tool-call"><b>patch</b><code>src/auth/refresh.ts</code><span class="green-text">applied</span></div>
+                  <div class="tool-call"><b>verify</b><code>focused auth flow</code><span class="green-text">passed</span></div>
+                </div>
+              </div>
+              <div class="composer"><span>Ask Trebell Code to change, inspect, debug, or verify…</span><button>↵</button></div>
+            </section>
+            <aside class="app-inspector">
+              <div class="inspector-tabs"><span class="active">Evidence</span><span>Context</span></div>
+              <div class="evidence-item"><small>MODIFIED</small><b>src/auth/refresh.ts</b><span>+8 −3</span></div>
+              <div class="evidence-item"><small>VERIFICATION</small><b>Auth refresh flow</b><span class="green-text">passed</span></div>
+              <div class="usage-box">
+                <small>THIS TURN</small>
+                <div><span>input</span><b>9,191</b></div>
+                <div><span>turns</span><b>4</b></div>
+                <div><span>tool calls</span><b>6</b></div>
+                <div><span>failed calls</span><b>0</b></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell reveal">
+        <div class="cta-rule"></div>
+        <div class="cta-grid">
+          <div>
+            <span class="eyebrow">Trebell Code</span>
+            <h2>Better models help.<br/><span>Better systems compound.</span></h2>
+          </div>
+          <div class="cta-side">
+            <p>Provider-independent engineering infrastructure for coding agents that need to work on real software, not just produce plausible text.</p>
+            <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener noreferrer" aria-label="View Trebell Code repository on GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.51-3.28-.63-3.5-1.22-.12-.3-.63-1.22-1.08-1.47-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.38.33.7.96.7 1.95l-.01 2.9c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8Z"/></svg>
+              View on GitHub
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/trebell-logo.png" alt="" /></span>
+        <span>Trebell Code</span>
+      </a>
+      <p>Created by Trebell.</p>
+      <div class="footer-links">
+        <a href="#platform">Platform</a>
+        <a href="#proof">Benchmarks</a>
+        <a href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener noreferrer" aria-label="View Trebell Code on GitHub">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local visual QA artifacts
+*-preview.png
+.playwright-cli/
+output/

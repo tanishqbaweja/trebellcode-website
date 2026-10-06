@@ -1,0 +1,15 @@
+# Trebell Code
+
+> Trebell Code is an open-source desktop coding harness for AI coding agents, built by Trebell.
+
+## Product
+- [Trebell Code](https://code.trebell.dev/): Product overview, architecture, capabilities, and benchmark evidence.
+- [Source repository](https://github.com/tanishqbaweja/trebellcode): Apache-2.0 source.
+- [Releases](https://github.com/tanishqbaweja/trebellcode/releases): Downloadable releases.
+- [Trebell](https://trebell.dev/): Parent company site.
+
+## What it does
+Trebell Code provides an agent runtime/harness around coding models: repository context, deterministic tools, terminal and file operations, Git/worktrees, browser verification, durable state, recovery, permissions, caching/context management, telemetry, and evidence-based completion.
+
+## Benchmarks
+The site reports same-model comparisons against other coding harnesses. Treat each claim together with its named task, verifier result, model/reasoning settings, and cost/token measurements rather than as a universal model-quality claim.

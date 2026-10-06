@@ -1,16 +1,5 @@
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- Scroll progress ---------- */
-const progress = document.getElementById("scroll-progress-bar");
-function updateProgress() {
-  const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const pct = max > 0 ? (document.documentElement.scrollTop / max) * 100 : 0;
-  if (progress) progress.style.width = Math.min(100, pct) + "%";
-}
-updateProgress();
-window.addEventListener("scroll", updateProgress, { passive: true });
-window.addEventListener("resize", updateProgress);
-
 /* ---------- Mobile menu ---------- */
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -18,11 +7,13 @@ if (menuButton && mobileMenu) {
   menuButton.addEventListener("click", () => {
     const open = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", String(!open));
+    menuButton.setAttribute("aria-label", open ? "Open menu" : "Close menu");
     mobileMenu.classList.toggle("open", !open);
   });
   mobileMenu.querySelectorAll("a").forEach((link) =>
     link.addEventListener("click", () => {
       menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open menu");
       mobileMenu.classList.remove("open");
     })
   );
@@ -45,8 +36,8 @@ if (reduced || !("IntersectionObserver" in window)) {
 
 /* ---------- Benchmark toggle ---------- */
 const benchmark = {
-  baseline: { input: "31,920", turns: "10", tools: "17", wi: "100%", wt: "100%", wc: "100%" },
-  trebell:  { input: "9,191",  turns: "4",  tools: "6",  wi: "28.8%", wt: "40%", wc: "35.3%" }
+  codex:   { input: "58.17M", turns: "1.095M", tools: "157.2 min", wi: "100%", wt: "100%", wc: "100%" },
+  trebell: { input: "19.60M", turns: "426k",   tools: "49.8 min",  wi: "33.7%", wt: "38.9%", wc: "31.7%" }
 };
 const buttons = [...document.querySelectorAll("[data-benchmark]")];
 function setBenchmark(mode) {
@@ -80,7 +71,7 @@ function currentTheme() {
 function setTheme(theme, persist) {
   rootEl.setAttribute("data-theme", theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "light" ? "#f4f5fa" : "#090b12");
+  if (meta) meta.setAttribute("content", theme === "light" ? "#f7f5f1" : "#141318");
   if (persist) {
     try { localStorage.setItem("trebell-theme", theme); } catch (e) {}
   }

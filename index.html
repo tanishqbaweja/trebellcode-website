@@ -1,442 +1,680 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trebell Code — The engineering layer for AI coding agents</title>
-  <meta name="description" content="Trebell Code gives coding agents a dependable engineering environment: repository intelligence, deterministic tools under real policy, durable state, verification with evidence, and efficiency you can measure.">
-  <meta name="theme-color" content="#090b12">
-  <link rel="canonical" href="https://trebellcode.pages.dev/">
-  <link rel="icon" type="image/png" href="assets/trebell-logo.png">
-  <link rel="apple-touch-icon" href="assets/trebell-logo.png">
-  <meta property="og:url" content="https://trebellcode.pages.dev/">
-  <meta property="og:image" content="https://trebellcode.pages.dev/assets/trebell-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trebell | Home of Trebell Code</title>
+<meta name="description" content="Trebell is the company behind Trebell Code, an open-source AI coding harness engineered for the same or better verified software-engineering results at lower actual dollar cost.">
+<meta name="theme-color" id="metaTheme" content="#141318">
+<link rel="canonical" href="https://trebell.dev/">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch.png">
+<meta property="og:title" content="Trebell | Home of Trebell Code">
+<meta property="og:description" content="Trebell is the company behind Trebell Code: an open-source AI coding harness engineered for verified engineering quality per dollar.">
+<meta property="og:url" content="https://trebell.dev/">
+<meta property="og:image" content="https://trebell.dev/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="describedby" href="/llms.txt" type="text/plain">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://trebell.dev/#organization",
+      "name": "Trebell",
+      "url": "https://trebell.dev/",
+      "logo": "https://trebell.dev/logo.png",
+      "description": "Trebell builds developer tools, including Trebell Code, an open-source AI coding harness focused on verified software-engineering quality per dollar."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trebell.dev/#website",
+      "url": "https://trebell.dev/",
+      "name": "Trebell",
+      "publisher": {"@id": "https://trebell.dev/#organization"}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS: DARK DEFAULT ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  color-scheme:dark;
+  --bg:#141318; --card:#1d1b24; --ink:#f2eff8; --mut:#a7a2b8; --dim:#7c7790;
+  --line:#2b2836; --line2:#3b3748;
+  --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -14px rgba(0,0,0,.55);
+  --sh-lg:0 2px 4px rgba(0,0,0,.4),0 22px 48px -16px rgba(0,0,0,.6);
+  --navbg:rgba(20,19,24,.82); --footbg:#0f0e13; --trackbg:#26232e; --scroll:#3b3748;
+  --glowA:rgba(107,78,255,.10); --glowB:rgba(46,155,255,.08); --glowC:rgba(255,77,141,.07);
+  --violet:#8b74ff; --pink:#ff6ba1; --blue:#4fb0ff; --amber:#ffb03f; --green:#2fd08a; --grape:#c46bff; --teal:#22c9b4;
+  --disp:'Gabarito',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+html[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f7f5f1; --card:#ffffff; --ink:#17141f; --mut:#5f5a6e; --dim:#8b8698;
+  --line:#e7e3db; --line2:#d8d3c9;
+  --sh:0 1px 2px rgba(23,20,31,.05),0 14px 34px -14px rgba(23,20,31,.14);
+  --sh-lg:0 2px 4px rgba(23,20,31,.06),0 22px 48px -16px rgba(23,20,31,.2);
+  --navbg:rgba(247,245,241,.85); --footbg:#17141f; --trackbg:#ffffff; --scroll:#cfc9be;
+  --glowA:rgba(107,78,255,.07); --glowB:rgba(46,155,255,.06); --glowC:rgba(255,77,141,.05);
+  --violet:#6b4eff; --pink:#ff4d8d; --blue:#2e9bff; --amber:#ff9f1c; --green:#17b26a; --grape:#b44bff; --teal:#0fb5a6;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(720px 420px at 8% -4%,var(--glowA),transparent 60%),
+             radial-gradient(680px 400px at 100% 6%,var(--glowB),transparent 60%),
+             radial-gradient(800px 500px at 50% 110%,var(--glowC),transparent 60%)}
+::selection{background:var(--violet);color:#fff}
+::-webkit-scrollbar{width:11px}::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--scroll);border:3px solid var(--bg);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:var(--violet)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2.5px solid var(--violet);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px;position:relative;z-index:1}
+.mono{font-family:var(--mono)}
 
-  <!-- Set theme before first paint to avoid a flash -->
-  <script>
-    (function () {
-      var theme = "dark";
-      try {
-        var stored = localStorage.getItem("trebell-theme");
-        theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-      } catch (e) {}
-      document.documentElement.setAttribute("data-theme", theme);
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", theme === "light" ? "#f4f5fa" : "#090b12");
-    })();
-  </script>
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:800;font-size:19px}
+.brand img{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);object-fit:cover;transition:transform .3s}
+.brand:hover img{transform:rotate(-10deg) scale(1.07)}
+.brand i{font-style:normal;color:var(--pink)}
+.nav-links{margin-left:auto;display:flex;gap:2px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--mut);padding:8px 14px;border-radius:999px;transition:.18s}
+.nav-links a:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
+.tbtn{width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);background:var(--card);color:var(--ink);
+  display:grid;place-items:center;cursor:pointer;font-size:15px;transition:.2s;flex-shrink:0}
+.tbtn:hover{border-color:var(--ink);transform:translateY(-2px)}
+html[data-theme="light"] .ic-sun{display:none}
+.ic-moon{display:none}
+html[data-theme="light"] .ic-moon{display:inline}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:11px 20px;border-radius:999px;
+  border:1.5px solid transparent;cursor:pointer;transition:.2s}
+.btn-pri{background:var(--violet);color:#fff;box-shadow:0 6px 18px -6px color-mix(in srgb,var(--violet) 60%,transparent)}
+.btn-pri:hover{transform:translateY(-2px);box-shadow:0 10px 24px -6px color-mix(in srgb,var(--violet) 65%,transparent)}
+.btn-pri .ar{transition:transform .2s}.btn-pri:hover .ar{transform:translateX(3px)}
+.btn-out{border-color:var(--line2);color:var(--ink);background:var(--card)}
+.btn-out:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-sm{padding:8px 15px;font-size:13.5px}
+@media(max-width:780px){.nav-links{display:none}}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+/* ============ HERO ============ */
+.hero{padding:150px 0 80px;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--violet)}
+.hero-kicker::before{content:'';width:9px;height:9px;border-radius:3px;background:var(--violet);box-shadow:0 0 18px color-mix(in srgb,var(--violet) 75%,transparent)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(3rem,7vw,5.2rem);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+h1 i{font-style:normal;color:var(--pink)}
+.hero h1 .product-word{color:var(--violet)}
+.lede{font-size:clamp(16px,1.8vw,19px);color:var(--mut);max-width:54ch;margin-bottom:30px;font-weight:400}
+.lede b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.statpills{display:flex;gap:10px;flex-wrap:wrap}
+.spill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;font-weight:500;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--mut);transition:.2s}
+.spill:hover{transform:translateY(-2px);border-color:var(--line2);box-shadow:var(--sh)}
+.spill i{width:8px;height:8px;border-radius:50%}
+.logo-card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--sh-lg);
+  transform:rotate(-1deg);transition:transform .35s;position:relative}
+.logo-card:hover{transform:rotate(0deg) translateY(-4px)}
+.logo-card img{width:100%;border-radius:18px;border:1px solid var(--line)}
+.product-shot-light{display:none}
+html[data-theme="light"] .product-shot-dark{display:none}
+html[data-theme="light"] .product-shot-light{display:block}
+.logo-card figcaption{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-top:14px}
+.dots{display:flex;gap:5px}
+.dots i{width:9px;height:9px;border-radius:50%}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.logo-card{max-width:none;order:2}}
+
+/* ============ SECTIONS: UNIFORM 80/80 RHYTHM ============ */
+section{padding-block:80px;position:relative;z-index:1}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.sec-eye{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.sec-eye i{width:10px;height:10px;border-radius:3px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.015em;line-height:1.1}
+.sec-note{color:var(--mut);font-size:14.5px;max-width:38ch}
+
+/* ============ FLAGSHIPS ============ */
+.flags{display:grid;gap:28px}
+.flag{--tint:color-mix(in srgb,var(--acc) 13%,transparent);--tintb:color-mix(in srgb,var(--acc) 5%,transparent);
+  background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh);overflow:hidden;
+  transition:transform .3s,box-shadow .3s}
+.flag:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.flag-top{display:flex;align-items:center;gap:14px;padding:22px 28px;border-bottom:1px solid var(--line);background:var(--tintb)}
+.squircle{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;
+  background:color-mix(in srgb,var(--acc) 15%,transparent);flex-shrink:0}
+.flag-top h3{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.01em}
+.flag-top .repo{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.pills{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.08em;border-radius:999px;padding:5px 12px;background:var(--card);border:1px solid var(--line2);color:var(--mut)}
+.pill.live{color:var(--green);border-color:color-mix(in srgb,var(--green) 45%,transparent);background:color-mix(in srgb,var(--green) 10%,transparent)}
+.pill.live i{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.flag-body{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;padding:30px 28px 32px}
+.flag .tag{font-size:16px;font-weight:600;color:var(--acc);margin-bottom:12px}
+.flag p.desc{color:var(--mut);font-size:15px;margin-bottom:18px}
+.flag p.desc b{color:var(--ink);font-weight:600}
+.feat{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:14.5px;color:var(--mut)}
+.feat li{padding-left:24px;position:relative}
+.feat li::before{content:'';position:absolute;left:2px;top:7px;width:9px;height:9px;border-radius:3px;background:var(--acc)}
+.plats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.plat{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--dim);border:1px dashed var(--line2);border-radius:8px;padding:5px 10px;background:var(--card)}
+.plat.soon{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,transparent)}
+.flag-cta{display:flex;gap:10px;flex-wrap:wrap}
+.vis{background:var(--tintb);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.vis-lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--dim);margin-bottom:6px}
+.vis-lab b{color:var(--ink);font-family:var(--body);font-size:12.5px;font-weight:600}
+.track{height:12px;border-radius:999px;background:var(--trackbg);border:1px solid var(--line);overflow:hidden;margin-bottom:14px}
+.fill{height:100%;border-radius:999px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.fill.waste{width:100%;background:linear-gradient(90deg,#ffb3c9,var(--pink))}
+.fill.lean{width:6%;background:linear-gradient(90deg,var(--violet),var(--grape))}
+.vis-note{font-size:12.5px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.vis-note b{color:var(--acc)}
+.caps{display:flex;gap:8px;flex-wrap:wrap}
+.cap{font-family:var(--mono);font-size:11px;font-weight:500;background:var(--card);border:1px solid var(--line2);border-radius:999px;padding:7px 13px;color:var(--mut);transition:.2s}
+.cap:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
+.cap.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+.live-line{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--green);font-weight:600}
+.live-line i{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.6s infinite}
+@media(max-width:920px){.flag-body{grid-template-columns:1fr}}
+
+/* ============ STARTUP ECOSYSTEM ============ */
+.program-trust{padding-block:18px 8px}
+.program-trust-card{display:grid;grid-template-columns:minmax(260px,.9fr) 1.35fr;gap:28px;align-items:center;background:color-mix(in srgb,var(--card) 72%,transparent);border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.program-trust-copy{display:grid;gap:5px}
+.program-trust-kicker{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.program-trust-copy p{font-size:13px;line-height:1.55;color:var(--mut);max-width:42ch}
+.program-names{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;align-items:center}
+.program-name{font-family:var(--disp);font-size:15px;font-weight:700;letter-spacing:-.01em;text-align:center;color:color-mix(in srgb,var(--ink) 78%,var(--mut));padding:7px 4px;white-space:nowrap}
+@media(max-width:760px){.program-trust-card{grid-template-columns:1fr;gap:16px;padding:18px}.program-names{grid-template-columns:repeat(2,1fr);gap:6px 12px}.program-name{text-align:left;font-size:14px}}
+
+/* ============ TOOL GRID ============ */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--sh);
+  display:flex;flex-direction:column;transition:transform .28s,box-shadow .28s;position:relative;overflow:hidden}
+.tool::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--acc);opacity:.85}
+.tool:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.tool-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tool h3{font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.tool .repo{font-family:var(--mono);font-size:10px;color:var(--dim);display:block;margin-top:2px}
+.badge-wip{margin-left:auto;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;color:var(--amber);
+  background:color-mix(in srgb,var(--amber) 12%,transparent);border:1px solid color-mix(in srgb,var(--amber) 45%,transparent);border-radius:999px;padding:4px 10px}
+.tool p{color:var(--mut);font-size:14px;margin-bottom:16px;flex:1}
+.tool p b{color:var(--ink);font-weight:600}
+.minis{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.mini{font-family:var(--mono);font-size:10px;letter-spacing:.06em;border:1px solid var(--line);border-radius:7px;padding:4px 9px;color:var(--dim);background:var(--bg)}
+.tool-link{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--acc);display:inline-flex;gap:7px;transition:gap .2s}
+.tool:hover .tool-link{gap:12px}
+
+/* ============ QUESTS ============ */
+.quests{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.quest{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--sh);transition:transform .28s,box-shadow .28s;display:flex;flex-direction:column}
+.quest:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.qtag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  color:var(--mut);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+.qtag i{width:7px;height:7px;border-radius:50%}
+.quest h3{font-family:var(--disp);font-weight:800;font-size:22px;margin-bottom:8px}
+.quest p{color:var(--mut);font-size:14.5px;margin-bottom:14px}
+.quest p b{color:var(--ink);font-weight:600}
+.qnote{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:auto;margin-bottom:18px;min-height:35px}
+.quest .btn{align-self:flex-start}
+@media(max-width:840px){.quests{grid-template-columns:1fr}.qnote{min-height:0}}
+
+/* ============ FOOTER ============ */
+footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;z-index:1}
+.foot-in{padding:56px 0 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+.foot-brand{display:flex;gap:15px;align-items:flex-start}
+.foot-brand img{width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.2);object-fit:cover}
+.foot-brand b{font-family:var(--disp);font-size:19px;color:#fff}
+.foot-brand b i{font-style:normal;color:var(--pink)}
+.foot-brand p{font-size:13.5px;margin-top:8px;max-width:36ch;color:#a49fb5}
+.foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#7d7890;margin-bottom:14px}
+.foot-col ul{list-style:none;display:grid;gap:9px}
+.foot-col a{font-size:14px;color:#a49fb5;transition:.15s;display:inline-block}
+.foot-col a:hover{color:#fff;transform:translateX(3px)}
+.foot-bot{border-top:1px solid rgba(255,255,255,.09);padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;color:#7d7890}
+.foot-bot b{color:var(--pink);font-weight:500}
+@media(max-width:840px){.foot-in{grid-template-columns:1fr}}
+
+/* ============ MOBILE ============ */
+@media(max-width:640px){
+  html{scroll-padding-top:72px}
+  body{font-size:15px}
+  .wrap{padding-inline:16px}
+
+  nav{backdrop-filter:blur(10px)}
+  .nav-in{height:62px;padding:0 14px;gap:8px}
+  .brand{font-size:16px;gap:8px}
+  .brand img{width:31px;height:31px}
+  .tbtn{width:36px;height:36px;font-size:13px;margin-left:auto}
+  .nav-in>.btn{padding:8px 12px;font-size:12px;white-space:nowrap;box-shadow:none}
+
+  .hero{padding:84px 16px 44px}
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .hero-grid>div{order:1;padding:23px 20px 20px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,color-mix(in srgb,var(--card) 94%,var(--violet) 6%),var(--card));box-shadow:0 18px 44px -32px rgba(0,0,0,.72);position:relative;overflow:hidden}
+  .hero-grid>div::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-95px;top:-95px;background:radial-gradient(circle,color-mix(in srgb,var(--pink) 17%,transparent),transparent 70%);pointer-events:none}
+  .logo-card{order:2;max-width:none;width:100%;justify-self:stretch;margin:0;padding:10px;border-radius:20px;transform:none;box-shadow:0 14px 34px -28px rgba(0,0,0,.78)}
+  .logo-card img{width:100%;height:auto;object-fit:contain;border-radius:13px}
+  .logo-card figcaption{padding:9px 3px 1px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:8px;line-height:1.5;letter-spacing:.08em}
+  .logo-card figcaption>span:first-child{max-width:none}
+  .logo-card .dots{gap:5px;flex:0 0 auto}.logo-card .dots i{width:7px;height:7px}
+  .hero-kicker{font-size:9px;margin-bottom:13px}
+  h1{font-size:clamp(2.85rem,13vw,3.25rem);line-height:.92;margin-bottom:16px;letter-spacing:-.055em}
+  .lede{font-size:14px;line-height:1.62;margin-bottom:20px;color:var(--muted)}
+  .hero-cta{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:8px;margin-bottom:17px}
+  .hero-cta .btn{justify-content:center;padding:10px 10px;font-size:12.5px;min-height:44px}
+  .statpills{display:flex;gap:7px;overflow-x:auto;margin:0 -20px;padding:2px 20px 3px;scroll-snap-type:x proximity;scrollbar-width:none}
+  .statpills::-webkit-scrollbar{display:none}
+  .spill{flex:0 0 auto;scroll-snap-align:start;min-width:max-content;padding:7px 10px;font-size:9px;line-height:1.25;justify-content:flex-start;background:color-mix(in srgb,var(--card) 82%,transparent)}
+  .spill i{width:7px;height:7px;flex:0 0 auto}
+
+  section{padding-block:48px}
+  .sec-head{display:grid;gap:12px;margin-bottom:24px}
+  .sec-eye{font-size:10px;margin-bottom:10px}
+  h2{font-size:clamp(2rem,9.5vw,2.4rem);line-height:1}
+  .sec-note{font-size:13px;line-height:1.55;max-width:31ch}
+
+  .flags{gap:16px}
+  .flag{border-radius:22px}
+  .flag-top{display:grid;grid-template-columns:auto 1fr;gap:11px;padding:17px}
+  .squircle{width:40px;height:40px;border-radius:12px;font-size:19px}
+  .flag-top h3{font-size:20px}
+  .flag-top .repo{font-size:9.5px}
+  .pills{grid-column:1/-1;margin:2px 0 0;gap:6px}
+  .pill{font-size:9px;padding:5px 9px}
+  .flag-body{grid-template-columns:1fr;gap:19px;padding:20px 17px 18px}
+  .flag .tag{font-size:14.5px;line-height:1.42}
+  .flag p.desc{font-size:13.5px;line-height:1.62}
+  .feat{font-size:13px;gap:7px}
+  .feat li{padding-left:21px}
+  .plat{font-size:9px;padding:5px 8px}
+  .flag-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .flag-cta .btn{justify-content:center;padding:9px 8px;font-size:11.5px}
+  .vis{padding:16px;border-radius:16px}
+  .vis-lab{font-size:8.7px;letter-spacing:.04em;gap:10px}
+  .vis-lab b{font-size:11px;white-space:nowrap}
+  .vis-note{font-size:11.5px;padding:9px 11px}
+  .cap{font-size:9.5px;padding:6px 10px}
+  .live-line{font-size:11px;line-height:1.4}
+
+  .tools{grid-template-columns:1fr;gap:12px}
+  .tool{padding:18px;border-radius:18px}
+  .tool-top{align-items:flex-start}
+  .tool h3{font-size:19px}
+  .tool p{font-size:13.5px;line-height:1.65}
+  .mini{font-size:9px;padding:4px 7px}
+  .badge-wip{font-size:8.5px;padding:4px 8px}
+
+  .quests{grid-template-columns:1fr;gap:12px}
+  .quest{padding:19px;border-radius:18px}
+  .quest h3{font-size:21px}
+  .quest p{font-size:13.5px;line-height:1.65}
+  .qtag{font-size:9px}
+  .qnote{font-size:9.5px;line-height:1.55}
+  .quest .btn{width:100%;justify-content:center}
+
+  footer{margin-top:40px}
+  .foot-in{padding:40px 0 30px;gap:30px}
+  .foot-brand img{width:46px;height:46px}
+  .foot-brand p{font-size:12.5px}
+  .foot-col h4{margin-bottom:10px}
+  .foot-col ul{gap:7px}
+  .foot-col a{font-size:13px}
+  .foot-bot{padding:16px 0 22px;font-size:9.5px;line-height:1.55}
+}
+@media(max-width:360px){
+  .brand span{display:none}
+  .hero-cta,.flag-cta{grid-template-columns:1fr}
+  .logo-card{padding:8px}
+  .hero-grid>div{padding-inline:17px}
+}
+@media(hover:none){
+  .brand:hover img,.tbtn:hover,.btn:hover,.spill:hover,.logo-card:hover,.flag:hover,.tool:hover,.quest:hover,.cap:hover{transform:none}
+}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+</style>
+<script>
+(function(){
+  var t='dark';
+  try{ var s=localStorage.getItem('trebell-theme'); if(s==='light'||s==='dark') t=s; }catch(e){}
+  document.documentElement.setAttribute('data-theme',t);
+})();
+</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient-grid"></div>
-    <div class="ambient-glow ambient-glow-a"></div>
-    <div class="ambient-glow ambient-glow-b"></div>
-    <div class="ambient-scan"></div>
-    <div class="ambient-noise"></div>
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><span>Trebell<i>.</i></span></a>
+    <div class="nav-links">
+      <a href="#flagships">Flagships</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#quests">Side quests</a>
+    </div>
+    <button class="tbtn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+      <span class="ic-sun">☀</span><span class="ic-moon">☾</span>
+    </button>
+    <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Open Trebell Code <span class="ar">→</span></a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-kicker rv">Flagship product by Trebell</div>
+      <h1 class="rv">Trebell <span class="product-word">Code</span></h1>
+      <p class="lede rv">An open-source AI coding harness engineered to <b>match or beat existing harnesses on verified software-engineering quality at lower actual dollar cost</b>. On Terminal-Bench 4.0, Trebell Native matched Codex API at <b>4/4</b> while costing <b>28.6% less</b>; on another same-outcome <b>3/4</b> run it was <b>90.7% cheaper</b>.</p>
+      <div class="hero-cta rv">
+        <a class="btn btn-pri" href="https://code.trebell.dev/">Explore Trebell Code <span class="ar">→</span></a>
+        <a class="btn btn-out" href="https://code.trebell.dev/#proof">View benchmarks</a>
+      </div>
+      <div class="statpills rv">
+        <span class="spill"><i style="background:var(--green)"></i>4/4 verified parity</span>
+        <span class="spill"><i style="background:var(--violet)"></i>28.6% lower cost</span>
+        <span class="spill"><i style="background:var(--amber)"></i>3/4 tie · 90.7% cheaper</span>
+        <span class="spill"><i style="background:var(--blue)"></i>fresh unseen: 18/19</span>
+      </div>
+    </div>
+    <figure class="logo-card rv">
+      <img class="product-shot-dark" src="/assets/trebell-app-dark.png" alt="Trebell Code desktop application">
+      <img class="product-shot-light" src="/assets/trebell-app-light.png" alt="Trebell Code desktop application in light mode">
+      <figcaption><span>Trebell Code · desktop harness · open source</span><span class="dots"><i style="background:var(--violet)"></i><i style="background:var(--pink)"></i><i style="background:var(--blue)"></i><i style="background:var(--green)"></i></span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ============ FLAGSHIPS ============ -->
+<section id="flagships" class="wrap">
+  <div class="sec-head rv">
+    <div>
+      <div class="sec-eye"><i style="background:var(--violet)"></i>01 · Flagships</div>
+      <h2>The two that pay the<br>respect bills.</h2>
+    </div>
+    <p class="sec-note">Maintained like my life depends on it. Because at this point, it kind of does.</p>
   </div>
 
-  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
-
-  <header class="site-header">
-    <div class="shell nav-shell">
-      <a class="brand" href="#">
-        <span class="brand-mark">
-          <img src="assets/trebell-logo.png" alt="">
-        </span>
-        Trebell Code
-      </a>
-
-      <nav class="desktop-nav" aria-label="Primary">
-        <a href="#problem">Why Trebell</a>
-        <a href="#platform">Platform</a>
-        <a href="#proof">Proof</a>
-        <a href="#product">Product</a>
-      </nav>
-
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.2 5.2 7 7M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
-      </button>
-
-      <a class="nav-github" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noreferrer">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        View on GitHub
-      </a>
-
-      <button id="menu-button" class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
-      <a href="#problem">Why Trebell</a>
-      <a href="#platform">Platform</a>
-      <a href="#proof">Proof</a>
-      <a href="#product">Product</a>
-      <a href="https://github.com/tanishqbaweja/trebellcode">View on GitHub</a>
-    </nav>
-  </header>
-
-  <main id="main">
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="shell">
-        <div class="hero-grid">
-          <div class="reveal">
-            <div class="hero-badges">
-              <span class="pill pill-violet"><span class="pill-dot"></span>Provider-independent coding infrastructure</span>
-              <span class="pill pill-green"><span class="status-dot"></span>v1.3.6 shipped</span>
-            </div>
-            <h1>The engineering layer<span>for AI coding agents.</span></h1>
-            <p class="hero-lede">Trebell Code gives capable models a dependable engineering environment: <strong>repository intelligence</strong>, <strong>deterministic tools under real policy</strong>, durable state, <strong>verification with evidence</strong>, recovery, and efficiency infrastructure measured in the things users actually pay for — tokens, turns, tool calls, retries, and context.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noreferrer">View on GitHub <span class="arrow">→</span></a>
-              <a class="button button-secondary" href="#platform">See how it works <span class="arrow">↓</span></a>
-            </div>
-            <dl class="hero-facts">
-              <div><dt>Desktop</dt><dd>Windows · macOS · Linux</dd></div>
-              <div><dt>Apache-2.0</dt><dd>Open core</dd></div>
-              <div><dt>Multi-runtime</dt><dd>One engineering layer</dd></div>
-              <div><dt>Evidence-first</dt><dd>Verify before “done”</dd></div>
-            </dl>
-          </div>
-
-          <aside class="reveal reveal-delay-1">
-            <div class="benchmark-card">
-              <div class="card-topline">
-                <div>
-                  <span class="eyebrow">Failure-repair benchmark</span>
-                  <h2>Same verified outcome.<br>Far less agent overhead.</h2>
-                </div>
-                <span class="live-chip"><i></i>Measured</span>
-              </div>
-
-              <div class="benchmark-toggle" role="tablist" aria-label="Benchmark view">
-                <button type="button" role="tab" data-benchmark="baseline" aria-selected="false">Before Trebell</button>
-                <button type="button" role="tab" data-benchmark="trebell" aria-selected="true">With Trebell</button>
-              </div>
-
-              <div class="ledger">
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>Provider input</span><b id="metric-input">9,191</b></div>
-                  <div class="bar" id="bar-input"><span style="--w:28.8%"></span></div>
-                </div>
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>Model turns</span><b id="metric-turns">4</b></div>
-                  <div class="bar" id="bar-turns"><span style="--w:40%"></span></div>
-                </div>
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>Tool calls</span><b id="metric-tools">6</b></div>
-                  <div class="bar" id="bar-tools"><span style="--w:35.3%"></span></div>
-                </div>
-              </div>
-
-              <div class="ledger-result">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Independent verification passed</strong>
-                  <small>Benchmark-specific result, not a universal guarantee.</small>
-                </div>
-              </div>
-
-              <div class="trace"><span>repo/context</span><i></i><span>tool execution</span><i></i><span>verification</span></div>
-            </div>
-          </aside>
-        </div>
+  <div class="flags">
+    <!-- TREBELL CODE -->
+    <article class="flag rv" style="--acc:var(--violet)">
+      <div class="flag-top">
+        <span class="squircle">🧠</span>
+        <div><h3>Trebell Code</h3><span class="repo">trebell / code</span></div>
+        <div class="pills"><span class="pill live"><i></i>LIVE · v1.3.6</span><span class="pill">APACHE-2.0</span></div>
       </div>
-
-    </section>
-
-    <!-- ============ 01 PROBLEM ============ -->
-    <section class="section" id="problem">
-      <div class="shell">
-        <div class="section-intro two-col reveal">
+      <div class="flag-body">
+        <div>
+          <div class="tag">Verified engineering quality per dollar, not token counting.</div>
+          <p class="desc">An open-source <b>AI coding harness</b> that owns the orchestration layer between models and real software projects: context, tools, terminals, Git worktrees, browser verification, recovery and evidence. The goal is simple: achieve the <b>same or better independently verified result at lower actual dollar cost</b>.</p>
+          <ul class="feat">
+            <li>Terminal-Bench 4.0: 4/4 vs Codex API 4/4 at 28.6% lower cost</li>
+            <li>Same-outcome 3/4 run: 90.7% cheaper than Codex API, 80.5% cheaper than OAuth</li>
+            <li>Fresh unseen task: 18/19, matching Codex OAuth and beating Codex API's 16/19</li>
+            <li>Seven runtimes: Native, Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity</li>
+            <li>Evidence-first verification: tests, builds, browser runs, screenshots</li>
+          </ul>
+          <div class="plats">
+            <span class="plat">WINDOWS</span><span class="plat">MACOS</span><span class="plat">LINUX</span><span class="plat soon">CLI: IN DEVELOPMENT</span>
+          </div>
+          <div class="flag-cta">
+            <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Explore Trebell Code <span class="ar">→</span></a>
+            <a class="btn btn-out btn-sm" href="https://code.trebell.dev/#proof">Benchmarks</a>
+          </div>
+        </div>
+        <div class="vis">
           <div>
-            <div class="section-label"><i></i><span>01</span>The problem</div>
-            <h2>The models got better.<br><span>The environment around them did not.</span></h2>
+            <div class="vis-lab"><span>CODEX API · 4/4 VERIFIED</span><b>$0.57020</b></div>
+            <div class="track"><div class="fill waste" data-w="100"></div></div>
+            <div class="vis-lab"><span>TREBELL NATIVE · 4/4 VERIFIED</span><b>$0.40734</b></div>
+            <div class="track"><div class="fill lean" data-w="71"></div></div>
           </div>
-          <p>Most coding-agent frontends answer one question: “How do I talk to this model?” Trebell is built around a harder one: <em>“How do I give different coding agents the same dependable engineering environment without pretending they all support the same things?”</em></p>
-        </div>
-
-        <div class="problem-list">
-          <article class="problem-row reveal">
-            <div class="problem-title">
-              <span class="icon-box">⌘</span><small>01 / 03</small>
-              <h3>Context becomes a tax.</h3>
-            </div>
-            <div class="problem-body">
-              <p>Dumping more of a repository into every turn burns tokens, damages cache locality, and often gives the model less signal rather than more.</p>
-              <ul>
-                <li><span>IN TREBELL</span> Repository intelligence is retrievable instead of eagerly stuffed into every prompt.</li>
-                <li><span>IN TREBELL</span> Large outputs can be virtualized while keeping hot previews available to the model.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="problem-row reveal">
-            <div class="problem-title">
-              <span class="icon-box">◇</span><small>02 / 03</small>
-              <h3>Agents operate in brittle worlds.</h3>
-            </div>
-            <div class="problem-body">
-              <p>Files, terminals, Git, worktrees, credentials, processes, permissions, side effects, crashes, and provider differences all become part of the agent’s actual runtime.</p>
-              <ul>
-                <li><span>IN TREBELL</span> Deterministic tools sit behind shared policy instead of bespoke provider behavior.</li>
-                <li><span>IN TREBELL</span> State, source control, process handling, and recovery belong to the harness.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="problem-row reveal">
-            <div class="problem-title">
-              <span class="icon-box">✓</span><small>03 / 03</small>
-              <h3>Completion is not proof.</h3>
-            </div>
-            <div class="problem-body">
-              <p>An agent saying “done” is not the same as the software being correct. Real engineering needs evidence, not confidence theater.</p>
-              <ul>
-                <li><span>IN TREBELL</span> Verification evidence is part of the execution loop rather than an optional afterthought.</li>
-                <li><span>IN TREBELL</span> Repairs are measured end-to-end instead of celebrating isolated micro-metrics.</li>
-              </ul>
-            </div>
-          </article>
+          <div class="vis-note"><b>28.6% lower cost:</b> same perfect verifier result, same model and reasoning settings. Full methodology and receipts on the Trebell Code benchmark page.</div>
         </div>
       </div>
-    </section>
+    </article>
 
-    <!-- ============ 02 PLATFORM ============ -->
-    <section class="section section-platform" id="platform">
-      <div class="shell">
-        <div class="section-intro centered reveal">
-          <div class="section-label centered-label"><i></i><span>02</span>Platform</div>
-          <h2>One engineering control plane.<br><span>Multiple capable agents.</span></h2>
-          <p>Trebell owns the durable environment around the model. Runtime adapters can change; the engineering substrate stays coherent.</p>
-        </div>
-
-        <div class="platform-stack reveal">
-          <div class="layer">
-            <span class="layer-index">01</span>
-            <span class="layer-icon">⌘</span>
-            <div class="layer-copy"><h3>Repository &amp; Context Intelligence</h3><p>Understand what matters, keep the rest retrievable, and preserve stable prompt prefixes where possible.</p></div>
-            <div class="layer-tags"><span>repo graph</span><span>retrieval</span><span>virtualization</span><span>cache-aware</span></div>
-          </div>
-          <div class="layer">
-            <span class="layer-index">02</span>
-            <span class="layer-icon">◇</span>
-            <div class="layer-copy"><h3>Tools, Policy &amp; Execution</h3><p>Deterministic engineering capabilities with permissions, process isolation, secrets, source control, and side-effect control.</p></div>
-            <div class="layer-tags"><span>terminal</span><span>files</span><span>git</span><span>policy</span><span>MCP</span></div>
-          </div>
-          <div class="layer">
-            <span class="layer-index">03</span>
-            <span class="layer-icon">✓</span>
-            <div class="layer-copy"><h3>State, Trace &amp; Verification</h3><p>Durable threads, checkpoints, crash recovery, usage telemetry, evidence capture, and verification before completion.</p></div>
-            <div class="layer-tags"><span>state</span><span>trace</span><span>recovery</span><span>evidence</span></div>
+    <!-- PDFOMNI -->
+    <article class="flag rv" style="--acc:var(--pink)">
+      <div class="flag-top">
+        <span class="squircle">📄</span>
+        <div><h3>PDFOmni</h3><span class="repo">pdfomni.com · github: pdfomni</span></div>
+        <div class="pills"><span class="pill live"><i></i>LIVE</span><span class="pill">IN-BROWSER</span><span class="pill">NO ACCOUNT</span></div>
+      </div>
+      <div class="flag-body">
+        <div>
+          <div class="tag">Browser PDF tools that actually edit PDFs. Shocking, I know.</div>
+          <p class="desc">Every other "local browser PDF tool" lets you scribble annotations and calls it editing. <a href="https://pdfomni.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">PDFOmni</a> edits the <b>actual document</b>: text, layout, pages. It converts PDF to Word with fidelity that beats ilovepdf in head-to-heads. Everything runs inside your tab. Your files never touch a server, because there is no server.</p>
+          <ul class="feat">
+            <li>True PDF editing, not annotation cosplay</li>
+            <li>High-fidelity PDF to Word conversion</li>
+            <li>100% local processing: zero uploads, zero accounts</li>
+            <li>Free, forever, no watermark nonsense</li>
+          </ul>
+          <div class="flag-cta">
+            <a class="btn btn-pri btn-sm" style="background:var(--pink);box-shadow:0 6px 18px -6px color-mix(in srgb,var(--pink) 60%,transparent)" href="https://pdfomni.com" target="_blank" rel="noopener">Open pdfomni.com <span class="ar">↗</span></a>
+            <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/pdfomni" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
-
-        <div class="runtime-strip reveal">
-          <span class="runtime-label">Runtime adapters</span>
-          <div class="runtime-list"><span>Trebell Native</span><span>Codex</span><span>Claude Code</span><span>OpenCode</span><span>ACP</span><span>+ future agents</span></div>
+        <div class="vis">
+          <div class="caps">
+            <span class="cap on">Edit text</span><span class="cap">Pages</span><span class="cap">Merge</span><span class="cap">→ Word</span><span class="cap">Sign</span><span class="cap">Compress</span>
+          </div>
+          <div class="vis-note">Dashed boxes in the editor are <b>real, editable text</b>, not sticky notes pretending.</div>
+          <div class="live-line"><i></i>processing locally · 0 bytes uploaded · 2.4s</div>
         </div>
       </div>
-    </section>
+    </article>
+  </div>
+</section>
 
-    <!-- ============ 03 CONTEXT ============ -->
-    <section class="section" id="context">
-      <div class="shell">
-        <div class="feature-grid">
-          <div class="feature-copy reveal">
-            <div class="section-label"><i></i><span>03</span>Context</div>
-            <h2>Give the model what matters.<br><span>Keep the rest retrievable.</span></h2>
-            <p>Bigger prompts are not automatically better prompts. Trebell treats context as an engineered resource: expensive enough to measure, stable enough to cache, and selective enough to preserve signal.</p>
-            <ul class="feature-points">
-              <li><b>Progressive discovery</b><span>Expose specialized tools and MCP capability only when the task needs them.</span></li>
-              <li><b>Large-output virtualization</b><span>Keep bulky command output retrievable instead of replaying it through every turn.</span></li>
-              <li><b>Stable identity</b><span>Keep project/thread state independent of whichever model provider is active.</span></li>
-            </ul>
-          </div>
+<!-- ============ STARTUP ECOSYSTEM ============ -->
+<section class="program-trust wrap" aria-label="Selected startup and developer programs">
+  <div class="program-trust-card rv">
+    <div class="program-trust-copy">
+      <div class="program-trust-kicker">Startup ecosystem</div>
+      <p>Trebell has been accepted into startup and developer programs from established infrastructure and developer platforms.</p>
+    </div>
+    <div class="program-names" aria-label="Program providers">
+      <span class="program-name">MongoDB</span>
+      <span class="program-name">Auth0</span>
+      <span class="program-name">Tailscale</span>
+      <span class="program-name">Sentry</span>
+      <span class="program-name">BrowserStack</span>
+      <span class="program-name">Pulumi</span>
+    </div>
+  </div>
+</section>
 
-          <div class="context-visual reveal reveal-delay-1" aria-hidden="true">
-            <div class="visual-toolbar"><span></span><span></span><span></span><b>context inspector</b></div>
-            <div class="context-cols">
-              <div class="tree">
-                <small>REPOSITORY</small>
-                <div class="tree-item active">src/agent/runtime.ts</div>
-                <div class="tree-item active">src/context/engine.ts</div>
-                <div class="tree-item">src/tools/gateway.ts</div>
-                <div class="tree-item">docs/architecture.md</div>
-                <div class="tree-item faded">logs/large-output.log</div>
-              </div>
-              <div class="context-core">
-                <div class="context-node violet"><span>hot context</span><b>8.4k</b></div>
-                <div class="context-link"></div>
-                <div class="context-node"><span>retrievable</span><b>92.7k</b></div>
-                <div class="context-link"></div>
-                <div class="context-node green"><span>cache-stable prefix</span><b>pinned</b></div>
-              </div>
-            </div>
-            <div class="visual-status"><span><i></i>context budget healthy</span><span>token replay avoided</span></div>
-          </div>
+<!-- ============ TOOLBOX ============ -->
+<section id="toolbox" class="wrap">
+  <div class="sec-head rv">
+    <div>
+      <div class="sec-eye"><i style="background:var(--blue)"></i>02 · Toolbox</div>
+      <h2>The rest of the workbench.</h2>
+    </div>
+    <p class="sec-note">Each solves exactly one problem extremely well. Repo names in small print so you can audit me.</p>
+  </div>
+
+  <div class="tools">
+    <article class="tool rv" style="--acc:var(--amber)">
+      <div class="tool-top">
+        <span class="squircle">🧬</span>
+        <div><h3>Proteus</h3><span class="repo">repo: fileconverter</span></div>
+        <span class="badge-wip">WIP</span>
+      </div>
+      <p>Any-to-any file conversion, entirely in your browser: media, audio, images, archives, docs, ebooks, subtitles, 388 proven routes. Converter websites die at 100 MB; Proteus swallowed a <b>10 GB file</b> under a hard 250 MB RAM cap and finished in seconds.</p>
+      <div class="minis"><span class="mini">388 ROUTES</span><span class="mini">&lt;250 MB RAM</span><span class="mini">10 GB TESTED</span><span class="mini">WASM FFMPEG</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/fileconverter" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+
+    <article class="tool rv" style="--acc:var(--blue)">
+      <div class="tool-top">
+        <span class="squircle">🎬</span>
+        <div><h3>V-GEN</h3><span class="repo">repo: AIVideoMaker</span></div>
+      </div>
+      <p>Prompt in, YouTube Short out. Gemini writes &amp; narrates, WhisperX aligns every word, Pexels supplies footage, FFmpeg assembles 60fps vertical video with springy subtitles. Then it uploads itself and pings Discord. Runs daily while I sleep.</p>
+      <div class="minis"><span class="mini">60FPS EXPORTS</span><span class="mini">AUTO-UPLOAD</span><span class="mini">ANTI-REPETITION</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/AIVideoMaker" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+
+    <article class="tool rv" style="--acc:var(--pink)">
+      <div class="tool-top">
+        <span class="squircle">🔌</span>
+        <div><h3>ZCodeToAPI</h3><span class="repo">repo: ZCodeToAPI</span></div>
+      </div>
+      <p>An unofficial interoperability layer that turns a signed-in ZCode Start Plan into local <b>OpenAI- and Anthropic-compatible APIs</b>, then wires the real Codex and Claude Code CLIs into them. Model and thinking switches stay real, quota stays honest, tool loops work, and your normal OpenAI / Anthropic auth stays untouched.</p>
+      <div class="minis"><span class="mini">CODEX + CLAUDE</span><span class="mini">OPENAI + ANTHROPIC API</span><span class="mini">LIVE ZCODE QUOTA</span><span class="mini">GLM-5.3</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/ZCodeToAPI" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+
+    <article class="tool rv" style="--acc:var(--green)">
+      <div class="tool-top">
+        <span class="squircle">🎧</span>
+        <div><h3>Trebell Player</h3><span class="repo">repo: LocalMusicPlayer</span></div>
+      </div>
+      <p>An offline audiophile player for Android with a Liquid Glass UI: gapless playback, folder scanning into a local Room DB, multi-band EQ, live frequency visualizer, sleep timer. Your library, your device, zero cloud.</p>
+      <div class="minis"><span class="mini">JETPACK COMPOSE</span><span class="mini">GAPLESS</span><span class="mini">EQ + VISUALIZER</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/LocalMusicPlayer" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+
+    <article class="tool rv" style="--acc:var(--grape)">
+      <div class="tool-top">
+        <span class="squircle">🤖</span>
+        <div><h3>DBZClanker</h3><span class="repo">repo: llmbot</span></div>
+      </div>
+      <p>A Discord bot with an unhinged, uncensored roast personality riding a 10-model Groq rotation. Streams replies, thinks out loud, runs anime &amp; Genshin trivia with global leaderboards, and remembers whatever personality you teach it. Rude by design.</p>
+      <div class="minis"><span class="mini">10-MODEL ROTATION</span><span class="mini">TRIVIA LEADERBOARDS</span><span class="mini">ROAST MODE: ON</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/llmbot" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+
+    <article class="tool rv" style="--acc:var(--teal)">
+      <div class="tool-top">
+        <span class="squircle">👾</span>
+        <div><h3>Professor Byte</h3><span class="repo">repo: pokebotlocal</span></div>
+      </div>
+      <p>A complete Gen-1 Pokémon game living inside Discord: all 151 Pokémon, spawns, catches, exact IVs, trade evolutions, 8 gyms plus Elite Four and Champion, economy and trading. PostgreSQL-backed and painfully authentic.</p>
+      <div class="minis"><span class="mini">151 POKÉMON</span><span class="mini">8 GYMS + E4</span><span class="mini">TRADE EVOS</span></div>
+      <a class="tool-link" href="https://github.com/tanishqbaweja/pokebotlocal" target="_blank" rel="noopener">SOURCE →</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SIDE QUESTS ============ -->
+<section id="quests" class="wrap">
+  <div class="sec-head rv">
+    <div>
+      <div class="sec-eye"><i style="background:var(--amber)"></i>03 · Side quests &amp; relics</div>
+      <h2>Yes, these exist.<br>No, I'm not sorry.</h2>
+    </div>
+    <p class="sec-note">Older, weirder, occasionally embarrassing. Kept public out of respect for the journey.</p>
+  </div>
+
+  <div class="quests">
+    <article class="quest rv">
+      <span class="qtag"><i style="background:var(--amber)"></i>SIDE QUEST · 2021</span>
+      <h3>Teyvat Shuffle ⚔️</h3>
+      <p>The engine behind a YouTube creator's <b>Genshin Impact randomizer speedrun mode</b>: rerolled chests, shuffled bosses, randomized gear, all chaos packaged as a single runnable JAR. Still out there in the wild inside someone's speedrun.</p>
+      <div class="qnote">Genshin_Impact_Randomizer_SpeedRun.jar · Java · legendary rarity · repo: teccy</div>
+      <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/teccy" target="_blank" rel="noopener">View the jar ↗</a>
+    </article>
+    <article class="quest rv">
+      <span class="qtag"><i style="background:var(--teal)"></i>RELIC · COLLEGE ERA</span>
+      <h3>Zoo Manager 🦁</h3>
+      <p>A Zoo Management System in Java for a college DBMS course. Normalized to oblivion, ER diagram and all. The zoo was managed, the grades were received, and the code now lives in the vault where it can hurt nobody.</p>
+      <div class="qnote">dbmsproject · Java · normalized: 3NF (allegedly)</div>
+      <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/dbmsproject" target="_blank" rel="noopener">View anyway ↗</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture>
+        <div>
+          <b>Trebell<i>★</i></b>
+          <p>Independent software by one person with too many ideas. Made with coffee, spite, and bounded I/O buffers.</p>
         </div>
       </div>
-    </section>
-
-    <!-- ============ 04 EFFICIENCY ============ -->
-    <section class="section" id="efficiency">
-      <div class="shell">
-        <div class="feature-grid reverse">
-          <div class="efficiency-visual reveal" aria-hidden="true">
-            <div class="visual-toolbar"><span></span><span></span><span></span><b>per-turn telemetry</b></div>
-            <div class="eff-head">
-              <div><small>PER-TURN TELEMETRY</small><strong>Useful work / provider input</strong></div>
-              <span>live accounting</span>
-            </div>
-            <div class="eff-chart">
-              <div class="eff-bar" style="--h:78%"><b>9.2k</b>input</div>
-              <div class="eff-bar green" style="--h:46%"><b>4.1k</b>cache</div>
-              <div class="eff-bar" style="--h:32%"><b>2.8k</b>output</div>
-              <div class="eff-bar" style="--h:8%"><b>0</b>retry</div>
-              <div class="eff-bar" style="--h:55%"><b>6</b>tool calls</div>
-              <div class="eff-bar" style="--h:8%"><b>0</b>failed</div>
-              <div class="eff-bar green" style="--h:40%"><b>4</b>turns</div>
-            </div>
-            <div class="eff-ledger">
-              <div><span>provider input</span><b>9.2k</b></div>
-              <div><span>tool calls</span><b>6</b></div>
-              <div><span>model turns</span><b>4</b></div>
-            </div>
-          </div>
-
-          <div class="feature-copy reveal reveal-delay-1">
-            <div class="section-label"><i></i><span>04</span>Efficiency</div>
-            <h2>Optimize useful coding work.<br><span>Not vanity metrics.</span></h2>
-            <p>Trebell measures the harness where it can actually control the result: provider input, cache behavior, model turns, tool calls, failures, retries, and unnecessary inference. No pretending noisy upstream provider latency is a harness breakthrough.</p>
-            <ul class="feature-points">
-              <li><b>Token &amp; cache telemetry</b><span>See where context is paid for, reused, or wasted.</span></li>
-              <li><b>Tool/retry accounting</b><span>Measure how much orchestration the model needed to reach a verified result.</span></li>
-              <li><b>Regression discipline</b><span>An optimization only counts when the end-to-end task gets better.</span></li>
-            </ul>
-          </div>
-        </div>
+      <div class="foot-col">
+        <h4>The stuff</h4>
+        <ul>
+          <li><a href="https://code.trebell.dev/">Trebell Code</a></li>
+          <li><a href="https://pdfomni.com" target="_blank" rel="noopener">PDFOmni</a></li>
+          <li><a href="#toolbox">Proteus · V-GEN · Player · bots</a></li>
+          <li><a href="#quests">Side quests &amp; relics</a></li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ============ 05 PROOF ============ -->
-    <section class="section proof-section" id="proof">
-      <div class="shell">
-        <div class="section-intro reveal">
-          <div class="section-label"><i></i><span>05</span>Measured proof</div>
-          <h2>Benchmarks people<br><span>actually care about.</span></h2>
-          <p>Workload-specific measurements from Trebell development. They are evidence of direction and engineering discipline, not universal promises.</p>
-        </div>
-
-        <div class="metrics-grid">
-          <article class="metric-card reveal">
-            <span class="metric-delta">≈71% lower</span>
-            <small>Failure-repair benchmark</small>
-            <strong>31.9k <i>→</i> 9.2k</strong>
-            <h3>Provider-input tokens</h3>
-            <p>Same independently verified outcome with dramatically less input replay.</p>
-            <small>Same benchmark</small>
-          </article>
-
-          <article class="metric-card reveal reveal-delay-1">
-            <small>Failure-repair benchmark</small>
-            <strong>10 <i>→</i> 4</strong>
-            <h3>Model turns</h3>
-            <p>Fewer inference loops needed to recover and verify.</p>
-            <small>Same benchmark</small>
-          </article>
-
-          <article class="metric-card reveal reveal-delay-2">
-            <small>Failure-repair benchmark</small>
-            <strong>17 <i>→</i> 6</strong>
-            <h3>Tool calls</h3>
-            <p>Less orchestration overhead around the actual engineering work.</p>
-            <small>Same benchmark</small>
-          </article>
-
-          <article class="metric-card reveal">
-            <small>Noisy-output repair</small>
-            <strong class="single">≈18%</strong>
-            <h3>Lower provider input</h3>
-            <p>Reduced replay on a 92 KB noisy-output repair workload while preserving verification.</p>
-          </article>
-
-          <article class="metric-card reveal reveal-delay-1">
-            <small>Recipe-restricted request</small>
-            <strong>11 <i>→</i> 1</strong>
-            <h3>Initially visible tools</h3>
-            <p>Progressive capability exposure instead of dumping the full tool surface up front.</p>
-          </article>
-
-          <article class="metric-card rejected reveal reveal-delay-2">
-            <small>Optimization discipline</small>
-            <strong class="single">Rejected</strong>
-            <h3>Schema compression that regressed the full task</h3>
-            <p>A smaller schema looked better in isolation, but increased end-to-end model work. Trebell did not ship the “win.”</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 06 PRODUCT ============ -->
-    <section class="section product-section" id="product">
-      <div class="shell">
-        <div class="section-intro centered reveal">
-          <div class="section-label centered-label"><i></i><span>06</span>Product surface</div>
-          <h2>A serious engineering environment.<br><span>Not a chat box with a terminal bolted on.</span></h2>
-          <p>Projects, source control, real terminal sessions, durable agent threads, verification evidence, usage accounting, and provider-independent runtime control in one desktop workspace.</p>
-        </div>
-
-        <figure class="product-shot-frame reveal">
-          <img class="product-shot product-shot-dark" src="assets/trebell-app-dark.png" alt="Trebell Code desktop workspace in dark mode" width="1600" height="980" loading="lazy">
-          <img class="product-shot product-shot-light" src="assets/trebell-app-light.png" alt="Trebell Code desktop workspace in light mode" width="1600" height="980" loading="lazy">
-          <figcaption>Actual Trebell Code interface captured from the current desktop build.</figcaption>
-        </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FINAL CTA ============ -->
-    <section class="final-cta">
-      <div class="shell">
-        <div class="cta-rule"></div>
-        <div class="cta-grid">
-          <div class="cta-copy reveal">
-            <div class="section-label"><i></i><span>Trebell</span>Code</div>
-            <h2>Better models help.<br><span>Better systems compound.</span></h2>
-            <p>Provider-independent engineering infrastructure for coding agents that need to work on real software, not just produce plausible text.</p>
-          </div>
-          <div class="cta-side reveal reveal-delay-1">
-            <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noreferrer">View on GitHub <span class="arrow">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <a class="footer-brand" href="#" aria-label="Trebell Code home"><img src="assets/trebell-logo.png" alt="">Trebell Code</a>
-      <p>Created by Trebell.</p>
-      <div class="footer-links">
-        <a href="#platform">Platform</a>
-        <a href="#proof">Benchmarks</a>
-        <a href="https://github.com/tanishqbaweja/trebellcode">GitHub</a>
+      <div class="foot-col">
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/tanishqbaweja" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://code.trebell.dev/">Trebell Code page →</a></li>
+          <li><a href="https://pdfomni.com" target="_blank" rel="noopener">pdfomni.com ↗</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="foot-bot">
+      <span>© 2026 Trebell · <b>no trackers, no cookies, no uploads: ever</b></span>
+      <span>hand-built · apache-2.0 / mit where noted</span>
+    </div>
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script>
+(function(){
+  var root=document.documentElement;
+  function setMeta(){
+    var m=document.getElementById('metaTheme');
+    if(m) m.content = root.getAttribute('data-theme')==='light' ? '#f7f5f1' : '#141318';
+  }
+  setMeta();
+  var btn=document.getElementById('themeToggle');
+  if(btn) btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('trebell-theme',next); }catch(e){}
+    setMeta();
+  });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(i%4)*60+'ms'; io.observe(el); });
+  var fio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.querySelectorAll('.fill').forEach(function(f,i){
+        var w=f.dataset.w+'%';
+        setTimeout(function(){ f.style.width=w; }, 300+i*220);
+      });
+      fio.unobserve(e.target);
+    });
+  },{threshold:.4});
+  document.querySelectorAll('.vis').forEach(function(el){ fio.observe(el); });
+})();
+</script>
 </body>
 </html>

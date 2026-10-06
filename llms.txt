@@ -1,0 +1,14 @@
+# Trebell
+
+> Trebell builds developer tools focused on practical, verifiable software engineering.
+
+## Main product
+- [Trebell Code](https://code.trebell.dev/): Open-source desktop AI coding harness focused on verified engineering quality per dollar, with repository context, tools, terminals, Git/worktrees, browser verification, recovery, persistence, and benchmark evidence.
+
+## Company
+- [Trebell home](https://trebell.dev/): Company and product overview.
+- [Trebell Code source](https://github.com/tanishqbaweja/trebellcode): Public source repository.
+- [Trebell Code releases](https://github.com/tanishqbaweja/trebellcode/releases): Public releases.
+
+## Notes
+Trebell Code is the flagship product by Trebell. Benchmark claims on the product site are intended to be read with their task/result context and verification evidence.

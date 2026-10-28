@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trebell | Home of Trebell Code</title>
-<meta name="description" content="Trebell is the company behind Trebell Code, an open-source AI coding harness engineered for the same or better verified software-engineering results at lower actual dollar cost.">
+<title>Trebell | Developer Tools Company Behind Trebell Code</title>
+<meta name="description" content="Trebell is a developer-tools company building Trebell Code, an open-source desktop AI coding harness for reliable, provider-agnostic software engineering with measurable quality and cost.">
 <meta name="theme-color" id="metaTheme" content="#141318">
 <link rel="canonical" href="https://trebell.dev/">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch.png">
-<meta property="og:title" content="Trebell | Home of Trebell Code">
-<meta property="og:description" content="Trebell is the company behind Trebell Code: an open-source AI coding harness engineered for verified engineering quality per dollar.">
+<meta property="og:title" content="Trebell | Developer Tools Company Behind Trebell Code">
+<meta property="og:description" content="Trebell builds Trebell Code, an open-source desktop AI coding harness for reliable, provider-agnostic software engineering with measurable quality and cost.">
 <meta property="og:url" content="https://trebell.dev/">
 <meta property="og:image" content="https://trebell.dev/logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,7 +26,62 @@
       "name": "Trebell",
       "url": "https://trebell.dev/",
       "logo": "https://trebell.dev/logo.png",
-      "description": "Trebell builds developer tools, including Trebell Code, an open-source AI coding harness focused on verified software-engineering quality per dollar."
+      "foundingDate": "2026-05",
+      "email": "founder@trebell.dev",
+      "description": "Trebell is a developer-tools company building software for AI-assisted software engineering. Its flagship product is Trebell Code, an open-source desktop AI coding harness focused on reliable execution, provider choice, verification, and engineering quality per dollar.",
+      "founder": {"@id": "https://trebell.dev/#tanishq-baweja"},
+      "member": [
+        {"@id": "https://trebell.dev/#tanishq-baweja"},
+        {"@id": "https://trebell.dev/#raghav-dabra"},
+        {"@id": "https://trebell.dev/#himnish-ishaan"},
+        {"@id": "https://trebell.dev/#shashwat-chaudhary"},
+        {"@id": "https://trebell.dev/#samriddhi-choursarisa"}
+      ],
+      "sameAs": [
+        "https://github.com/tanishqbaweja/trebellcode",
+        "https://www.linkedin.com/in/tanishq-baweja-427468191"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trebell.dev/#raghav-dabra",
+      "name": "Raghav Dabra",
+      "jobTitle": "Engineering",
+      "worksFor": {"@id": "https://trebell.dev/#organization"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trebell.dev/#himnish-ishaan",
+      "name": "Himnish Ishaan",
+      "jobTitle": "Product & Research",
+      "worksFor": {"@id": "https://trebell.dev/#organization"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trebell.dev/#shashwat-chaudhary",
+      "name": "Shashwat Chaudhary",
+      "jobTitle": "Operations & Growth",
+      "worksFor": {"@id": "https://trebell.dev/#organization"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trebell.dev/#samriddhi-choursarisa",
+      "name": "Samriddhi Choursarisa",
+      "jobTitle": "Engineering",
+      "worksFor": {"@id": "https://trebell.dev/#organization"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trebell.dev/#tanishq-baweja",
+      "name": "Tanishq Baweja",
+      "jobTitle": "Founder & CEO",
+      "email": "founder@trebell.dev",
+      "url": "https://trebell.dev/about/",
+      "worksFor": {"@id": "https://trebell.dev/#organization"},
+      "sameAs": [
+        "https://github.com/tanishqbaweja",
+        "https://www.linkedin.com/in/tanishq-baweja-427468191"
+      ]
     },
     {
       "@type": "WebSite",
@@ -34,6 +89,18 @@
       "url": "https://trebell.dev/",
       "name": "Trebell",
       "publisher": {"@id": "https://trebell.dev/#organization"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://trebell.dev/#trebell-code",
+      "name": "Trebell Code",
+      "url": "https://code.trebell.dev/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {"@id": "https://trebell.dev/#organization"},
+      "description": "Trebell Code is Trebell's flagship open-source desktop AI coding harness. It connects AI models and coding runtimes to repositories, terminals, Git worktrees, browser automation, verification, recovery, and persistent project context."
     }
   ]
 }
@@ -145,6 +212,22 @@ section{padding-block:80px;position:relative;z-index:1}
 h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.015em;line-height:1.1}
 .sec-note{color:var(--mut);font-size:14.5px;max-width:38ch}
 
+/* ============ COMPANY OVERVIEW ============ */
+.company-intro{padding-top:34px}
+.company-shell{background:linear-gradient(145deg,color-mix(in srgb,var(--violet) 8%,var(--card)),var(--card));border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--sh)}
+.company-lead{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start;margin-bottom:26px}
+.company-lead p{color:var(--mut);font-size:16px;max-width:67ch}
+.company-lead p b{color:var(--ink);font-weight:650}
+.company-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.company-card{background:color-mix(in srgb,var(--bg) 48%,var(--card));border:1px solid var(--line);border-radius:16px;padding:18px}
+.company-card .label{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--violet);margin-bottom:8px}
+.company-card h3{font-family:var(--disp);font-size:17px;line-height:1.15;margin-bottom:7px}
+.company-card p{color:var(--mut);font-size:12.8px;line-height:1.55}
+.team-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.team-links a{font-family:var(--mono);font-size:10px;color:var(--ink);text-decoration:none;border:1px solid var(--line2);border-radius:9px;padding:6px 9px;background:var(--card)}
+@media(max-width:900px){.company-lead{grid-template-columns:1fr}.company-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.company-shell{padding:24px 18px}.company-grid{grid-template-columns:1fr}}
+
 /* ============ FLAGSHIPS ============ */
 .flags{display:grid;gap:28px}
 .flag{--tint:color-mix(in srgb,var(--acc) 13%,transparent);--tintb:color-mix(in srgb,var(--acc) 5%,transparent);
@@ -196,9 +279,18 @@ h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);le
 .program-trust-copy{display:grid;gap:5px}
 .program-trust-kicker{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
 .program-trust-copy p{font-size:13px;line-height:1.55;color:var(--mut);max-width:42ch}
-.program-names{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;align-items:center}
-.program-name{font-family:var(--disp);font-size:15px;font-weight:700;letter-spacing:-.01em;text-align:center;color:color-mix(in srgb,var(--ink) 78%,var(--mut));padding:7px 4px;white-space:nowrap}
-@media(max-width:760px){.program-trust-card{grid-template-columns:1fr;gap:16px;padding:18px}.program-names{grid-template-columns:repeat(2,1fr);gap:6px 12px}.program-name{text-align:left;font-size:14px}}
+.program-names{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;align-items:stretch}
+.program-name{display:flex;align-items:center;gap:9px;min-width:0;min-height:50px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg) 55%,transparent);color:color-mix(in srgb,var(--ink) 82%,var(--mut));font-family:var(--disp);font-size:12.5px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.program-mark{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:9px;background:color-mix(in srgb,var(--card) 88%,var(--bg));border:1px solid color-mix(in srgb,var(--line) 82%,transparent)}
+.program-mark img{display:block;max-width:21px;max-height:21px;width:auto;height:auto;object-fit:contain}
+.program-name.aws .program-mark img{max-width:24px;max-height:18px}
+.program-logo-light{display:none!important}
+html[data-theme="light"] .program-logo-dark{display:none!important}
+html[data-theme="light"] .program-logo-light{display:block!important}
+html:not([data-theme="light"]) .program-mark{background:color-mix(in srgb,var(--card) 88%,white 4%);border-color:color-mix(in srgb,var(--line2) 88%,transparent)}
+.program-label{overflow:hidden;text-overflow:ellipsis}
+@media(max-width:980px){.program-trust-card{grid-template-columns:minmax(230px,.75fr) 1.25fr;gap:20px}.program-names{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.program-trust-card{grid-template-columns:1fr;gap:16px;padding:18px}.program-names{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.program-name{font-size:12.5px;padding:8px 9px}.program-mark{width:28px;height:28px;flex-basis:28px}.program-mark img{max-width:20px;max-height:20px}}
 
 /* ============ TOOL GRID ============ */
 .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
@@ -234,12 +326,12 @@ h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);le
 
 /* ============ FOOTER ============ */
 footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;z-index:1}
-.foot-in{padding:56px 0 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
-.foot-brand{display:flex;gap:15px;align-items:flex-start}
-.foot-brand img{width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.2);object-fit:cover}
-.foot-brand b{font-family:var(--disp);font-size:19px;color:#fff}
-.foot-brand b i{font-style:normal;color:var(--pink)}
-.foot-brand p{font-size:13.5px;margin-top:8px;max-width:36ch;color:#a49fb5}
+.foot-in{padding:56px 0 40px;display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:30px}
+.foot-brand{display:block}
+.foot-brand-link{display:inline-flex;align-items:center;gap:10px}
+.foot-brand-link img{width:36px;height:36px;border-radius:50%;border:0;object-fit:cover}
+.foot-brand-link b{font-family:var(--disp);font-size:19px;line-height:1;color:#fff}
+.foot-brand p{font-size:13.5px;margin-top:12px;max-width:36ch;color:#a49fb5}
 .foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#7d7890;margin-bottom:14px}
 .foot-col ul{list-style:none;display:grid;gap:9px}
 .foot-col a{font-size:14px;color:#a49fb5;transition:.15s;display:inline-block}
@@ -247,7 +339,8 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 .foot-bot{border-top:1px solid rgba(255,255,255,.09);padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
   font-family:var(--mono);font-size:11px;color:#7d7890}
 .foot-bot b{color:var(--pink);font-weight:500}
-@media(max-width:840px){.foot-in{grid-template-columns:1fr}}
+@media(max-width:1050px){.foot-in{grid-template-columns:1.3fr 1fr 1fr}.foot-in>.foot-col:nth-last-child(-n+2){margin-top:8px}}
+@media(max-width:840px){.foot-in{grid-template-columns:1fr}.foot-in>.foot-col:nth-last-child(-n+2){margin-top:0}}
 
 /* ============ MOBILE ============ */
 @media(max-width:640px){
@@ -328,7 +421,7 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 
   footer{margin-top:40px}
   .foot-in{padding:40px 0 30px;gap:30px}
-  .foot-brand img{width:46px;height:46px}
+  .foot-brand-link img{width:34px;height:34px}
   .foot-brand p{font-size:12.5px}
   .foot-col h4{margin-bottom:10px}
   .foot-col ul{gap:7px}
@@ -356,7 +449,11 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 <script>
 (function(){
   var t='dark';
-  try{ var s=localStorage.getItem('trebell-theme'); if(s==='light'||s==='dark') t=s; }catch(e){}
+  try{
+    var s=localStorage.getItem('trebell-theme');
+    if(s==='light'||s==='dark') t=s;
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches) t='light';
+  }catch(e){}
   document.documentElement.setAttribute('data-theme',t);
 })();
 </script>
@@ -368,9 +465,11 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
   <div class="nav-in">
     <a class="brand" href="#top"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><span>Trebell<i>.</i></span></a>
     <div class="nav-links">
-      <a href="#flagships">Flagships</a>
-      <a href="#toolbox">Toolbox</a>
-      <a href="#quests">Side quests</a>
+      <a href="/product/">Product</a>
+      <a href="/about/">Company</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/security/">Security</a>
+      <a href="/contact/">Contact</a>
     </div>
     <button class="tbtn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
       <span class="ic-sun">☀</span><span class="ic-moon">☾</span>
@@ -383,18 +482,18 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 <header class="hero wrap" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hero-kicker rv">Flagship product by Trebell</div>
+      <div class="hero-kicker rv">Trebell · developer tools company</div>
       <h1 class="rv">Trebell <span class="product-word">Code</span></h1>
-      <p class="lede rv">An open-source AI coding harness engineered to <b>match or beat existing harnesses on verified software-engineering quality at lower actual dollar cost</b>. On Terminal-Bench 4.0, Trebell Native matched Codex API at <b>4/4</b> while costing <b>28.6% less</b>; on another same-outcome <b>3/4</b> run it was <b>90.7% cheaper</b>.</p>
+      <p class="lede rv"><b>Trebell builds developer infrastructure for AI-assisted software engineering.</b> Our flagship product, Trebell Code, is an open-source desktop coding harness that connects AI models to real repositories, terminals, Git workflows, browser automation and verification — while measuring whether the final result is actually correct and cost-efficient.</p>
       <div class="hero-cta rv">
-        <a class="btn btn-pri" href="https://code.trebell.dev/">Explore Trebell Code <span class="ar">→</span></a>
-        <a class="btn btn-out" href="https://code.trebell.dev/#proof">View benchmarks</a>
+        <a class="btn btn-pri" href="/product/">Trebell Code overview <span class="ar">→</span></a>
+        <a class="btn btn-out" href="https://code.trebell.dev/">Open product site</a>
       </div>
       <div class="statpills rv">
-        <span class="spill"><i style="background:var(--green)"></i>4/4 verified parity</span>
-        <span class="spill"><i style="background:var(--violet)"></i>28.6% lower cost</span>
-        <span class="spill"><i style="background:var(--amber)"></i>3/4 tie · 90.7% cheaper</span>
-        <span class="spill"><i style="background:var(--blue)"></i>fresh unseen: 18/19</span>
+        <span class="spill"><i style="background:var(--green)"></i>open source</span>
+        <span class="spill"><i style="background:var(--violet)"></i>desktop coding harness</span>
+        <span class="spill"><i style="background:var(--blue)"></i>provider-agnostic</span>
+        <span class="spill"><i style="background:var(--amber)"></i>Windows · macOS · Linux</span>
       </div>
     </div>
     <figure class="logo-card rv">
@@ -405,14 +504,49 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
   </div>
 </header>
 
+<!-- ============ COMPANY ============ -->
+<section id="company" class="company-intro wrap">
+  <div class="company-shell rv">
+    <div class="company-lead">
+      <div>
+        <div class="sec-eye"><i style="background:var(--violet)"></i>Company</div>
+        <h2>Trebell builds the layer around the model.</h2>
+      </div>
+      <p>Trebell is an independent developer-tools company focused on making AI coding systems more useful on real software projects. <b>Trebell Code is developed and maintained by Trebell and is our primary product.</b> Instead of locking developers to one model vendor, Trebell Code provides a common desktop workspace for multiple coding runtimes and model providers, then adds the context management, tools, recovery and verification needed to finish engineering work reliably.</p>
+    </div>
+    <div class="company-grid">
+      <article class="company-card">
+        <div class="label">Product</div>
+        <h3>A complete coding workspace</h3>
+        <p>Repository context, terminal execution, file editing, Git and worktrees, browser automation, project recovery and evidence live in one harness.</p>
+      </article>
+      <article class="company-card">
+        <div class="label">Users</div>
+        <h3>Built for software developers</h3>
+        <p>Trebell Code is for developers who want coding agents to work on real codebases without giving up provider choice or visibility into what the agent did.</p>
+      </article>
+      <article class="company-card">
+        <div class="label">Approach</div>
+        <h3>Provider-agnostic by design</h3>
+        <p>The harness can work across multiple agent runtimes and model providers, so the workflow is not tied to a single AI vendor.</p>
+      </article>
+      <article class="company-card">
+        <div class="label">Proof</div>
+        <h3>Measure the finished result</h3>
+        <p>We benchmark correctness and actual dollar cost on software-engineering tasks, with builds, tests and browser evidence rather than treating token count alone as success.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FLAGSHIPS ============ -->
 <section id="flagships" class="wrap">
   <div class="sec-head rv">
     <div>
-      <div class="sec-eye"><i style="background:var(--violet)"></i>01 · Flagships</div>
-      <h2>The two that pay the<br>respect bills.</h2>
+      <div class="sec-eye"><i style="background:var(--violet)"></i>01 · Products</div>
+      <h2>Trebell Code leads the<br>product line.</h2>
     </div>
-    <p class="sec-note">Maintained like my life depends on it. Because at this point, it kind of does.</p>
+    <p class="sec-note">The flagship is an open-source AI coding harness. Additional Trebell products explore local-first document and developer workflows.</p>
   </div>
 
   <div class="flags">
@@ -425,14 +559,15 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
       </div>
       <div class="flag-body">
         <div>
-          <div class="tag">Verified engineering quality per dollar, not token counting.</div>
-          <p class="desc">An open-source <b>AI coding harness</b> that owns the orchestration layer between models and real software projects: context, tools, terminals, Git worktrees, browser verification, recovery and evidence. The goal is simple: achieve the <b>same or better independently verified result at lower actual dollar cost</b>.</p>
+          <div class="tag">Trebell's flagship open-source AI coding harness.</div>
+          <p class="desc"><b>Trebell Code is developed by Trebell</b> as a desktop workspace for agentic software engineering. It owns the orchestration layer between AI models and real projects: repository context, tools, terminals, Git worktrees, browser automation, recovery, persistence and verification. Developers can switch between supported coding runtimes and model providers without rebuilding their entire workflow around one vendor.</p>
           <ul class="feat">
+            <li>One desktop harness for coding agents, terminals, files, Git, browser automation and project context</li>
+            <li>Provider-agnostic architecture with multiple agent runtimes and model providers</li>
             <li>Terminal-Bench 4.0: 4/4 vs Codex API 4/4 at 28.6% lower cost</li>
             <li>Same-outcome 3/4 run: 90.7% cheaper than Codex API, 80.5% cheaper than OAuth</li>
             <li>Fresh unseen task: 18/19, matching Codex OAuth and beating Codex API's 16/19</li>
-            <li>Seven runtimes: Native, Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity</li>
-            <li>Evidence-first verification: tests, builds, browser runs, screenshots</li>
+            <li>Evidence-first verification through tests, builds, browser runs and screenshots</li>
           </ul>
           <div class="plats">
             <span class="plat">WINDOWS</span><span class="plat">MACOS</span><span class="plat">LINUX</span><span class="plat soon">CLI: IN DEVELOPMENT</span>
@@ -440,6 +575,7 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
           <div class="flag-cta">
             <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Explore Trebell Code <span class="ar">→</span></a>
             <a class="btn btn-out btn-sm" href="https://code.trebell.dev/#proof">Benchmarks</a>
+            <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/trebellcode" target="_blank" rel="noopener">Source code ↗</a>
           </div>
         </div>
         <div class="vis">
@@ -463,13 +599,13 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
       </div>
       <div class="flag-body">
         <div>
-          <div class="tag">Browser PDF tools that actually edit PDFs. Shocking, I know.</div>
-          <p class="desc">Every other "local browser PDF tool" lets you scribble annotations and calls it editing. <a href="https://pdfomni.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">PDFOmni</a> edits the <b>actual document</b>: text, layout, pages. It converts PDF to Word with fidelity that beats ilovepdf in head-to-heads. Everything runs inside your tab. Your files never touch a server, because there is no server.</p>
+          <div class="tag">Local-first PDF editing and conversion in the browser.</div>
+          <p class="desc"><a href="https://pdfomni.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">PDFOmni</a> is a local-first browser PDF workspace for editing document text, layout and pages, with PDF-to-Word conversion and common document utilities. Processing runs in the browser so documents are not uploaded to a Trebell processing server.</p>
           <ul class="feat">
-            <li>True PDF editing, not annotation cosplay</li>
+            <li>Direct PDF text and page editing</li>
             <li>High-fidelity PDF to Word conversion</li>
             <li>100% local processing: zero uploads, zero accounts</li>
-            <li>Free, forever, no watermark nonsense</li>
+            <li>Free to use with no account requirement or added watermark</li>
           </ul>
           <div class="flag-cta">
             <a class="btn btn-pri btn-sm" style="background:var(--pink);box-shadow:0 6px 18px -6px color-mix(in srgb,var(--pink) 60%,transparent)" href="https://pdfomni.com" target="_blank" rel="noopener">Open pdfomni.com <span class="ar">↗</span></a>
@@ -496,115 +632,32 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
       <p>Trebell has been accepted into startup and developer programs from established infrastructure and developer platforms.</p>
     </div>
     <div class="program-names" aria-label="Program providers">
-      <span class="program-name">MongoDB</span>
-      <span class="program-name">Auth0</span>
-      <span class="program-name">Tailscale</span>
-      <span class="program-name">Sentry</span>
-      <span class="program-name">BrowserStack</span>
-      <span class="program-name">Pulumi</span>
+      <span class="program-name aws"><span class="program-mark"><img class="program-logo-dark" src="/assets/programs/aws-dark.svg" alt="" aria-hidden="true"><img class="program-logo-light" src="/assets/programs/aws.svg" alt="" aria-hidden="true"></span><span class="program-label">AWS</span></span>
+      <span class="program-name"><span class="program-mark"><img class="program-logo-dark" src="/assets/programs/anthropic-dark.svg" alt="" aria-hidden="true"><img class="program-logo-light" src="/assets/programs/anthropic.svg" alt="" aria-hidden="true"></span><span class="program-label">Anthropic</span></span>
+      <span class="program-name"><span class="program-mark"><img src="/assets/programs/mongodb.svg" alt="" aria-hidden="true"></span><span class="program-label">MongoDB</span></span>
+      <span class="program-name"><span class="program-mark"><img src="/assets/programs/auth0.svg" alt="" aria-hidden="true"></span><span class="program-label">Auth0</span></span>
+      <span class="program-name"><span class="program-mark"><img class="program-logo-dark" src="/assets/programs/tailscale-dark.svg" alt="" aria-hidden="true"><img class="program-logo-light" src="/assets/programs/tailscale.svg" alt="" aria-hidden="true"></span><span class="program-label">Tailscale</span></span>
+      <span class="program-name"><span class="program-mark"><img class="program-logo-dark" src="/assets/programs/sentry-dark.svg" alt="" aria-hidden="true"><img class="program-logo-light" src="/assets/programs/sentry.svg" alt="" aria-hidden="true"></span><span class="program-label">Sentry</span></span>
+      <span class="program-name"><span class="program-mark"><img src="/assets/programs/browserstack.png" alt="" aria-hidden="true"></span><span class="program-label">BrowserStack</span></span>
+      <span class="program-name"><span class="program-mark"><img src="/assets/programs/pulumi.svg" alt="" aria-hidden="true"></span><span class="program-label">Pulumi</span></span>
     </div>
   </div>
 </section>
 
-<!-- ============ TOOLBOX ============ -->
-<section id="toolbox" class="wrap">
+<!-- ============ COMPANY RESOURCES ============ -->
+<section class="wrap" id="resources">
   <div class="sec-head rv">
     <div>
-      <div class="sec-eye"><i style="background:var(--blue)"></i>02 · Toolbox</div>
-      <h2>The rest of the workbench.</h2>
+      <div class="sec-eye"><i style="background:var(--blue)"></i>Company resources</div>
+      <h2>The boring pages are public too.</h2>
     </div>
-    <p class="sec-note">Each solves exactly one problem extremely well. Repo names in small print so you can audit me.</p>
+    <p class="sec-note">Product, team, pricing, security, privacy and support information should be easy to verify without emailing us first.</p>
   </div>
-
-  <div class="tools">
-    <article class="tool rv" style="--acc:var(--amber)">
-      <div class="tool-top">
-        <span class="squircle">🧬</span>
-        <div><h3>Proteus</h3><span class="repo">repo: fileconverter</span></div>
-        <span class="badge-wip">WIP</span>
-      </div>
-      <p>Any-to-any file conversion, entirely in your browser: media, audio, images, archives, docs, ebooks, subtitles, 388 proven routes. Converter websites die at 100 MB; Proteus swallowed a <b>10 GB file</b> under a hard 250 MB RAM cap and finished in seconds.</p>
-      <div class="minis"><span class="mini">388 ROUTES</span><span class="mini">&lt;250 MB RAM</span><span class="mini">10 GB TESTED</span><span class="mini">WASM FFMPEG</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/fileconverter" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-
-    <article class="tool rv" style="--acc:var(--blue)">
-      <div class="tool-top">
-        <span class="squircle">🎬</span>
-        <div><h3>V-GEN</h3><span class="repo">repo: AIVideoMaker</span></div>
-      </div>
-      <p>Prompt in, YouTube Short out. Gemini writes &amp; narrates, WhisperX aligns every word, Pexels supplies footage, FFmpeg assembles 60fps vertical video with springy subtitles. Then it uploads itself and pings Discord. Runs daily while I sleep.</p>
-      <div class="minis"><span class="mini">60FPS EXPORTS</span><span class="mini">AUTO-UPLOAD</span><span class="mini">ANTI-REPETITION</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/AIVideoMaker" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-
-    <article class="tool rv" style="--acc:var(--pink)">
-      <div class="tool-top">
-        <span class="squircle">🔌</span>
-        <div><h3>ZCodeToAPI</h3><span class="repo">repo: ZCodeToAPI</span></div>
-      </div>
-      <p>An unofficial interoperability layer that turns a signed-in ZCode Start Plan into local <b>OpenAI- and Anthropic-compatible APIs</b>, then wires the real Codex and Claude Code CLIs into them. Model and thinking switches stay real, quota stays honest, tool loops work, and your normal OpenAI / Anthropic auth stays untouched.</p>
-      <div class="minis"><span class="mini">CODEX + CLAUDE</span><span class="mini">OPENAI + ANTHROPIC API</span><span class="mini">LIVE ZCODE QUOTA</span><span class="mini">GLM-5.3</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/ZCodeToAPI" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-
-    <article class="tool rv" style="--acc:var(--green)">
-      <div class="tool-top">
-        <span class="squircle">🎧</span>
-        <div><h3>Trebell Player</h3><span class="repo">repo: LocalMusicPlayer</span></div>
-      </div>
-      <p>An offline audiophile player for Android with a Liquid Glass UI: gapless playback, folder scanning into a local Room DB, multi-band EQ, live frequency visualizer, sleep timer. Your library, your device, zero cloud.</p>
-      <div class="minis"><span class="mini">JETPACK COMPOSE</span><span class="mini">GAPLESS</span><span class="mini">EQ + VISUALIZER</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/LocalMusicPlayer" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-
-    <article class="tool rv" style="--acc:var(--grape)">
-      <div class="tool-top">
-        <span class="squircle">🤖</span>
-        <div><h3>DBZClanker</h3><span class="repo">repo: llmbot</span></div>
-      </div>
-      <p>A Discord bot with an unhinged, uncensored roast personality riding a 10-model Groq rotation. Streams replies, thinks out loud, runs anime &amp; Genshin trivia with global leaderboards, and remembers whatever personality you teach it. Rude by design.</p>
-      <div class="minis"><span class="mini">10-MODEL ROTATION</span><span class="mini">TRIVIA LEADERBOARDS</span><span class="mini">ROAST MODE: ON</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/llmbot" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-
-    <article class="tool rv" style="--acc:var(--teal)">
-      <div class="tool-top">
-        <span class="squircle">👾</span>
-        <div><h3>Professor Byte</h3><span class="repo">repo: pokebotlocal</span></div>
-      </div>
-      <p>A complete Gen-1 Pokémon game living inside Discord: all 151 Pokémon, spawns, catches, exact IVs, trade evolutions, 8 gyms plus Elite Four and Champion, economy and trading. PostgreSQL-backed and painfully authentic.</p>
-      <div class="minis"><span class="mini">151 POKÉMON</span><span class="mini">8 GYMS + E4</span><span class="mini">TRADE EVOS</span></div>
-      <a class="tool-link" href="https://github.com/tanishqbaweja/pokebotlocal" target="_blank" rel="noopener">SOURCE →</a>
-    </article>
-  </div>
-</section>
-
-<!-- ============ SIDE QUESTS ============ -->
-<section id="quests" class="wrap">
-  <div class="sec-head rv">
-    <div>
-      <div class="sec-eye"><i style="background:var(--amber)"></i>03 · Side quests &amp; relics</div>
-      <h2>Yes, these exist.<br>No, I'm not sorry.</h2>
-    </div>
-    <p class="sec-note">Older, weirder, occasionally embarrassing. Kept public out of respect for the journey.</p>
-  </div>
-
-  <div class="quests">
-    <article class="quest rv">
-      <span class="qtag"><i style="background:var(--amber)"></i>SIDE QUEST · 2021</span>
-      <h3>Teyvat Shuffle ⚔️</h3>
-      <p>The engine behind a YouTube creator's <b>Genshin Impact randomizer speedrun mode</b>: rerolled chests, shuffled bosses, randomized gear, all chaos packaged as a single runnable JAR. Still out there in the wild inside someone's speedrun.</p>
-      <div class="qnote">Genshin_Impact_Randomizer_SpeedRun.jar · Java · legendary rarity · repo: teccy</div>
-      <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/teccy" target="_blank" rel="noopener">View the jar ↗</a>
-    </article>
-    <article class="quest rv">
-      <span class="qtag"><i style="background:var(--teal)"></i>RELIC · COLLEGE ERA</span>
-      <h3>Zoo Manager 🦁</h3>
-      <p>A Zoo Management System in Java for a college DBMS course. Normalized to oblivion, ER diagram and all. The zoo was managed, the grades were received, and the code now lives in the vault where it can hurt nobody.</p>
-      <div class="qnote">dbmsproject · Java · normalized: 3NF (allegedly)</div>
-      <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/dbmsproject" target="_blank" rel="noopener">View anyway ↗</a>
-    </article>
+  <div class="company-grid">
+    <article class="company-card rv"><div class="label">Product</div><h3>Trebell Code</h3><p>See the product, architecture, current status and public source in one place.</p><div class="team-links"><a href="/product/">Product overview &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Trust</div><h3>Security &amp; privacy</h3><p>Responsible disclosure, website data practices, open-source transparency and legal information.</p><div class="team-links"><a href="/trust/">Trust center &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Company</div><h3>Team &amp; leadership</h3><p>Founder, current five-person core team, roles, founding date and public company contact.</p><div class="team-links"><a href="/about/">About Trebell &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Contact</div><h3>Talk to the team</h3><p>Product support, partnerships, verification enquiries and security reports each have a clear route.</p><div class="team-links"><a href="/contact/">Contact Trebell &rarr;</a></div></article>
   </div>
 </section>
 
@@ -613,33 +666,46 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
   <div class="wrap">
     <div class="foot-in">
       <div class="foot-brand">
-        <picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture>
-        <div>
-          <b>Trebell<i>★</i></b>
-          <p>Independent software by one person with too many ideas. Made with coffee, spite, and bounded I/O buffers.</p>
-        </div>
+        <a class="foot-brand-link" href="/" aria-label="Trebell home"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><b>Trebell</b></a>
+        <p>Developer tools for AI-assisted software engineering. Trebell Code is the flagship open-source coding harness built and maintained by Trebell.</p>
       </div>
       <div class="foot-col">
-        <h4>The stuff</h4>
+        <h4>Product</h4>
         <ul>
+          <li><a href="/product/">Trebell Code overview</a></li>
           <li><a href="https://code.trebell.dev/">Trebell Code</a></li>
-          <li><a href="https://pdfomni.com" target="_blank" rel="noopener">PDFOmni</a></li>
-          <li><a href="#toolbox">Proteus · V-GEN · Player · bots</a></li>
-          <li><a href="#quests">Side quests &amp; relics</a></li>
+          <li><a href="/pricing/">Pricing &amp; business model</a></li>
+          <li><a href="/open-source/">Open source</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Elsewhere</h4>
+        <h4>Company</h4>
         <ul>
-          <li><a href="https://github.com/tanishqbaweja" target="_blank" rel="noopener">GitHub ↗</a></li>
-          <li><a href="https://code.trebell.dev/">Trebell Code page →</a></li>
-          <li><a href="https://pdfomni.com" target="_blank" rel="noopener">pdfomni.com ↗</a></li>
+          <li><a href="/about/">About &amp; team</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Trust</h4>
+        <ul>
+          <li><a href="/trust/">Trust center</a></li>
+          <li><a href="/security/">Security</a></li>
+          <li><a href="/support/">Support</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/legal/">Legal center</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bot">
-      <span>© 2026 Trebell · <b>no trackers, no cookies, no uploads: ever</b></span>
-      <span>hand-built · apache-2.0 / mit where noted</span>
+      <span>© 2026 Trebell · founded May 2026 · five-person core team</span>
+      <span>Trebell Code · Apache-2.0 · trebell.dev</span>
     </div>
   </div>
 </footer>
@@ -678,3 +744,4 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 </script>
 </body>
 </html>
+

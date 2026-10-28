@@ -1,15 +1,45 @@
 # Trebell Code
 
-> Trebell Code is an open-source desktop coding harness for AI coding agents, built by Trebell.
+> Trebell Code is Trebell's flagship open-source desktop AI software-engineering product.
+
+## Company
+
+Trebell is a founder-led developer-tools startup founded in May 2026.
+
+- Company: Trebell
+- Company website: https://trebell.dev/
+- Founding team and leadership: https://trebell.dev/about/
+- Founder & CEO: Tanishq Baweja
+- Current core team size: 5
+- Core team: Tanishq Baweja (Founder & CEO), Raghav Dabra (Engineering), Himnish Ishaan (Product & Research), Shashwat Chaudhary (Operations & Growth), Samriddhi Choursarisa (Engineering)
+- Business contact: founder@trebell.dev
+- Founder LinkedIn: https://www.linkedin.com/in/tanishq-baweja-427468191
+- Founder GitHub: https://github.com/tanishqbaweja
+- Company trust center: https://trebell.dev/trust/
+- Security and responsible disclosure: https://trebell.dev/security/
+- Privacy policy: https://trebell.dev/privacy/
+- Terms of use: https://trebell.dev/terms/
 
 ## Product
-- [Trebell Code](https://code.trebell.dev/): Product overview, architecture, capabilities, and benchmark evidence.
-- [Source repository](https://github.com/tanishqbaweja/trebellcode): Apache-2.0 source.
-- [Releases](https://github.com/tanishqbaweja/trebellcode/releases): Downloadable releases.
-- [Trebell](https://trebell.dev/): Parent company site.
+
+- Trebell Code: https://code.trebell.dev/
+- Source repository: https://github.com/tanishqbaweja/trebellcode
+- Releases: https://github.com/tanishqbaweja/trebellcode/releases
+- License: Apache-2.0
+- Current shipped desktop release: v1.3.6
 
 ## What it does
+
 Trebell Code provides an agent runtime/harness around coding models: repository context, deterministic tools, terminal and file operations, Git/worktrees, browser verification, durable state, recovery, permissions, caching/context management, telemetry, and evidence-based completion.
 
+## Intended users
+
+Trebell Code is built for software developers and engineering teams using AI coding agents on real codebases, especially where provider choice, reproducible execution, verification, and cost visibility matter.
+
+## Business model
+
+The desktop harness is open source for developers. Trebell plans a paid team infrastructure layer with shared policy, usage and cost controls, managed execution environments, auditability, and administration.
+
 ## Benchmarks
+
 The site reports same-model comparisons against other coding harnesses. Treat each claim together with its named task, verifier result, model/reasoning settings, and cost/token measurements rather than as a universal model-quality claim.

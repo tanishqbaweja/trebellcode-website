@@ -1,36 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#141318">
-  <title>404 | Trebell</title>
-  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{box-sizing:border-box}
-    :root{color-scheme:dark;--bg:#141318;--card:#1d1b24;--ink:#f2eff8;--mut:#a7a2b8;--line:#2b2836;--violet:#8b74ff;--pink:#ff6ba1}
-    @media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f7f5f1;--card:#fff;--ink:#17141f;--mut:#5f5a6e;--line:#e7e3db;--violet:#6b4eff;--pink:#ff4d8d}}
-    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif}
-    body{min-height:100vh;display:grid;place-items:center;padding:24px;background-image:radial-gradient(600px 360px at 10% 0,color-mix(in srgb,var(--violet) 10%,transparent),transparent 65%),radial-gradient(560px 340px at 100% 100%,color-mix(in srgb,var(--pink) 8%,transparent),transparent 65%)}
-    main{width:min(620px,100%);padding:clamp(28px,6vw,52px);border:1px solid var(--line);border-radius:28px;background:var(--card);box-shadow:0 24px 64px -34px rgba(0,0,0,.6)}
-    .brand{display:flex;align-items:center;gap:10px;font-family:Gabarito,sans-serif;font-weight:800;font-size:18px}.brand img{width:36px;height:36px;border-radius:50%;object-fit:cover}
-    .code{margin:64px 0 8px;font:500 12px "JetBrains Mono",monospace;letter-spacing:.14em;color:var(--violet)}
-    h1{font-family:Gabarito,sans-serif;font-size:clamp(3rem,11vw,5.8rem);line-height:.9;letter-spacing:-.055em;margin:0}
-    p{max-width:46ch;margin:24px 0 30px;color:var(--mut);line-height:1.7}
-    a.button{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--violet);color:#fff;text-decoration:none;font-weight:600}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#141318">
+<title>Page Not Found | Trebell</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<script>(function(){var t="dark";try{var s=localStorage.getItem("trebell-theme");if(s==="light"||s==="dark")t=s;else if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)t="light";}catch(e){}document.documentElement.setAttribute("data-theme",t);})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <main>
-    <a class="brand" href="https://trebell.dev/"><img src="/logo-ui.webp" alt="">Trebell.</a>
-    <div class="code">404 · LOST IN THE REPO</div>
-    <h1>Nothing lives here.</h1>
-    <p>The URL wandered into an untracked file. Head back to Trebell and pretend this branch never happened.</p>
-    <a class="button" href="https://trebell.dev/">Back to Trebell →</a>
-  </main>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="/"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><span>Trebell<i>.</i></span></a><nav class="navlinks" aria-label="Primary"><a href="/product/">Product</a><a href="/about/">Company</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/contact/">Contact</a></nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button><a class="navcta" href="https://code.trebell.dev/">Open Trebell Code <span class="ar">→</span></a></div></header>
+<main><section class="hero"><div class="wrap"><div class="eyebrow">404 · page not found</div><h1>This page<br><span>isn't in the worktree.</span></h1><p class="lede">The URL may have moved or never existed. The main company, product and trust pages are still right where they should be.</p><div class="hero-actions"><a class="btn primary" href="/">Trebell home →</a><a class="btn" href="/product/">Product</a><a class="btn" href="/trust/">Trust center</a></div></div></section></main>
+<footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 Trebell</span><span><a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></span></div></div></footer>
+<script src="/site.js"></script>
 </body>
 </html>

@@ -1,14 +1,70 @@
 # Trebell
 
-> Trebell builds developer tools focused on practical, verifiable software engineering.
-
-## Main product
-- [Trebell Code](https://code.trebell.dev/): Open-source desktop AI coding harness focused on verified engineering quality per dollar, with repository context, tools, terminals, Git/worktrees, browser verification, recovery, persistence, and benchmark evidence.
+> Trebell is a founder-led developer-tools startup building software and infrastructure for AI-assisted software engineering.
 
 ## Company
-- [Trebell home](https://trebell.dev/): Company and product overview.
-- [Trebell Code source](https://github.com/tanishqbaweja/trebellcode): Public source repository.
-- [Trebell Code releases](https://github.com/tanishqbaweja/trebellcode/releases): Public releases.
 
-## Notes
-Trebell Code is the flagship product by Trebell. Benchmark claims on the product site are intended to be read with their task/result context and verification evidence.
+- Company website: https://trebell.dev/
+- About, founding team and leadership: https://trebell.dev/about/
+- Founded: May 2026
+- Current core team size: 5
+- Business contact: founder@trebell.dev
+- Trust center: https://trebell.dev/trust/
+- Security: https://trebell.dev/security/
+- Privacy: https://trebell.dev/privacy/
+- Terms: https://trebell.dev/terms/
+
+## Founding team, leadership, and staff
+
+Tanishq Baweja is Trebell's founder and Founder & CEO. He leads product, engineering, and company strategy.
+
+- Tanishq Baweja: Founder & CEO
+- Raghav Dabra: Engineering
+- Himnish Ishaan: Product & Research
+- Shashwat Chaudhary: Operations & Growth
+- Samriddhi Choursarisa: Engineering
+- Founder email: founder@trebell.dev
+- Founder LinkedIn: https://www.linkedin.com/in/tanishq-baweja-427468191
+- Founder GitHub: https://github.com/tanishqbaweja
+
+## Flagship product: Trebell Code
+
+Trebell Code is developed and maintained by Trebell and is the company's primary product.
+
+- Company product overview: https://trebell.dev/product/
+- Product website: https://code.trebell.dev/
+- Source repository: https://github.com/tanishqbaweja/trebellcode
+- Public releases: https://github.com/tanishqbaweja/trebellcode/releases
+- License: Apache-2.0
+- Platforms: Windows, macOS, Linux
+- Category: open-source desktop AI coding harness
+
+Trebell Code provides a common workspace around AI coding models and agent runtimes. It connects them to repository context, file editing, terminals, Git and worktrees, browser automation, recovery, persistence, and verification. The architecture is provider-independent so developers are not forced to rebuild their workflow around a single model vendor.
+
+## Business model
+
+- Pricing and business model: https://trebell.dev/pricing/
+- Trebell Code's desktop harness is open source with no software license fee.
+- Trebell's planned commercial layer is team infrastructure: organization policy, shared usage and cost controls, managed execution environments, auditability, and administration.
+- Team pricing has not yet been announced.
+
+## Trust and support
+
+- Trust center: https://trebell.dev/trust/
+- Responsible disclosure: https://trebell.dev/security/
+- security.txt: https://trebell.dev/.well-known/security.txt
+- Privacy policy: https://trebell.dev/privacy/
+- Terms of use: https://trebell.dev/terms/
+- Legal center: https://trebell.dev/legal/
+- Support: https://trebell.dev/support/
+- Open-source information: https://trebell.dev/open-source/
+- Careers: https://trebell.dev/careers/
+- Contact: https://trebell.dev/contact/
+
+## Website data practices
+
+The current public Trebell marketing site does not include analytics, advertising trackers, account registration, or contact forms. Theme controls on some pages may store a preference in browser local storage. Hosting/network providers and externally hosted fonts may process ordinary request metadata required to deliver those resources.
+
+## What Trebell measures
+
+Trebell evaluates coding-harness performance using completed software-engineering outcomes, verification evidence, and actual dollar cost. Benchmark claims are presented with task/result context and should be read together with the benchmark evidence on the Trebell Code product site.

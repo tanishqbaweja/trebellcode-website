@@ -1,6 +1,6 @@
 # Trebell Code
 
-> Trebell Code is Trebell's flagship open-source desktop AI software-engineering product.
+> Trebell Code is Trebell's flagship product: a free desktop workspace for AI coding agents. The current release is 2.0.0, for Windows 10 and 11 (x64).
 
 ## Company
 
@@ -23,14 +23,40 @@ Trebell is a founder-led developer-tools startup founded in May 2026.
 ## Product
 
 - Trebell Code: https://code.trebell.dev/
-- Source repository: https://github.com/tanishqbaweja/trebellcode
-- Releases: https://github.com/tanishqbaweja/trebellcode/releases
-- License: Apache-2.0
-- Current shipped desktop release: v1.3.6
+- Current release: 2.0.0, Windows 10 and 11 (x64) installer
+- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe
+- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0
+- License: Apache-2.0, free to download and use
+- Licensing and releases: https://trebell.dev/licensing/
+- Updates: from 2.0.0 on, the app checks the public releases repository for new versions; an update downloads and installs only when the user chooses.
 
 ## What it does
 
-Trebell Code provides an agent runtime/harness around coding models: repository context, deterministic tools, terminal and file operations, Git/worktrees, browser verification, durable state, recovery, permissions, caching/context management, telemetry, and evidence-based completion.
+Trebell Code is a desktop coding workspace around coding agents: files, terminal, Git and pull requests, worktrees, previews, a browser panel, projects and environments. Every turn keeps an activity card that shows what it did, such as a command's exit code and duration or an edit's diff.
+
+## Harnesses
+
+- Trebell Native: Trebell's own agent harness, with its own model and tool loop calling model APIs directly. OpenAI is the default provider.
+- Codex: runs the Codex CLI the user has installed.
+- Claude Code
+- OpenCode: OpenCode 1.x and OpenCode 2.
+- Cursor
+- Grok Build
+- Antigravity: runs with a Gemini API key from Google AI Studio.
+- Muse Code: Meta's coding agent, new in 2.0; sign in with `muse login`.
+
+Each of the seven external agents runs as its real harness, with its own models, sign-in, approvals and updates.
+
+## What's new in 2.0
+
+- Muse Code is a new harness: its replies, reasoning, commands and file edits stream into the thread, its approvals and questions come to Trebell's own card and dialog, and Usage shows its 5-hour and weekly windows.
+- OpenCode 2 is supported beside OpenCode 1.x.
+- Each harness brings its own model list, options and default; a reopened thread resumes on the model it used; a harness's thinking shows as a collapsed Thinking row.
+- A redesigned interface: one design across the app, the same top bar on every page, and replies as GitHub-style Markdown with tables and copyable code blocks.
+- Every turn shows what it did, and a turn that failed or was stopped before it replied says how and why.
+- Trebell Native streams replies on OpenAI (code-change turns are checked before the answer), can look at images in the workspace, and waits out network drops instead of failing the turn.
+- Harness updates from Settings.
+- Lighter on the machine: fewer background processes, less CPU and GPU while typing and streaming, and large threads open with much less disk and database work.
 
 ## Intended users
 
@@ -38,8 +64,14 @@ Trebell Code is built for software developers and engineering teams using AI cod
 
 ## Business model
 
-The desktop harness is open source for developers. Trebell plans a paid team infrastructure layer with shared policy, usage and cost controls, managed execution environments, auditability, and administration.
+Trebell Code is free for developers. Trebell plans a paid team infrastructure layer with shared policy, usage and cost controls, managed execution environments, auditability, and administration.
 
 ## Benchmarks
 
-The site reports same-model comparisons against other coding harnesses. Treat each claim together with its named task, verifier result, model/reasoning settings, and cost/token measurements rather than as a universal model-quality claim.
+Trebell Native was compared with Codex using the OpenAI API, with the same model and settings on both: gpt-6-luna, max reasoning, fast service tier, hosted web search off. Tasks were fresh (never used before), and an independent verifier graded each run. Cost is API-equivalent, compared on the tasks where both got the same verifier result.
+
+- SWE-bench Multilingual, 156 fresh tasks: Trebell Native resolved 125, Codex using the OpenAI API resolved 124. Native's cost was 0.819x (95% bootstrap interval 0.75-0.90), 18% less.
+- Terminal-Bench 2.0, 78 fresh tasks: both resolved 62. Native's cost was 0.721x (0.58-0.87), 28% less.
+- Terminal-Bench Pro 1.0, 40 fresh tasks: Trebell Native resolved 22, Codex using the OpenAI API resolved 21. Cost was statistically level (0.929x, 0.80-1.08).
+
+These results compare Trebell Native with Codex using the OpenAI API under the settings above; read them as that comparison, not as a claim about every harness or setup.

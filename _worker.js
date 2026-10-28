@@ -1,3 +1,11 @@
+// trebell.dev pages whose address changed: the old address answers with one
+// permanent redirect to the new one, so old links and search results still work.
+const MOVED = new Map([
+  ["/open-source", "/licensing/"],
+  ["/open-source/", "/licensing/"],
+  ["/open-source/index.html", "/licensing/"],
+]);
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -10,6 +18,7 @@ export default {
         url.pathname = url.pathname.replace(/^\/code(?=\/|$)/, "") || "/";
       } else {
         url.hostname = "trebell.dev";
+        url.pathname = MOVED.get(url.pathname) || url.pathname;
       }
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
@@ -23,6 +32,7 @@ export default {
         url.pathname = url.pathname.replace(/^\/code(?=\/|$)/, "") || "/";
       } else {
         url.hostname = "trebell.dev";
+        url.pathname = MOVED.get(url.pathname) || url.pathname;
       }
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
@@ -36,6 +46,14 @@ export default {
       url.hostname = "code.trebell.dev";
       url.pathname = url.pathname.replace(/^\/code(?=\/|$)/, "") || "/";
       url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
+
+    // Old addresses of moved pages, in one hop.
+    const moved = host === "code.trebell.dev" ? undefined : MOVED.get(url.pathname);
+    if (moved) {
+      url.pathname = moved;
+      if (host === "trebell.dev") url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
     }
 

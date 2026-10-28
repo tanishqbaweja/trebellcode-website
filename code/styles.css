@@ -75,9 +75,9 @@ svg{display:block}
 .brand-mark svg{width:25px;height:25px}
 .desktop-nav{margin-left:auto;display:flex;align-items:center;gap:26px;color:var(--muted);font-size:13px}
 .desktop-nav a{transition:color .2s}.desktop-nav a:hover{color:var(--ink)}
-.nav-github{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:12px;font-weight:600;transition:border-color .2s,background .2s,transform .2s}
-.nav-github:hover{border-color:rgba(156,108,255,.5);background:var(--panel);transform:translateY(-1px)}
-.nav-github svg{width:15px;height:15px;fill:currentColor}
+.nav-download{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:12px;font-weight:600;white-space:nowrap;transition:border-color .2s,background .2s,transform .2s}
+.nav-download:hover{border-color:rgba(156,108,255,.5);background:var(--panel);transform:translateY(-1px)}
+.nav-download svg{width:15px;height:15px;fill:currentColor}
 
 /* Theme toggle */
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);cursor:pointer;transition:border-color .2s,background .2s,color .2s,transform .2s}
@@ -268,13 +268,23 @@ main>.section+.section{padding-top:40px}
 .founder-band p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.7}
 .founder-band a{color:var(--text);font-weight:700;text-underline-offset:3px}
 
-/* ---------- Product mockup ---------- */
+/* ---------- Product screenshots ---------- */
 .product-section .centered{max-width:900px}
 .product-section{padding-bottom:32px}
-.product-shot-frame{position:relative;margin:58px 0 0;border:1px solid var(--line);border-radius:24px;background:var(--panel);box-shadow:0 2px 4px rgba(0,0,0,.18),0 22px 48px -18px rgba(0,0,0,.5);overflow:hidden}
+.shot-figure{margin:58px 0 0}
+.harness-shot{margin-top:44px}
+.product-shot-frame{position:relative;border:1px solid var(--line);border-radius:24px;background:var(--panel);box-shadow:0 2px 4px rgba(0,0,0,.18),0 22px 48px -18px rgba(0,0,0,.5);overflow:hidden}
 .product-shot{display:block;width:100%;height:auto}
 .product-shot-light{display:none}
-.product-shot-frame figcaption{position:absolute;left:18px;bottom:16px;padding:7px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(8,10,16,.94);color:#b8becd;font-family:var(--mono);font-size:8px;letter-spacing:.04em;box-shadow:0 8px 28px rgba(0,0,0,.24)}
+.shot-panel[hidden],.shot-desc[hidden]{display:none}
+.shot-panel{border-radius:inherit}
+.shot-panel:focus-visible{outline-offset:-3px;border-radius:inherit}
+.shot-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;width:fit-content;max-width:100%;margin:0 auto 18px;padding:3px;background:#0a0d14;border:1px solid var(--line-soft);border-radius:9px}
+.shot-tabs button{border:0;border-radius:6px;background:transparent;color:var(--muted2);padding:8px 14px;font-family:var(--mono);font-size:11px;line-height:1.3;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.shot-tabs button:hover{color:var(--ink)}
+.shot-tabs button[aria-selected="true"]{background:#191e2a;color:var(--ink)}
+.shot-caption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px;margin-top:14px;padding-inline:4px;color:var(--muted);font-size:13px;line-height:1.55}
+.shot-note{color:var(--muted2);font-family:var(--mono);font-size:9px;letter-spacing:.04em}
 /* ---------- Final CTA / footer ---------- */
 .final-cta{padding:32px 0 48px}
 .cta-rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
@@ -306,8 +316,8 @@ main>.section+.section{padding-top:40px}
 [data-theme="light"] .brand-mark{background:transparent;border:0;box-shadow:none}
 [data-theme="light"] .theme-toggle{background:rgba(255,255,255,.75);color:#5a6178}
 [data-theme="light"] .theme-toggle:hover{background:#fff;color:var(--ink)}
-[data-theme="light"] .nav-github{background:rgba(255,255,255,.75)}
-[data-theme="light"] .nav-github:hover{background:#fff}
+[data-theme="light"] .nav-download{background:rgba(255,255,255,.75)}
+[data-theme="light"] .nav-download:hover{background:#fff}
 [data-theme="light"] .skip-link{background:#fff}
 [data-theme="light"] .mobile-menu{background:rgba(255,255,255,.98);box-shadow:0 24px 60px rgba(30,35,70,.18)}
 [data-theme="light"] .mobile-menu a{color:#4d5468}
@@ -349,7 +359,8 @@ main>.section+.section{padding-top:40px}
 [data-theme="light"] .product-shot-frame{border-color:#dee1ee;background:#fff;box-shadow:0 40px 90px -45px rgba(30,34,60,.28),0 30px 80px -55px rgba(108,77,246,.28)}
 [data-theme="light"] .product-shot-dark{display:none}
 [data-theme="light"] .product-shot-light{display:block}
-[data-theme="light"] .product-shot-frame figcaption{border-color:rgba(38,43,67,.12);background:rgba(255,255,255,.82);color:#626980;box-shadow:0 8px 28px rgba(40,45,75,.12)}
+[data-theme="light"] .shot-tabs{background:#e9ebf4}
+[data-theme="light"] .shot-tabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(21,24,39,.14)}
 
 [data-theme="light"] .footer-brand{color:#3f4560}
 
@@ -368,7 +379,7 @@ main>.section+.section{padding-top:40px}
 }
 @media(max-width:760px){
   .shell{width:min(100% - 28px,1240px)}
-  .desktop-nav,.nav-github{display:none}
+  .desktop-nav,.nav-download{display:none}
   .menu-button{display:block;margin-left:0}
   .theme-toggle{margin-left:auto}
   .nav-shell{height:62px}
@@ -398,14 +409,13 @@ main>.section+.section{padding-top:40px}
   .metrics-grid{grid-template-columns:1fr}.metric-card{min-height:auto}
   .metric-meta{display:grid;gap:10px;min-height:0}
   .metric-delta{justify-self:start}
-  .product-shot-frame{border-radius:10px}
-  .product-shot-frame figcaption{display:none}
   .product-section{padding-bottom:24px}
   .final-cta{padding-top:20px}
   .cta-grid{padding-top:28px}
   .cta-grid{grid-template-columns:1fr;gap:28px}
   .footer-inner{grid-template-columns:1fr;gap:16px;text-align:center;justify-items:center}
-  .footer-links{justify-self:center}
+  .footer-links{justify-self:center;flex-wrap:wrap;justify-content:center;gap:8px 16px}
+  .footer-links a{white-space:nowrap}
   .snapshot-grid,.company-grid{grid-template-columns:1fr}
   .snapshot-card{min-height:0}
   .execution-strip,.method-strip{grid-template-columns:1fr}
@@ -532,7 +542,13 @@ main>.section+.section{padding-top:40px}
   .founder-band h3{font-size:20px}
   .founder-band p{font-size:12px;line-height:1.6}
 
-  .product-shot-frame{margin-top:28px;border-radius:18px}
+  .shot-figure{margin-top:28px}
+  .harness-shot{margin-top:24px}
+  .product-shot-frame{border-radius:18px}
+  .shot-tabs{margin-bottom:12px}
+  .shot-tabs button{padding:7px 9px;font-size:9.5px}
+  .shot-caption{margin-top:10px;font-size:12px;line-height:1.5}
+  .shot-note{font-size:8px}
   .product-section{padding-bottom:24px}
   .final-cta{padding:20px 0 42px}
   .cta-grid{padding-top:28px;gap:22px}
@@ -541,17 +557,20 @@ main>.section+.section{padding-top:40px}
   .footer{padding:22px 0 26px}
   .footer-inner{font-size:9px}
 }
+/* Two hero buttons side by side wrap "Download for Windows" onto two lines below about 480px: stack them there. */
+@media(max-width:480px){
+  .hero-actions{grid-template-columns:1fr}
+}
 @media(max-width:380px){
   .brand{font-size:15px}
   .brand-mark{width:30px;height:30px}
   .brand-mark img{width:30px;height:30px}
   .hero h1{font-size:clamp(2rem,9vw,2.3rem)}
-  .hero-actions{grid-template-columns:1fr}
   .hero-facts{grid-template-columns:1fr 1fr}
   .eff-chart{gap:4px;padding-inline:8px}
 }
 @media(hover:none){
-  .problem-row:hover .problem-title,.problem-row:hover .icon-box,.metric-card:hover,.button:hover,.theme-toggle:hover,.nav-github:hover{transform:none}
+  .problem-row:hover .problem-title,.problem-row:hover .icon-box,.metric-card:hover,.button:hover,.theme-toggle:hover,.nav-download:hover{transform:none}
   .problem-row:hover::before{opacity:0}
 }
 

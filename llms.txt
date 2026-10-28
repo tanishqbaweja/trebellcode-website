@@ -33,18 +33,20 @@ Trebell Code is developed and maintained by Trebell and is the company's primary
 
 - Company product overview: https://trebell.dev/product/
 - Product website: https://code.trebell.dev/
-- Source repository: https://github.com/tanishqbaweja/trebellcode
-- Public releases: https://github.com/tanishqbaweja/trebellcode/releases
-- License: Apache-2.0
-- Platforms: Windows, macOS, Linux
-- Category: open-source desktop AI coding harness
+- Current release: 2.0.0
+- Platform: Windows 10 and 11 (x64)
+- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe
+- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0
+- License: Apache-2.0, free to download and use
+- Licensing and releases: https://trebell.dev/licensing/
+- Category: desktop workspace for AI coding agents
 
-Trebell Code provides a common workspace around AI coding models and agent runtimes. It connects them to repository context, file editing, terminals, Git and worktrees, browser automation, recovery, persistence, and verification. The architecture is provider-independent so developers are not forced to rebuild their workflow around a single model vendor.
+Trebell Code is a desktop coding workspace around coding agents: files, terminal, Git and pull requests, worktrees, previews, a browser panel, projects and environments. Trebell Native is Trebell's own agent harness, with its own model and tool loop calling model APIs directly; OpenAI is its default provider. Trebell Code also runs Codex, Claude Code, OpenCode (1.x and OpenCode 2), Cursor, Grok Build, Antigravity and Muse Code (new in 2.0) as their real harnesses, each with its own models, sign-in, approvals and updates, so developers are not forced to rebuild their workflow around a single model vendor.
 
 ## Business model
 
 - Pricing and business model: https://trebell.dev/pricing/
-- Trebell Code's desktop harness is open source with no software license fee.
+- Trebell Code is free to download and use, with no software license fee.
 - Trebell's planned commercial layer is team infrastructure: organization policy, shared usage and cost controls, managed execution environments, auditability, and administration.
 - Team pricing has not yet been announced.
 
@@ -57,7 +59,7 @@ Trebell Code provides a common workspace around AI coding models and agent runti
 - Terms of use: https://trebell.dev/terms/
 - Legal center: https://trebell.dev/legal/
 - Support: https://trebell.dev/support/
-- Open-source information: https://trebell.dev/open-source/
+- Licensing and releases: https://trebell.dev/licensing/
 - Careers: https://trebell.dev/careers/
 - Contact: https://trebell.dev/contact/
 
@@ -67,4 +69,4 @@ The current public Trebell marketing site does not include analytics, advertisin
 
 ## What Trebell measures
 
-Trebell evaluates coding-harness performance using completed software-engineering outcomes, verification evidence, and actual dollar cost. Benchmark claims are presented with task/result context and should be read together with the benchmark evidence on the Trebell Code product site.
+Trebell evaluates coding-harness performance using resolved software-engineering tasks graded by an independent verifier, and API-equivalent dollar cost. Benchmark claims are presented with task/result context and should be read together with the benchmark evidence on the Trebell Code product site: https://code.trebell.dev/#proof

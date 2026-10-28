@@ -7,3 +7,6 @@ desktop.ini
 *-preview.png
 .playwright-cli/
 output/
+
+# Local Cloudflare CLI state
+.wrangler/

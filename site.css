@@ -2,38 +2,22 @@
   color-scheme:dark;
   --bg:#141318;--panel:#1d1b24;--panel2:#23202b;--text:#f2eff8;--muted:#a7a2b8;
   --dim:#7c7790;--line:#2b2836;--line2:#3b3748;--violet:#8b74ff;--blue:#4fb0ff;
-  --green:#2fd08a;--amber:#ffb03f;--red:#ff7b8b;--navbg:rgba(20,19,24,.82);
-  --headline-muted:#9d97af;--footer-bg:#0f0e13;--max:1120px;--radius:18px
+  --green:#2fd08a;--amber:#ffb03f;--red:#ff7b8b;
+  --headline-muted:#9d97af;--max:1120px;--radius:18px
 }
 html[data-theme="light"]{
   color-scheme:light;
   --bg:#f7f5f1;--panel:#ffffff;--panel2:#f0ede7;--text:#17141f;--muted:#5f5a6e;
   --dim:#8b8698;--line:#e7e3db;--line2:#d8d3c9;--violet:#6b4eff;--blue:#2e9bff;
-  --green:#17b26a;--amber:#ff9f1c;--red:#d94b62;--navbg:rgba(247,245,241,.85);
-  --headline-muted:#5f5a6e;--footer-bg:#17141f
+  --green:#17b26a;--amber:#ff9f1c;--red:#d94b62;
+  --headline-muted:#5f5a6e
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;transition:background .3s,color .3s}
 a{color:inherit}.wrap{max-width:var(--max);margin:0 auto;padding-inline:24px}
 
-/* Header: intentionally mirrors trebell.dev homepage */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:68px;display:flex;align-items:center;gap:12px}
-.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-family:Gabarito,Inter,sans-serif;font-weight:800;font-size:19px;color:var(--text)}
-.brand img{display:block;width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);object-fit:cover}
-.brand i{font-style:normal;color:#ff6ba1}
-.navlinks{margin-left:auto;display:flex;gap:2px;align-items:center}
-.navlinks>a:not(.navcta){font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:999px;transition:.18s}
-.navlinks>a:not(.navcta):hover,.navlinks>a[aria-current="page"]{color:var(--text);background:color-mix(in srgb,var(--text) 6%,transparent)}
-.navcta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:13.5px;padding:8px 15px;border-radius:999px;background:var(--violet);border:1.5px solid var(--violet);color:#fff!important;white-space:nowrap}
-.navcta:hover{transform:translateY(-1px)}
-.theme-toggle{width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:15px;transition:.2s;flex:0 0 auto}
-.theme-toggle:hover{border-color:var(--text);transform:translateY(-1px)}
-.theme-toggle .icon-moon{display:none}
-html[data-theme="light"] .theme-toggle .icon-sun{display:none}
-html[data-theme="light"] .theme-toggle .icon-moon{display:inline}
-
+/* The header and footer are the shared site chrome: /assets/trebell-chrome.css. */
 .hero{padding:150px 0 80px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:var(--violet);margin-bottom:16px}
 h1,h2,h3{font-family:Gabarito,Inter,system-ui,sans-serif;letter-spacing:-.025em;margin-top:0}h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.94;margin-bottom:24px}
@@ -67,17 +51,7 @@ h1 span{color:var(--headline-muted)}h2{font-size:clamp(2rem,4.4vw,3.5rem);line-h
 .trust-item b{display:block;font-size:13px;margin-bottom:4px}.trust-item span{font-size:12px;color:var(--muted)}
 .notice{padding:14px 16px;border-left:3px solid var(--violet);background:var(--panel);color:var(--muted);border-radius:0 12px 12px 0}.notice b{color:var(--text)}
 
-/* Footer stays deliberately dark in both themes, matching the homepage. */
-.footer{padding:52px 0 28px;background:var(--footer-bg);color:#f2eff8}.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:32px}
-.footer-brand p{color:#9f99ad;font-size:12px;max-width:280px}
-.footer .brand{display:inline-flex;align-items:center;gap:10px;color:#f2eff8!important;font-size:19px;margin:0 0 10px}
-.footer .brand img{width:36px;height:36px;border:0;border-radius:50%;object-fit:cover}
-.footer h4{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#827b92;margin:0 0 12px}
-.footer a{display:block;text-decoration:none;color:#aaa4b7;font-size:12px;margin:7px 0}.footer a:hover{color:#fff}
-.footer-bottom{margin-top:38px;padding-top:20px;border-top:1px solid #24212c;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#716b80;font-size:11px}
-
-@media(max-width:900px){.hero-grid,.section-head,.split{grid-template-columns:1fr}.grid.four{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1.2fr 1fr 1fr}.footer-grid>div:nth-child(n+4){margin-top:8px}.trust-strip{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:780px){.navlinks{display:none}.theme-toggle{margin-left:auto}.hero{padding-top:132px}}
-@media(max-width:720px){.wrap{padding-inline:16px}.grid,.grid.two,.grid.four,.trust-strip{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.contact-row{grid-template-columns:1fr;gap:4px}.visual{padding:8px}}
-@media(max-width:640px){.topbar .wrap{padding-inline:14px}.nav{height:62px;gap:8px}.brand{font-size:16px;gap:8px}.brand img{width:31px;height:31px}.theme-toggle{width:36px;height:36px;font-size:13px}.navcta{padding:8px 12px;font-size:12px}.hero{padding-top:84px}}
-@media(max-width:460px){.footer-grid{grid-template-columns:1fr}.navcta{padding:8px 10px;font-size:11px}.brand{font-size:18px}.brand img{width:34px;height:34px}}
+@media(max-width:900px){.hero-grid,.section-head,.split{grid-template-columns:1fr}.grid.four{grid-template-columns:repeat(2,1fr)}.trust-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:780px){.hero{padding-top:132px}}
+@media(max-width:720px){.wrap{padding-inline:16px}.grid,.grid.two,.grid.four,.trust-strip{grid-template-columns:1fr}.contact-row{grid-template-columns:1fr;gap:4px}.visual{padding:8px}}
+@media(max-width:640px){.hero{padding-top:84px}}

@@ -1,23 +1,5 @@
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ---------- Mobile menu ---------- */
-const menuButton = document.getElementById("menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
-if (menuButton && mobileMenu) {
-  menuButton.addEventListener("click", () => {
-    const open = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!open));
-    menuButton.setAttribute("aria-label", open ? "Open menu" : "Close menu");
-    mobileMenu.classList.toggle("open", !open);
-  });
-  mobileMenu.querySelectorAll("a").forEach((link) =>
-    link.addEventListener("click", () => {
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Open menu");
-      mobileMenu.classList.remove("open");
-    })
-  );
-}
+// The header (theme toggle and menu) is the shared site chrome: /assets/trebell-chrome.js.
 
 /* ---------- Reveal on scroll ---------- */
 if (reduced || !("IntersectionObserver" in window)) {
@@ -97,44 +79,3 @@ shotTabs.forEach((tab, index) => {
     selectShot(shotTabs[next], true);
   });
 });
-
-/* ---------- Theme toggle ---------- */
-const themeToggle = document.getElementById("theme-toggle");
-const rootEl = document.documentElement;
-
-function currentTheme() {
-  return rootEl.getAttribute("data-theme") === "light" ? "light" : "dark";
-}
-
-function setTheme(theme, persist) {
-  rootEl.setAttribute("data-theme", theme);
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "light" ? "#f7f5f1" : "#141318");
-  if (persist) {
-    try { localStorage.setItem("trebell-theme", theme); } catch (e) {}
-  }
-  if (themeToggle) {
-    const light = theme === "light";
-    themeToggle.setAttribute("aria-pressed", String(light));
-    const label = light ? "Switch to dark mode" : "Switch to light mode";
-    themeToggle.setAttribute("aria-label", label);
-    themeToggle.setAttribute("title", label);
-  }
-}
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () =>
-    setTheme(currentTheme() === "light" ? "dark" : "light", true)
-  );
-}
-setTheme(currentTheme(), false); // sync button/meta on load without persisting
-
-/* Follow the OS preference until the user makes an explicit choice */
-let storedTheme = null;
-try { storedTheme = localStorage.getItem("trebell-theme"); } catch (e) {}
-if (!storedTheme) {
-  const mq = window.matchMedia("(prefers-color-scheme: light)");
-  const follow = (e) => setTheme(e.matches ? "light" : "dark", false);
-  if (mq.addEventListener) mq.addEventListener("change", follow);
-  else if (mq.addListener) mq.addListener(follow);
-}

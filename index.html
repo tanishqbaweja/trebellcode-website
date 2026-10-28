@@ -120,7 +120,7 @@
   --line:#2b2836; --line2:#3b3748;
   --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -14px rgba(0,0,0,.55);
   --sh-lg:0 2px 4px rgba(0,0,0,.4),0 22px 48px -16px rgba(0,0,0,.6);
-  --navbg:rgba(20,19,24,.82); --footbg:#0f0e13; --trackbg:#26232e; --scroll:#3b3748;
+  --trackbg:#26232e;
   --glowA:rgba(107,78,255,.10); --glowB:rgba(46,155,255,.08); --glowC:rgba(255,77,141,.07);
   --violet:#8b74ff; --pink:#ff6ba1; --blue:#4fb0ff; --amber:#ffb03f; --green:#2fd08a; --grape:#c46bff; --teal:#22c9b4;
   --disp:'Gabarito',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
@@ -131,7 +131,7 @@ html[data-theme="light"]{
   --line:#e7e3db; --line2:#d8d3c9;
   --sh:0 1px 2px rgba(23,20,31,.05),0 14px 34px -14px rgba(23,20,31,.14);
   --sh-lg:0 2px 4px rgba(23,20,31,.06),0 22px 48px -16px rgba(23,20,31,.2);
-  --navbg:rgba(247,245,241,.85); --footbg:#17141f; --trackbg:#ffffff; --scroll:#cfc9be;
+  --trackbg:#ffffff;
   --glowA:rgba(107,78,255,.07); --glowB:rgba(46,155,255,.06); --glowC:rgba(255,77,141,.05);
   --violet:#6b4eff; --pink:#ff4d8d; --blue:#2e9bff; --amber:#ff9f1c; --green:#17b26a; --grape:#b44bff; --teal:#0fb5a6;
 }
@@ -142,31 +142,13 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
              radial-gradient(680px 400px at 100% 6%,var(--glowB),transparent 60%),
              radial-gradient(800px 500px at 50% 110%,var(--glowC),transparent 60%)}
 ::selection{background:var(--violet);color:#fff}
-::-webkit-scrollbar{width:11px}::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--scroll);border:3px solid var(--bg);border-radius:8px}
-::-webkit-scrollbar-thumb:hover{background:var(--violet)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 :focus-visible{outline:2.5px solid var(--violet);outline-offset:3px;border-radius:8px}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:24px;position:relative;z-index:1}
 .mono{font-family:var(--mono)}
 
-/* ============ NAV ============ */
-nav{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:800;font-size:19px}
-.brand img{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);object-fit:cover;transition:transform .3s}
-.brand:hover img{transform:rotate(-10deg) scale(1.07)}
-.brand i{font-style:normal;color:var(--pink)}
-.nav-links{margin-left:auto;display:flex;gap:2px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--mut);padding:8px 14px;border-radius:999px;transition:.18s}
-.nav-links a:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
-.tbtn{width:40px;height:40px;border-radius:999px;border:1px solid var(--line2);background:var(--card);color:var(--ink);
-  display:grid;place-items:center;cursor:pointer;font-size:15px;transition:.2s;flex-shrink:0}
-.tbtn:hover{border-color:var(--ink);transform:translateY(-2px)}
-html[data-theme="light"] .ic-sun{display:none}
-.ic-moon{display:none}
-html[data-theme="light"] .ic-moon{display:inline}
+/* ============ BUTTONS (the header and footer are the shared site chrome: /assets/trebell-chrome.css) ============ */
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:11px 20px;border-radius:999px;
   border:1.5px solid transparent;cursor:pointer;transition:.2s}
 .btn-pri{background:var(--violet);color:#fff;box-shadow:0 6px 18px -6px color-mix(in srgb,var(--violet) 60%,transparent)}
@@ -175,7 +157,6 @@ html[data-theme="light"] .ic-moon{display:inline}
 .btn-out{border-color:var(--line2);color:var(--ink);background:var(--card)}
 .btn-out:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn-sm{padding:8px 15px;font-size:13.5px}
-@media(max-width:780px){.nav-links{display:none}}
 
 /* ============ HERO ============ */
 .hero{padding:150px 0 80px;position:relative;z-index:1}
@@ -327,36 +308,14 @@ html:not([data-theme="light"]) .program-mark{background:color-mix(in srgb,var(--
 .quest .btn{align-self:flex-start}
 @media(max-width:840px){.quests{grid-template-columns:1fr}.qnote{min-height:0}}
 
-/* ============ FOOTER ============ */
-footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;z-index:1}
-.foot-in{padding:56px 0 40px;display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:30px}
-.foot-brand{display:block}
-.foot-brand-link{display:inline-flex;align-items:center;gap:10px}
-.foot-brand-link img{width:36px;height:36px;border-radius:50%;border:0;object-fit:cover}
-.foot-brand-link b{font-family:var(--disp);font-size:19px;line-height:1;color:#fff}
-.foot-brand p{font-size:13.5px;margin-top:12px;max-width:36ch;color:#a49fb5}
-.foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#7d7890;margin-bottom:14px}
-.foot-col ul{list-style:none;display:grid;gap:9px}
-.foot-col a{font-size:14px;color:#a49fb5;transition:.15s;display:inline-block}
-.foot-col a:hover{color:#fff;transform:translateX(3px)}
-.foot-bot{border-top:1px solid rgba(255,255,255,.09);padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-  font-family:var(--mono);font-size:11px;color:#7d7890}
-.foot-bot b{color:var(--pink);font-weight:500}
-@media(max-width:1050px){.foot-in{grid-template-columns:1.3fr 1fr 1fr}.foot-in>.foot-col:nth-last-child(-n+2){margin-top:8px}}
-@media(max-width:840px){.foot-in{grid-template-columns:1fr}.foot-in>.foot-col:nth-last-child(-n+2){margin-top:0}}
+/* ============ FOOTER: the shared chrome's, with this page's space above it ============ */
+body>.tc-footer{margin-top:80px}
 
 /* ============ MOBILE ============ */
 @media(max-width:640px){
   html{scroll-padding-top:72px}
   body{font-size:15px}
   .wrap{padding-inline:16px}
-
-  nav{backdrop-filter:blur(10px)}
-  .nav-in{height:62px;padding:0 14px;gap:8px}
-  .brand{font-size:16px;gap:8px}
-  .brand img{width:31px;height:31px}
-  .tbtn{width:36px;height:36px;font-size:13px;margin-left:auto}
-  .nav-in>.btn{padding:8px 12px;font-size:12px;white-space:nowrap;box-shadow:none}
 
   .hero{padding:84px 16px 44px}
   .hero-grid{grid-template-columns:1fr;gap:18px}
@@ -422,23 +381,15 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
   .qnote{font-size:9.5px;line-height:1.55}
   .quest .btn{width:100%;justify-content:center}
 
-  footer{margin-top:40px}
-  .foot-in{padding:40px 0 30px;gap:30px}
-  .foot-brand-link img{width:34px;height:34px}
-  .foot-brand p{font-size:12.5px}
-  .foot-col h4{margin-bottom:10px}
-  .foot-col ul{gap:7px}
-  .foot-col a{font-size:13px}
-  .foot-bot{padding:16px 0 22px;font-size:9.5px;line-height:1.55}
+  body>.tc-footer{margin-top:40px}
 }
 @media(max-width:360px){
-  .brand span{display:none}
   .hero-cta,.flag-cta{grid-template-columns:1fr}
   .logo-card{padding:8px}
   .hero-grid>div{padding-inline:17px}
 }
 @media(hover:none){
-  .brand:hover img,.tbtn:hover,.btn:hover,.spill:hover,.logo-card:hover,.flag:hover,.tool:hover,.quest:hover,.cap:hover{transform:none}
+  .btn:hover,.spill:hover,.logo-card:hover,.flag:hover,.tool:hover,.quest:hover,.cap:hover{transform:none}
 }
 
 /* ============ REVEAL ============ */
@@ -449,6 +400,7 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
   html{scroll-behavior:auto}.rv{opacity:1;transform:none}
 }
 </style>
+<link rel="stylesheet" href="/assets/trebell-chrome.css?v=2">
 <script>
 (function(){
   var t='dark';
@@ -463,26 +415,25 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
-<nav>
-  <div class="nav-in">
-    <a class="brand" href="#top"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><span>Trebell<i>.</i></span></a>
-    <div class="nav-links">
-      <a href="/product/">Product</a>
-      <a href="/about/">Company</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/security/">Security</a>
-      <a href="/contact/">Contact</a>
-    </div>
-    <button class="tbtn" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
-      <span class="ic-sun">☀</span><span class="ic-moon">☾</span>
-    </button>
-    <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Open Trebell Code <span class="ar">→</span></a>
-  </div>
+<!-- ============ HEADER ============ -->
+<header class="tc-header">
+<div class="tc-bar">
+<a class="tc-brand" href="https://trebell.dev/" aria-label="Trebell home"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="" width="36" height="36"></picture><span class="tc-word">Trebell<span class="tc-dot">.</span></span></a>
+<nav class="tc-nav" id="tc-nav" aria-label="Primary">
+<a href="https://code.trebell.dev/">Trebell Code</a>
+<a href="https://trebell.dev/about/">Company</a>
+<a href="https://trebell.dev/pricing/">Pricing</a>
+<a href="https://trebell.dev/security/">Security</a>
+<a href="https://trebell.dev/contact/">Contact</a>
 </nav>
+<button class="tc-theme" type="button" aria-label="Toggle color theme" title="Toggle color theme"><svg class="tc-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.2 5.2 7 7M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/></svg><svg class="tc-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg></button>
+<a class="tc-download" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe" aria-label="Download 2.0.0 for Windows (x64)" title="Download Trebell Code 2.0.0 for Windows (x64)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download 2.0.0</a>
+<button class="tc-menu" type="button" aria-expanded="false" aria-controls="tc-nav" aria-label="Open menu"><svg class="tc-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="tc-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</header>
 
 <!-- ============ HERO ============ -->
-<header class="hero wrap" id="top">
+<div class="hero wrap" id="top">
   <div class="hero-grid">
     <div>
       <div class="hero-kicker rv">Trebell · developer tools company</div>
@@ -505,7 +456,7 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
       <figcaption><span>Trebell Code 2.0 · desktop workspace · Windows</span><span class="dots"><i style="background:var(--violet)"></i><i style="background:var(--pink)"></i><i style="background:var(--blue)"></i><i style="background:var(--green)"></i></span></figcaption>
     </figure>
   </div>
-</header>
+</div>
 
 <!-- ============ COMPANY ============ -->
 <section id="company" class="company-intro wrap">
@@ -669,70 +620,58 @@ footer{margin-top:80px;background:var(--footbg);color:#cfcbdb;position:relative;
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer>
-  <div class="wrap">
-    <div class="foot-in">
-      <div class="foot-brand">
-        <a class="foot-brand-link" href="/" aria-label="Trebell home"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><b>Trebell</b></a>
-        <p>Developer tools for AI-assisted software engineering. Trebell Code is the flagship desktop workspace for coding agents, built and maintained by Trebell.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="/product/">Trebell Code overview</a></li>
-          <li><a href="https://code.trebell.dev/">Trebell Code</a></li>
-          <li><a href="/pricing/">Pricing &amp; business model</a></li>
-          <li><a href="/licensing/">Licensing &amp; releases</a></li>
-          <li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 (Windows x64)</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about/">About &amp; team</a></li>
-          <li><a href="/careers/">Careers</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Trust</h4>
-        <ul>
-          <li><a href="/trust/">Trust center</a></li>
-          <li><a href="/security/">Security</a></li>
-          <li><a href="/support/">Support</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/legal/">Legal center</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <span>© 2026 Trebell · founded May 2026 · five-person core team</span>
-      <span>Trebell Code · Apache-2.0 · trebell.dev</span>
-    </div>
-  </div>
+<footer class="tc-footer">
+<div class="tc-fin">
+<div class="tc-fgrid">
+<div class="tc-fbrandcol">
+<a class="tc-fbrand" href="https://trebell.dev/" aria-label="Trebell home"><img src="/logo-ui.webp" alt="" width="36" height="36"><b>Trebell</b></a>
+<p class="tc-fabout">Developer infrastructure for AI-assisted software engineering. Trebell Code is our flagship desktop workspace for coding agents.</p>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Product</h4>
+<ul class="tc-flist">
+<li><a href="https://code.trebell.dev/">Trebell Code</a></li>
+<li><a href="https://trebell.dev/product/">Trebell Code overview</a></li>
+<li><a href="https://trebell.dev/pricing/">Pricing &amp; business model</a></li>
+<li><a href="https://trebell.dev/licensing/">Licensing &amp; releases</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 (Windows x64)</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Company</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/about/">About &amp; team</a></li>
+<li><a href="https://trebell.dev/careers/">Careers</a></li>
+<li><a href="https://trebell.dev/contact/">Contact</a></li>
+<li><a href="https://trebell.dev/trust/">Trust center</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Resources</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/security/">Security</a></li>
+<li><a href="https://trebell.dev/support/">Support</a></li>
+<li><a href="https://code.trebell.dev/#proof">Benchmarks</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noopener">Release notes ↗</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Legal</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/legal/">Legal center</a></li>
+<li><a href="https://trebell.dev/privacy/">Privacy</a></li>
+<li><a href="https://trebell.dev/terms/">Terms</a></li>
+<li><a href="https://trebell.dev/security/">Responsible disclosure</a></li>
+</ul>
+</div>
+</div>
+<div class="tc-fbot"><span>© 2026 Trebell · founded May 2026</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
+</div>
 </footer>
 
+<script src="/assets/trebell-chrome.js?v=1"></script>
 <script>
 (function(){
-  var root=document.documentElement;
-  function setMeta(){
-    var m=document.getElementById('metaTheme');
-    if(m) m.content = root.getAttribute('data-theme')==='light' ? '#f7f5f1' : '#141318';
-  }
-  setMeta();
-  var btn=document.getElementById('themeToggle');
-  if(btn) btn.addEventListener('click',function(){
-    var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
-    root.setAttribute('data-theme',next);
-    try{ localStorage.setItem('trebell-theme',next); }catch(e){}
-    setMeta();
-  });
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.12});

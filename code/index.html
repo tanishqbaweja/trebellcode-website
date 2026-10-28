@@ -133,7 +133,8 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="/code/styles.css?v=7">
+  <link rel="stylesheet" href="/code/styles.css?v=8">
+  <link rel="stylesheet" href="/assets/trebell-chrome.css?v=2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -146,48 +147,21 @@
     <div class="ambient-noise"></div>
   </div>
 
-  <header class="site-header">
-    <div class="shell nav-shell">
-      <a class="brand" href="https://trebell.dev/" aria-label="Trebell home">
-        <span class="brand-mark">
-          <picture><source media="(max-width:760px)" srcset="/logo-ui.webp"><img src="/logo.png" alt=""></picture>
-        </span>
-        Trebell
-      </a>
-
-      <nav class="desktop-nav" aria-label="Primary">
-        <a href="#whats-new">What's new</a>
-        <a href="#harnesses">Harnesses</a>
-        <a href="#problem">Why Trebell</a>
-        <a href="#proof">Proof</a>
-        <a href="#company">Company</a>
-        <a href="https://trebell.dev/about/">Team</a>
-      </nav>
-
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.2 5.2 7 7M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
-      </button>
-
-      <a class="nav-download" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe" title="Download Trebell Code 2.0.0 for Windows (x64)" aria-label="Download 2.0.0 for Windows (x64)">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>
-        Download 2.0.0
-      </a>
-
-      <button id="menu-button" class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
-      <a href="#whats-new">What's new</a>
-      <a href="#harnesses">Harnesses</a>
-      <a href="#problem">Why Trebell</a>
-      <a href="#proof">Proof</a>
-      <a href="#company">Company</a>
-      <a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 for Windows (x64)</a>
-    </nav>
-  </header>
+<header class="tc-header">
+<div class="tc-bar">
+<a class="tc-brand" href="https://trebell.dev/" aria-label="Trebell home"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="" width="36" height="36"></picture><span class="tc-word">Trebell<span class="tc-dot">.</span></span></a>
+<nav class="tc-nav" id="tc-nav" aria-label="Primary">
+<a href="https://code.trebell.dev/" aria-current="page">Trebell Code</a>
+<a href="https://trebell.dev/about/">Company</a>
+<a href="https://trebell.dev/pricing/">Pricing</a>
+<a href="https://trebell.dev/security/">Security</a>
+<a href="https://trebell.dev/contact/">Contact</a>
+</nav>
+<button class="tc-theme" type="button" aria-label="Toggle color theme" title="Toggle color theme"><svg class="tc-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.2 5.2 7 7M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/></svg><svg class="tc-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg></button>
+<a class="tc-download" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe" aria-label="Download 2.0.0 for Windows (x64)" title="Download Trebell Code 2.0.0 for Windows (x64)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download 2.0.0</a>
+<button class="tc-menu" type="button" aria-expanded="false" aria-controls="tc-nav" aria-label="Open menu"><svg class="tc-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="tc-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</header>
 
   <main id="main">
 
@@ -706,22 +680,56 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <a class="footer-brand" href="https://trebell.dev/" aria-label="Trebell home"><picture><source media="(max-width:760px)" srcset="/logo-ui.webp"><img src="/logo.png" alt=""></picture>Trebell</a>
-      <p><a class="trebell-home-link" href="https://trebell.dev/about/">Tanishq Baweja · Founder &amp; CEO</a> · <a class="trebell-home-link" href="mailto:founder@trebell.dev">founder@trebell.dev</a></p>
-      <div class="footer-links">
-        <a href="https://trebell.dev/about/">Company</a>
-        <a href="https://trebell.dev/trust/">Trust</a>
-        <a href="https://trebell.dev/security/">Security</a>
-        <a href="https://trebell.dev/privacy/">Privacy</a>
-        <a href="https://trebell.dev/terms/">Terms</a>
-        <a href="#proof">Benchmarks</a>
-        <a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release notes</a>
-      </div>
-    </div>
-  </footer>
+<footer class="tc-footer">
+<div class="tc-fin">
+<div class="tc-fgrid">
+<div class="tc-fbrandcol">
+<a class="tc-fbrand" href="https://trebell.dev/" aria-label="Trebell home"><img src="/logo-ui.webp" alt="" width="36" height="36"><b>Trebell</b></a>
+<p class="tc-fabout">Developer infrastructure for AI-assisted software engineering. Trebell Code is our flagship desktop workspace for coding agents.</p>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Product</h4>
+<ul class="tc-flist">
+<li><a href="https://code.trebell.dev/">Trebell Code</a></li>
+<li><a href="https://trebell.dev/product/">Trebell Code overview</a></li>
+<li><a href="https://trebell.dev/pricing/">Pricing &amp; business model</a></li>
+<li><a href="https://trebell.dev/licensing/">Licensing &amp; releases</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 (Windows x64)</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Company</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/about/">About &amp; team</a></li>
+<li><a href="https://trebell.dev/careers/">Careers</a></li>
+<li><a href="https://trebell.dev/contact/">Contact</a></li>
+<li><a href="https://trebell.dev/trust/">Trust center</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Resources</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/security/">Security</a></li>
+<li><a href="https://trebell.dev/support/">Support</a></li>
+<li><a href="https://code.trebell.dev/#proof">Benchmarks</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noopener">Release notes ↗</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Legal</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/legal/">Legal center</a></li>
+<li><a href="https://trebell.dev/privacy/">Privacy</a></li>
+<li><a href="https://trebell.dev/terms/">Terms</a></li>
+<li><a href="https://trebell.dev/security/">Responsible disclosure</a></li>
+</ul>
+</div>
+</div>
+<div class="tc-fbot"><span>© 2026 Trebell · founded May 2026</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
+</div>
+</footer>
 
-  <script src="/code/script.js?v=2"></script>
+  <script src="/assets/trebell-chrome.js?v=1"></script>
+  <script src="/code/script.js?v=3"></script>
 </body>
 </html>

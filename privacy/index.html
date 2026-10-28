@@ -17,9 +17,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css?v=2">
+<link rel="stylesheet" href="/site.css?v=3">
+<link rel="stylesheet" href="/assets/trebell-chrome.css?v=2">
 </head>
-<body><header class="topbar"><div class="wrap nav"><a class="brand" href="/"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="Trebell logo"></picture><span>Trebell<i>.</i></span></a><nav class="navlinks" aria-label="Primary"><a href="/product/">Product</a><a href="/about/">Company</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/contact/">Contact</a></nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button><a class="navcta" href="https://code.trebell.dev/">Open Trebell Code <span class="ar">→</span></a></div></header><main><section class="hero"><div class="wrap"><div class="eyebrow">Privacy policy</div><h1>Plain-language<br><span>website privacy.</span></h1><p class="lede">This policy covers the public Trebell websites at trebell.dev and code.trebell.dev. It does not pretend a static marketing site has a giant data pipeline when it does not.</p></div></section>
+<body>
+<header class="tc-header">
+<div class="tc-bar">
+<a class="tc-brand" href="https://trebell.dev/" aria-label="Trebell home"><picture><source media="(max-width:640px)" srcset="/logo-ui.webp"><img src="/logo.png" alt="" width="36" height="36"></picture><span class="tc-word">Trebell<span class="tc-dot">.</span></span></a>
+<nav class="tc-nav" id="tc-nav" aria-label="Primary">
+<a href="https://code.trebell.dev/">Trebell Code</a>
+<a href="https://trebell.dev/about/">Company</a>
+<a href="https://trebell.dev/pricing/">Pricing</a>
+<a href="https://trebell.dev/security/">Security</a>
+<a href="https://trebell.dev/contact/">Contact</a>
+</nav>
+<button class="tc-theme" type="button" aria-label="Toggle color theme" title="Toggle color theme"><svg class="tc-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.2 5.2 7 7M17 17l1.8 1.8M18.8 5.2 17 7M7 17l-1.8 1.8"/></svg><svg class="tc-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg></button>
+<a class="tc-download" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe" aria-label="Download 2.0.0 for Windows (x64)" title="Download Trebell Code 2.0.0 for Windows (x64)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download 2.0.0</a>
+<button class="tc-menu" type="button" aria-expanded="false" aria-controls="tc-nav" aria-label="Open menu"><svg class="tc-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="tc-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+</header>
+<main><section class="hero"><div class="wrap"><div class="eyebrow">Privacy policy</div><h1>Plain-language<br><span>website privacy.</span></h1><p class="lede">This policy covers the public Trebell websites at trebell.dev and code.trebell.dev. It does not pretend a static marketing site has a giant data pipeline when it does not.</p></div></section>
   <section class="section"><div class="wrap prose"><div class="meta">Effective: October 8, 2026</div>
   <h2>What the website collects</h2><p>The current public marketing site does not include analytics, advertising trackers, account registration, or contact forms. The site's theme controls may store a theme preference in your browser's local storage. That preference stays in your browser unless your browser or extensions synchronize it.</p>
   <h2>Infrastructure requests</h2><p>The websites are served using third-party hosting and network infrastructure. Those providers may process ordinary request metadata such as IP address, user agent, request path, timestamps, and security-related information as necessary to deliver and protect the site. Some pages also request web fonts from Google Fonts, which may expose normal request metadata to that provider.</p>
@@ -27,14 +44,54 @@
   <h2>Trebell Code and model providers</h2><p>Trebell Code is separate software. When you configure the product to use a third-party model provider or service, data sent to that provider is subject to the provider's own terms and privacy practices. Visiting this website by itself does not send your local repository to Trebell.</p>
   <h2>Cookies</h2><p>The current site does not intentionally set advertising or analytics cookies. Infrastructure providers may use their own technical mechanisms when required for security or delivery.</p>
   <h2>Changes</h2><p>As Trebell adds hosted services, accounts, analytics, or commercial team infrastructure, this policy will be updated before those changes are represented as current practice.</p>
-  <h2>Contact</h2><p>Questions about this policy can be sent to <a href="mailto:founder@trebell.dev">founder@trebell.dev</a>.</p></div></section></main><footer class="footer"><div class="wrap">
-<div class="footer-grid">
-<div class="footer-brand"><a class="brand" href="/"><img src="/logo.png" alt="">Trebell</a><p>Developer infrastructure for AI-assisted software engineering. Trebell Code is our flagship desktop workspace for coding agents.</p></div>
-<div><h4>Product</h4><a href="/product/">Trebell Code</a><a href="https://code.trebell.dev/">Product site</a><a href="/pricing/">Pricing & business model</a><a href="/licensing/">Licensing & releases</a><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 (Windows x64)</a></div>
-<div><h4>Company</h4><a href="/about/">About & team</a><a href="/careers/">Careers</a><a href="/contact/">Contact</a><a href="/trust/">Trust center</a></div>
-<div><h4>Resources</h4><a href="/security/">Security</a><a href="/support/">Support</a><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noopener">Release notes ↗</a></div>
-<div><h4>Legal</h4><a href="/legal/">Legal center</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/security/">Responsible disclosure</a></div>
+  <h2>Contact</h2><p>Questions about this policy can be sent to <a href="mailto:founder@trebell.dev">founder@trebell.dev</a>.</p></div></section></main>
+<footer class="tc-footer">
+<div class="tc-fin">
+<div class="tc-fgrid">
+<div class="tc-fbrandcol">
+<a class="tc-fbrand" href="https://trebell.dev/" aria-label="Trebell home"><img src="/logo-ui.webp" alt="" width="36" height="36"><b>Trebell</b></a>
+<p class="tc-fabout">Developer infrastructure for AI-assisted software engineering. Trebell Code is our flagship desktop workspace for coding agents.</p>
 </div>
-<div class="footer-bottom"><span>© 2026 Trebell · founded May 2026 · five-person core team</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
-</div></footer><script src="/site.js"></script>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Product</h4>
+<ul class="tc-flist">
+<li><a href="https://code.trebell.dev/">Trebell Code</a></li>
+<li><a href="https://trebell.dev/product/">Trebell Code overview</a></li>
+<li><a href="https://trebell.dev/pricing/">Pricing &amp; business model</a></li>
+<li><a href="https://trebell.dev/licensing/">Licensing &amp; releases</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download 2.0.0 (Windows x64)</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Company</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/about/">About &amp; team</a></li>
+<li><a href="https://trebell.dev/careers/">Careers</a></li>
+<li><a href="https://trebell.dev/contact/">Contact</a></li>
+<li><a href="https://trebell.dev/trust/">Trust center</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Resources</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/security/">Security</a></li>
+<li><a href="https://trebell.dev/support/">Support</a></li>
+<li><a href="https://code.trebell.dev/#proof">Benchmarks</a></li>
+<li><a href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noopener">Release notes ↗</a></li>
+</ul>
+</div>
+<div class="tc-fcol">
+<h4 class="tc-fhead">Legal</h4>
+<ul class="tc-flist">
+<li><a href="https://trebell.dev/legal/">Legal center</a></li>
+<li><a href="https://trebell.dev/privacy/">Privacy</a></li>
+<li><a href="https://trebell.dev/terms/">Terms</a></li>
+<li><a href="https://trebell.dev/security/">Responsible disclosure</a></li>
+</ul>
+</div>
+</div>
+<div class="tc-fbot"><span>© 2026 Trebell · founded May 2026</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
+</div>
+</footer>
+<script src="/assets/trebell-chrome.js?v=1"></script>
 </body></html>

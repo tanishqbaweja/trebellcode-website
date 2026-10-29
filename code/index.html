@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trebell Code 2.0 | Desktop Workspace for AI Coding Agents by Trebell</title>
   <meta name="description" content="Trebell Code 2.0 is a free desktop workspace for AI coding agents: Trebell Native plus Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity and the new Muse Code. For Windows (x64).">
-  <meta name="theme-color" content="#131312">
+  <meta name="theme-color" content="#0b1d4d">
   <link rel="canonical" href="https://code.trebell.dev/">
   <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch.png">
@@ -117,7 +117,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Set theme before first paint to avoid a flash -->
   <script>
@@ -129,12 +129,12 @@
       } catch (e) {}
       document.documentElement.setAttribute("data-theme", theme);
       var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", theme === "light" ? "#f7f5f1" : "#131312");
+      if (meta) meta.setAttribute("content", theme === "light" ? "#faf6ec" : "#0b1d4d");
     })();
   </script>
 
-  <link rel="stylesheet" href="/code/styles.css?v=9">
-  <link rel="stylesheet" href="/assets/trebell-chrome.css?v=3">
+  <link rel="stylesheet" href="/code/styles.css?v=10">
+  <link rel="stylesheet" href="/assets/trebell-chrome.css?v=4">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -160,69 +160,59 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="shell">
-        <div class="hero-grid">
-          <div class="reveal">
-            <div class="hero-badges">
-              <span class="pill"><span class="pill-dot"></span>New in 2.0: Muse Code and OpenCode 2</span>
-            </div>
-            <h1>Trebell Code 2.0</h1>
-            <p class="hero-lede"><strong>A free desktop app for running AI coding agents on your own code.</strong> Use Trebell Native, our own agent, or Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity and Muse Code. Each one runs as its real harness, with its own models, sign-in and approvals, next to your files, terminal, Git and pull requests, previews and a browser panel.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download for Windows</a>
-              <a class="button button-secondary" href="#whats-new">What's new in 2.0 <span class="arrow">→</span></a>
-            </div>
-            <dl class="hero-facts">
-              <div><dt>Version 2.0.0</dt><dd>Windows 10 and 11 (x64) · <a class="trebell-home-link" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release notes</a></dd></div>
-              <div><dt>Free</dt><dd>Apache-2.0 licensed</dd></div>
-              <div><dt>8 harnesses</dt><dd>Trebell Native plus seven coding agents</dd></div>
-              <div><dt>Trebell</dt><dd>Founder-led · founded 2026</dd></div>
-            </dl>
-          </div>
+        <div class="hero-top">
+        <h1>Coding agents that show their work.</h1>
+        <div class="hero-side">
+        <p class="hero-lede"><strong>Trebell Code is a free desktop app for running AI coding agents on your own repositories.</strong> Use Trebell Native, our own agent, or Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity and Muse Code, each as its real harness with its own models, sign-in and approvals.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download for Windows</a>
+          <a class="button button-secondary" href="#whats-new">What's new in 2.0</a>
+        </div>
+        <p class="hero-fine">Version 2.0.0 for Windows 10 and 11 (x64). Free and Apache-2.0 licensed. <a class="trebell-home-link" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release notes</a></p>
+        </div>
+        </div>
+        <figure class="hero-shot">
+          <img class="product-shot-dark" src="/assets/trebell-code-2-native-dark-1200.webp" srcset="/assets/trebell-code-2-native-dark-1200.webp 1200w, /assets/trebell-code-2-native-dark-2400.webp 2400w" sizes="(max-width: 760px) calc(100vw - 32px), 900px" width="1600" height="1000" alt="Trebell Code 2.0 in dark mode: a Trebell Native thread whose activity card lists each step it took, with one edit's diff open, above the reply, beside the Diff panel with the changed files" fetchpriority="high" decoding="async">
+          <img class="product-shot-light" src="/assets/trebell-code-2-native-light-1200.webp" srcset="/assets/trebell-code-2-native-light-1200.webp 1200w, /assets/trebell-code-2-native-light-2400.webp 2400w" sizes="(max-width: 760px) calc(100vw - 32px), 900px" width="1600" height="1000" alt="Trebell Code 2.0 in light mode: a Trebell Native thread whose activity card lists each step it took, with one edit's diff open, above the reply, beside the Diff panel with the changed files" loading="lazy" decoding="async">
+          <svg class="hero-marks" viewBox="0 0 1200 750" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-30 160 C 50 150, 150 142, 246 170"/><path d="M228 158 L 248 171 L 230 184"/>
+            <path d="M1230 214 C 1200 230, 1168 246, 1128 268"/><path d="M1134 252 L 1126 269 L 1145 274"/>
+            <path d="M-30 640 C 70 640, 172 660, 232 688"/><path d="M212 682 L 234 689 L 220 706"/>
+          </svg>
+          <p class="hero-note hero-note-left" style="top:16%" aria-hidden="true">Every step the agent took, and how each one went</p>
+          <p class="hero-note hero-note-right" style="top:24%" aria-hidden="true">The exact change, line by line</p>
+          <p class="hero-note hero-note-left" style="top:79%" aria-hidden="true">The model, thinking level and access mode for each turn</p>
+          <figcaption>A Trebell Native thread in a demo project: every step it took and how each went, the exact changes, and the model and access mode it ran with.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-          <aside class="reveal reveal-delay-1">
-            <div class="benchmark-card">
-              <div class="card-topline">
-                <div>
-                  <span class="eyebrow">vs Codex (OpenAI API)</span>
-                  <h2>As many or more tasks resolved.<br>Up to 28% lower cost.</h2>
-                </div>
-                <span class="live-chip"><i></i>Measured</span>
-              </div>
-
-              <div class="benchmark-toggle" role="tablist" aria-label="Benchmark view">
-                <button type="button" role="tab" data-benchmark="codex" aria-selected="false">Codex (OpenAI API)</button>
-                <button type="button" role="tab" data-benchmark="trebell" aria-selected="true">Trebell Native</button>
-              </div>
-
-              <div class="ledger">
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>SWE-bench Multilingual</span><b id="metric-swe">125 / 156</b></div>
-                  <div class="bar" id="bar-swe"><span></span></div>
-                </div>
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>Terminal-Bench 2.0</span><b id="metric-tb2">62 / 78</b></div>
-                  <div class="bar" id="bar-tb2"><span></span></div>
-                </div>
-                <div class="ledger-row">
-                  <div class="ledger-label"><span>Terminal-Bench Pro 1.0</span><b id="metric-tbpro">22 / 40</b></div>
-                  <div class="bar" id="bar-tbpro"><span></span></div>
-                </div>
-              </div>
-
-              <div class="ledger-result">
-                <span class="check">✓</span>
-                <div>
-                  <strong>18% lower cost on SWE-bench Multilingual, 28% on Terminal-Bench 2.0</strong>
-                  <small>Tasks resolved out of 274 fresh tasks across three benchmarks, graded by an independent verifier, with the same model and settings. Cost is API-equivalent, on the tasks where both got the same result; on Terminal-Bench Pro 1.0 it was level.</small>
-                </div>
-              </div>
-
-              <div class="trace"><span>gpt-6-luna</span><i></i><span>reasoning=max</span><i></i><span>independent verifier</span></div>
-            </div>
-          </aside>
+    <!-- ============ RESULTS ============ -->
+    <section class="results" id="proof">
+      <div class="shell">
+        <h2>We test it against Codex on fresh tasks.</h2>
+        <p class="results-intro">Trebell Native and <strong>Codex using the OpenAI API</strong> ran the same model and settings, gpt-6-luna with max reasoning on the fast service tier and hosted web search off, on fresh tasks that had never been used before. An independent verifier graded every run. Cost is API-equivalent, compared on the tasks where both got the same verifier result.</p>
+        <div class="result-grid">
+          <article class="result">
+            <p class="result-num">125 <span>vs 124</span></p>
+            <h3>SWE-bench Multilingual</h3>
+            <p>156 fresh tasks. Trebell Native resolved 125 and Codex using the OpenAI API resolved 124. On the tasks where both got the same result, Native cost 0.819x as much, with a 95% interval of 0.75 to 0.90.</p>
+            <p class="result-tag">18% lower cost</p>
+          </article>
+          <article class="result">
+            <p class="result-num">62 <span>vs 62</span></p>
+            <h3>Terminal-Bench 2.0</h3>
+            <p>78 fresh tasks. Each resolved 62. On the tasks with the same result, Native cost 0.721x as much, with a 95% interval of 0.58 to 0.87.</p>
+            <p class="result-tag">28% lower cost</p>
+          </article>
+          <article class="result">
+            <p class="result-num">22 <span>vs 21</span></p>
+            <h3>Terminal-Bench Pro 1.0</h3>
+            <p>40 fresh tasks. Trebell Native resolved 22 and Codex using the OpenAI API resolved 21. Cost on this pool was statistically level: 0.929x, with a 95% interval of 0.80 to 1.08.</p>
+            <p class="result-tag">1 more resolved</p>
+          </article>
         </div>
       </div>
-
     </section>
 
     <!-- ============ 00 WHAT'S NEW ============ -->
@@ -230,40 +220,33 @@
       <div class="shell">
         <div class="section-intro two-col reveal">
           <div>
-            <div class="section-label">What's new in 2.0</div>
-            <h2>The first major release since 1.6</h2>
+            <h2>What's new in 2.0</h2>
           </div>
-          <p>2.0.0 is mostly about the coding agents you run inside Trebell. Muse Code is new, OpenCode 2 is supported, and every harness now brings its own models, approvals, sign-in and updates. We also redesigned the interface, made every turn show what it did, and made the app lighter on your machine.</p>
+          <p>2.0.0 is the first major release since 1.6.0, and it is mostly about the coding agents you run inside Trebell. Muse Code is new, OpenCode 2 is supported, and every harness now brings its own models, approvals, sign-in and updates. We also redesigned the interface, made every turn show what it did, and made the app lighter on your machine.</p>
         </div>
 
         <div class="snapshot-grid">
           <article class="snapshot-card reveal">
-            <small>New harness</small>
             <h3>Muse Code, Meta's coding agent</h3>
             <p>Meta's coding agent now runs inside Trebell. Sign in with muse login, and its replies, reasoning, commands and file edits stream into the thread. Its approvals and questions come to Trebell's own card and dialog, and Usage shows its 5-hour and weekly windows.</p>
           </article>
           <article class="snapshot-card reveal reveal-delay-1">
-            <small>Every harness</small>
             <h3>Each harness brings its own models</h3>
             <p>The model picker shows each harness's own models, options and default, and a reopened thread resumes on the model it used. Thinking shows as a collapsed Thinking row, OpenCode 2 runs beside OpenCode 1.x, and Settings offers an update when a harness has a newer release.</p>
           </article>
           <article class="snapshot-card reveal reveal-delay-2">
-            <small>Design</small>
             <h3>A redesigned interface</h3>
             <p>Every page now shares the same top bar. Replies render as GitHub-style Markdown, with tables and code blocks you can copy.</p>
           </article>
           <article class="snapshot-card reveal">
-            <small>Activity</small>
             <h3>Every turn shows what it did</h3>
             <p>Each turn keeps an activity card that says what every step did, such as a command's exit code and duration or an edit's diff. A turn that failed or was stopped before it replied says how and why.</p>
           </article>
           <article class="snapshot-card reveal reveal-delay-1">
-            <small>Trebell Native</small>
             <h3>Native streams replies and waits out network drops</h3>
             <p>On OpenAI, Native's replies stream in as they are written, and code-change turns are checked before the answer. Native can look at images in your workspace, and it waits for the network instead of failing the turn.</p>
           </article>
           <article class="snapshot-card reveal reveal-delay-2">
-            <small>Performance</small>
             <h3>Lighter on your machine</h3>
             <p>Trebell starts fewer background processes, uses less CPU and GPU while you type and replies stream, and opens large threads with much less disk and database work.</p>
           </article>
@@ -272,7 +255,7 @@
         <div class="execution-strip reveal">
           <div><span>Version</span><b>2.0.0</b></div>
           <div><span>Platform</span><b>Windows 10 and 11 (x64)</b></div>
-          <div><span>Price</span><b>Free · Apache-2.0</b></div>
+          <div><span>Price</span><b>Free, Apache-2.0 licensed</b></div>
           <div><span>Updates</span><b>You choose when to install</b></div>
         </div>
       </div>
@@ -282,8 +265,7 @@
     <section class="section product-section" id="product">
       <div class="shell">
         <div class="section-intro centered reveal">
-          <div class="section-label">The app</div>
-          <h2>A look at Trebell Code 2.0</h2>
+          <h2>Your files, terminal and Git, right next to the agent.</h2>
           <p>Projects and environments, files, a real terminal, Git and pull requests, worktrees, previews and a browser panel, around whichever coding agent you use.</p>
         </div>
 
@@ -329,8 +311,7 @@
     <section class="section section-platform" id="harnesses">
       <div class="shell">
         <div class="section-intro centered reveal">
-          <div class="section-label">Harnesses</div>
-          <h2>Eight harnesses to choose from</h2>
+          <h2>Bring the agent you already use.</h2>
           <p>Trebell Native is our own agent harness. The other seven run as their real harnesses, each with its own models, sign-in, approvals and updates, so switching agents does not mean switching tools.</p>
         </div>
 
@@ -345,7 +326,7 @@
           </div>
           <div class="layer">
             <div class="layer-copy"><h3>Claude Code</h3><p>Claude Code's own executable, with its own sign-in and models. Claude's to-do list shows as the thread's plan, and the context meter shows how full the context window is.</p></div>
-            <div class="layer-tags"><span>plan &amp; to-dos</span><span>context meter</span><span>Bedrock · Vertex AI</span></div>
+            <div class="layer-tags"><span>plan &amp; to-dos</span><span>context meter</span><span>Bedrock and Vertex AI</span></div>
           </div>
           <div class="layer">
             <div class="layer-copy"><h3>OpenCode</h3><p>OpenCode 1.x and, new in 2.0, OpenCode 2 through its own client and protocol. Its questions open in Trebell's dialog, and its turns survive a dropped event stream.</p></div>
@@ -361,7 +342,7 @@
           </div>
           <div class="layer">
             <div class="layer-copy"><h3>Antigravity</h3><p>Runs with a Gemini API key from Google AI Studio, kept in an owner-only file and never shown again. Attach images, audio and PDFs to a chat.</p></div>
-            <div class="layer-tags"><span>Gemini API key</span><span>images · audio · PDF</span></div>
+            <div class="layer-tags"><span>Gemini API key</span><span>images, audio and PDFs</span></div>
           </div>
           <div class="layer">
             <div class="layer-copy"><h3>Muse Code</h3><p>Meta's coding agent, new in 2.0. Sign in with muse login in a Trebell terminal; its replies, reasoning, commands and file edits stream into the thread, and Usage shows its 5-hour and weekly windows.</p></div>
@@ -391,7 +372,6 @@
       <div class="shell">
         <div class="section-intro two-col reveal">
           <div>
-            <div class="section-label">Trebell Native</div>
             <h2>Why we built our own agent</h2>
           </div>
           <p>The same model can do very different work depending on the harness around it: the tools it gets, the context it sees, how it recovers when something fails and how it checks its work. Trebell Native is the harness we build and tune ourselves, aimed at <em>getting real repository work done reliably.</em></p>
@@ -445,7 +425,6 @@
       <div class="shell">
         <div class="feature-grid">
           <div class="feature-copy reveal">
-            <div class="section-label">Context</div>
             <h2>How Native finds the right code</h2>
             <p>More context is not always better. Trebell Native reads the files that define a name first, searches beyond source code, and keeps long output out of the model's way without throwing it away.</p>
             <ul class="feature-points">
@@ -504,7 +483,6 @@
           </div>
 
           <div class="feature-copy reveal reveal-delay-1">
-            <div class="section-label">Cost</div>
             <h2>What a finished task costs</h2>
             <p>We compare cost on finished work, task by task. On fresh tasks where Trebell Native and Codex using the OpenAI API got the same verifier result, Native's API-equivalent cost was 18% lower on SWE-bench Multilingual and 28% lower on Terminal-Bench 2.0. On Terminal-Bench Pro 1.0 the cost was statistically level.</p>
             <ul class="feature-points">
@@ -517,106 +495,45 @@
       </div>
     </section>
 
-    <!-- ============ 06 PROOF ============ -->
-    <section class="section proof-section" id="proof">
-      <div class="shell">
-        <div class="section-intro reveal">
-          <div class="section-label">Benchmarks</div>
-          <h2>How Native compares with Codex</h2>
-          <p>Trebell Native and <strong>Codex using the OpenAI API</strong> ran the same model and settings, gpt-6-luna with max reasoning on the fast service tier and hosted web search off, on fresh tasks that had never been used before. An independent verifier graded every run. Cost is API-equivalent, compared on the tasks where both got the same verifier result.</p>
-        </div>
-
-        <div class="metrics-grid">
-          <article class="metric-card reveal">
-            <div class="metric-meta">
-              <small>SWE-bench Multilingual · 156 fresh tasks</small>
-              <span class="metric-delta">18% lower cost</span>
-            </div>
-            <strong>125 <i>vs</i> 124</strong>
-            <h3>One more task resolved, for less</h3>
-            <p>Trebell Native resolved 125 of 156 tasks and Codex using the OpenAI API resolved 124. On the tasks where both got the same result, Native cost 0.819x as much, with a 95% interval of 0.75 to 0.90.</p>
-            <small>Whole fresh pool · tasks resolved</small>
-          </article>
-
-          <article class="metric-card reveal reveal-delay-1">
-            <div class="metric-meta">
-              <small>Terminal-Bench 2.0 · 78 fresh tasks</small>
-              <span class="metric-delta">28% lower cost</span>
-            </div>
-            <strong>62 <i>=</i> 62</strong>
-            <h3>Same result, 28% less spend</h3>
-            <p>Trebell Native and Codex using the OpenAI API each resolved 62 of 78 tasks. On the tasks with the same result, Native cost 0.721x as much, with a 95% interval of 0.58 to 0.87.</p>
-            <small>Whole fresh pool · tasks resolved</small>
-          </article>
-
-          <article class="metric-card reveal reveal-delay-2">
-            <div class="metric-meta">
-              <small>Terminal-Bench Pro 1.0 · 40 fresh tasks</small>
-              <span class="metric-delta">1 more resolved</span>
-            </div>
-            <strong>22 <i>vs</i> 21</strong>
-            <h3>One more task resolved</h3>
-            <p>Trebell Native resolved 22 of 40 fresh tasks and Codex using the OpenAI API resolved 21. Cost on this pool was statistically level: 0.929x, with a 95% interval of 0.80 to 1.08.</p>
-            <small>40 fresh tasks · tasks resolved</small>
-          </article>
-        </div>
-
-        <div class="method-strip reveal">
-          <div><small>Benchmarks</small><b>SWE-bench Multilingual · Terminal-Bench 2.0 · Terminal-Bench Pro 1.0</b></div>
-          <div><small>Model and effort</small><b>gpt-6-luna · max reasoning · fast tier</b></div>
-          <div><small>Compared</small><b>Trebell Native · Codex (OpenAI API)</b></div>
-          <div><small>Grading</small><b>Independent verifier · fresh tasks</b></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ 07 COMPANY ============ -->
     <section class="section company-section" id="company">
       <div class="shell">
         <div class="section-intro two-col reveal">
           <div>
-            <div class="section-label">Company</div>
-            <h2>About Trebell</h2>
+            <h2>Who makes Trebell Code</h2>
           </div>
           <p>Trebell is a developer-tools startup founded in 2026. Its main product is Trebell Code, a free desktop workspace for AI coding agents, now at version 2.0. The company is founder-led, with a five-person core team.</p>
         </div>
 
         <div class="founder-band reveal">
           <div>
-            <span>Founder and team</span>
             <h3>Tanishq Baweja, Founder &amp; CEO</h3>
           </div>
-          <p>Tanishq founded Trebell and currently leads product, engineering and company strategy. The core team also includes Raghav Dabra (Engineering), Himnish Ishaan (Product &amp; Research), Shashwat Chaudhary (Operations &amp; Growth) and Samriddhi Choursarisa (Engineering). <a href="https://trebell.dev/about/">Full company &amp; team profile →</a></p>
+          <p>Tanishq founded Trebell and currently leads product, engineering and company strategy. The core team also includes Raghav Dabra (Engineering), Himnish Ishaan (Product &amp; Research), Shashwat Chaudhary (Operations &amp; Growth) and Samriddhi Choursarisa (Engineering). <a href="https://trebell.dev/about/">The full company and team profile</a></p>
         </div>
 
         <div class="company-grid">
           <article class="company-card reveal">
-            <span class="company-kicker">Our agent</span>
             <h3>Trebell Native is our own agent runtime and harness</h3>
             <p>It runs its own model and tool loop and calls model APIs directly, with its own code search, permission modes, recovery and checks, instead of passing everything through another coding harness.</p>
           </article>
           <article class="company-card reveal reveal-delay-1">
-            <span class="company-kicker">Cost</span>
             <h3>Lower cost for the same work</h3>
             <p>Good repository search, long output kept out of the prompt, context that stays stable for the cache, and sensible stopping and retries all cut cost without needing a smarter model.</p>
           </article>
           <article class="company-card reveal">
-            <span class="company-kicker">Today</span>
             <h3>Trebell Code 2.0 is out now</h3>
             <p>Trebell Code 2.0 ships Trebell Native and runs seven more coding agents in one workspace with files, a terminal, Git and pull requests, worktrees, previews, a browser panel, projects and environments. Trebell Native's benchmark results are graded by an independent verifier.</p>
           </article>
           <article class="company-card reveal reveal-delay-1">
-            <span class="company-kicker">Next</span>
             <h3>More fresh benchmarks</h3>
             <p>Today's results come from 274 fresh tasks across SWE-bench Multilingual, Terminal-Bench 2.0 and Terminal-Bench Pro 1.0. We want gains that hold up on new tasks, not one good benchmark run.</p>
           </article>
           <article class="company-card reveal">
-            <span class="company-kicker">Providers</span>
             <h3>Not tied to one model vendor</h3>
             <p>Trebell Native calls model providers directly, with OpenAI as the default, and Trebell Code also runs seven other coding agents as their real harnesses. Which model you use stays your choice.</p>
           </article>
           <article class="company-card reveal reveal-delay-1">
-            <span class="company-kicker">Teams</span>
             <h3>A paid plan for teams, later</h3>
             <p>The planned commercial layer adds organization policy, shared usage and cost controls, managed execution environments, auditing and administration, without changing how developers work.</p>
           </article>
@@ -624,7 +541,6 @@
 
         <div class="founder-band reveal">
           <div>
-            <span>Business model</span>
             <h3>Free for individual developers</h3>
           </div>
           <p>Trebell Code is free and Apache-2.0 licensed, and you can start using it today. We plan to charge engineering teams for the shared layer: organization policy, shared usage and cost controls, managed execution environments, auditing and administration.</p>
@@ -638,14 +554,13 @@
         <div class="cta-rule"></div>
         <div class="cta-grid">
           <div class="cta-copy reveal">
-            <div class="section-label">Download</div>
-            <h2>Get Trebell Code 2.0</h2>
+            <h2>Try it on your own repository.</h2>
             <p>Trebell Code is free and runs on Windows 10 and 11 (x64). Use it with Trebell Native or with the coding agents you already have.</p>
           </div>
           <div class="cta-side reveal reveal-delay-1">
             <a class="button button-primary" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6.5v6.5H1zM8.5 1H15v6.5H8.5zM1 8.5h6.5V15H1zM8.5 8.5H15V15H8.5z"/></svg>Download for Windows (x64)</a>
             <p>Trebell Code 2.0.0 for Windows 10 and 11 (x64), free and Apache-2.0 licensed. <a class="trebell-home-link" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.0.0" target="_blank" rel="noreferrer">Release notes</a>. The installer is not code-signed yet, so Windows SmartScreen may ask you to confirm: choose More info, then Run anyway.</p>
-            <a class="button button-secondary" href="https://trebell.dev/about/">About Trebell &amp; team <span class="arrow">→</span></a>
+            <a class="button button-secondary" href="https://trebell.dev/about/">About Trebell and the team</a>
           </div>
         </div>
       </div>
@@ -697,11 +612,11 @@
 </ul>
 </div>
 </div>
-<div class="tc-fbot"><span>© 2026 Trebell · founded May 2026</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
+<div class="tc-fbot"><span>© 2026 Trebell. Founded in May 2026.</span><span>Trebell Code is free and Apache-2.0 licensed.</span></div>
 </div>
 </footer>
 
-  <script src="/assets/trebell-chrome.js?v=2"></script>
-  <script src="/code/script.js?v=4"></script>
+  <script src="/assets/trebell-chrome.js?v=3"></script>
+  <script src="/code/script.js?v=5"></script>
 </body>
 </html>

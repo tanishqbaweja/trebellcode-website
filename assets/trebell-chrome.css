@@ -5,17 +5,17 @@
    the same at any page height. The behaviour is in /assets/trebell-chrome.js. */
 
 :root{
-  --tc-header-h:69px;
-  --tc-bg:#131312;--tc-card:#1b1b19;--tc-ink:#ecebe6;--tc-mut:#a9a79f;--tc-line:#2c2c29;--tc-line2:#3c3b37;
-  --tc-accent:#5fbf85;--tc-scroll:#3c3b37;--tc-tint:rgba(236,235,230,.07);
-  --tc-btn-bg:#ecebe6;--tc-btn-ink:#131312;--tc-btn-hover:#ffffff;--tc-drawer-shadow:0 18px 45px -18px rgba(0,0,0,.6);
-  --tc-foot-bg:#0e0e0d;
+  --tc-header-h:73px;
+  --tc-bg:#0b1d4d;--tc-raise:#102663;--tc-ink:#fbf6ea;--tc-mut:#bac6e6;--tc-line:#1b3474;--tc-line2:#25418c;
+  --tc-gold:#ffc23d;--tc-gold-hover:#ffd166;--tc-gold-ink:#1f1500;--tc-gold-text:#ffcf63;
+  --tc-scroll:#25418c;--tc-tint:rgba(251,246,234,.08);--tc-drawer-shadow:0 22px 50px -20px rgba(3,8,30,.75);
+  --tc-foot-bg:#081538;
 }
 :root[data-theme="light"]{
-  --tc-bg:#f7f5f1;--tc-card:#ffffff;--tc-ink:#1b1a17;--tc-mut:#5c5a53;--tc-line:#e7e3db;--tc-line2:#d8d3c9;
-  --tc-accent:#1e7a4a;--tc-scroll:#cfc9be;--tc-tint:rgba(27,26,23,.06);
-  --tc-btn-bg:#1b1a17;--tc-btn-ink:#f7f5f1;--tc-btn-hover:#000000;--tc-drawer-shadow:0 22px 50px -22px rgba(40,36,28,.25);
-  --tc-foot-bg:#1b1a17;
+  --tc-bg:#faf6ec;--tc-raise:#ffffff;--tc-ink:#0b1d4d;--tc-mut:#3f4d77;--tc-line:#e9e2d0;--tc-line2:#ddd5c1;
+  --tc-gold:#ffc23d;--tc-gold-hover:#ffcd57;--tc-gold-ink:#1f1500;--tc-gold-text:#7f5400;
+  --tc-scroll:#d3cab3;--tc-tint:rgba(11,29,77,.06);--tc-drawer-shadow:0 22px 50px -22px rgba(11,29,77,.28);
+  --tc-foot-bg:#081538;
 }
 
 /* One scrollbar on every page (the homepage's), so the header and footer sit at the same place on every page in browsers
@@ -31,8 +31,8 @@ html{scrollbar-gutter:stable}
 /* ---------- Isolation from the page's stylesheet ---------- */
 .tc-header,.tc-footer{
   display:block;box-sizing:border-box;margin:0;padding:0;border:0;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;font-style:normal;font-weight:400;
-  line-height:20px;font-variant:normal;font-feature-settings:normal;font-kerning:auto;font-stretch:normal;
+  font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;font-style:normal;font-weight:400;
+  line-height:20px;font-variant:normal;font-feature-settings:normal;font-kerning:auto;font-stretch:normal;font-optical-sizing:auto;
   letter-spacing:normal;word-spacing:normal;text-align:left;text-indent:0;text-transform:none;text-decoration:none;text-shadow:none;
   white-space:normal;text-wrap:wrap;hyphens:manual;overflow-wrap:normal;word-break:normal;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:auto;
@@ -42,28 +42,29 @@ html{scrollbar-gutter:stable}
 .tc-header *,.tc-header *::before,.tc-header *::after,.tc-footer *,.tc-footer *::before,.tc-footer *::after{
   box-sizing:border-box;margin:0;padding:0;border:0;
 }
-.tc-header ::selection,.tc-footer ::selection{background:color-mix(in srgb,var(--tc-accent) 35%,transparent);color:inherit}
-.tc-header a:focus-visible,.tc-header button:focus-visible{outline:2px solid var(--tc-accent);outline-offset:3px}
-.tc-footer a:focus-visible{outline:2px solid #5fbf85;outline-offset:3px}
+.tc-header ::selection,.tc-footer ::selection{background:var(--tc-gold);color:var(--tc-gold-ink)}
+.tc-header a:focus-visible,.tc-header button:focus-visible{outline:2px solid var(--tc-gold-text);outline-offset:3px}
+.tc-footer a:focus-visible{outline:2px solid #ffcf63;outline-offset:3px}
 .tc-header :focus:not(:focus-visible),.tc-footer :focus:not(:focus-visible){outline:none}
 
 /* ---------- Header ---------- */
 .tc-header{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--tc-bg);border-bottom:1px solid var(--tc-line);transition:background-color .3s,border-color .3s}
-.tc-header .tc-bar{display:flex;align-items:center;gap:12px;max-width:1120px;height:68px;margin:0 auto;padding:0 24px}
-.tc-header .tc-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;border-radius:12px;color:var(--tc-ink);text-decoration:none;font-family:Gabarito,Inter,ui-sans-serif,system-ui,sans-serif;font-size:19px;font-weight:800;line-height:24px;white-space:nowrap}
+.tc-header .tc-bar{display:flex;align-items:center;gap:12px;max-width:1160px;height:72px;margin:0 auto;padding:0 28px}
+.tc-header .tc-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;border-radius:12px;color:var(--tc-ink);text-decoration:none;font-size:21px;font-weight:800;line-height:24px;letter-spacing:-.02em;white-space:nowrap}
 .tc-header .tc-brand picture{display:block;flex:0 0 auto}
-.tc-header .tc-brand img{display:block;width:36px;height:36px;max-width:none;border:1px solid var(--tc-line2);border-radius:50%;object-fit:cover}
+.tc-header .tc-brand img{display:block;width:38px;height:38px;max-width:none;border-radius:50%;object-fit:cover}
 .tc-header .tc-word{display:block}
-.tc-header .tc-dot{color:var(--tc-accent)}
+.tc-header .tc-dot{color:var(--tc-gold-text)}
 
 .tc-header .tc-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
-.tc-header .tc-nav a{display:block;padding:8px 14px;border-radius:999px;background:transparent;color:var(--tc-mut);text-decoration:none;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;transition:color .18s,background-color .18s}
-.tc-header .tc-nav a:hover{color:var(--tc-ink);background:var(--tc-tint)}
-.tc-header .tc-nav a[aria-current="page"]{color:var(--tc-ink);background:var(--tc-tint)}
+.tc-header .tc-nav a{position:relative;display:block;padding:8px 13px;border-radius:10px;background:transparent;color:var(--tc-mut);text-decoration:none;font-size:15px;font-weight:500;line-height:20px;white-space:nowrap;transition:color .18s}
+.tc-header .tc-nav a:hover{color:var(--tc-ink)}
+.tc-header .tc-nav a[aria-current="page"]{color:var(--tc-ink)}
+.tc-header .tc-nav a[aria-current="page"]::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:3px;border-radius:3px;background:var(--tc-gold)}
 
-.tc-header .tc-theme,.tc-header .tc-menu{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border:1px solid var(--tc-line2);border-radius:999px;background:var(--tc-card);color:var(--tc-ink);font:inherit;line-height:0;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color .2s}
-.tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-ink)}
-.tc-header .tc-theme svg,.tc-header .tc-menu svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tc-header .tc-theme,.tc-header .tc-menu{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border:1.5px solid var(--tc-line2);border-radius:12px;background:transparent;color:var(--tc-ink);font:inherit;line-height:0;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color .2s}
+.tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-mut)}
+.tc-header .tc-theme svg,.tc-header .tc-menu svg{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tc-header .tc-theme .tc-moon{display:none}
 :root[data-theme="light"] .tc-header .tc-theme .tc-sun{display:none}
 :root[data-theme="light"] .tc-header .tc-theme .tc-moon{display:block}
@@ -73,8 +74,8 @@ html{scrollbar-gutter:stable}
 .tc-header.tc-open .tc-menu .tc-burger{display:none}
 .tc-header.tc-open .tc-menu .tc-close{display:block}
 
-.tc-header .tc-download{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;height:40px;padding:0 16px;border-radius:999px;background:var(--tc-btn-bg);color:var(--tc-btn-ink);text-decoration:none;font-size:13.5px;font-weight:600;line-height:20px;white-space:nowrap;transition:background-color .2s}
-.tc-header .tc-download:hover{background:var(--tc-btn-hover)}
+.tc-header .tc-download{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;height:40px;padding:0 16px;border-radius:12px;background:var(--tc-gold);color:var(--tc-gold-ink);text-decoration:none;font-size:14.5px;font-weight:700;line-height:20px;white-space:nowrap;transition:background-color .2s}
+.tc-header .tc-download:hover{background:var(--tc-gold-hover)}
 .tc-header .tc-download svg{display:block;flex:0 0 auto;width:14px;height:14px;fill:currentColor}
 
 /* Narrower than the five links need: they move into the menu, a drawer under the bar. The open drawer has its own
@@ -82,41 +83,42 @@ html{scrollbar-gutter:stable}
 @media (max-width:900px){
   .tc-header .tc-theme{margin-left:auto}
   .tc-header .tc-menu{display:grid}
-  .tc-header .tc-nav{display:none;position:absolute;top:calc(100% + 8px);right:24px;left:auto;width:300px;margin:0;padding:8px;flex-direction:column;align-items:stretch;gap:2px;background:var(--tc-card);border:1px solid var(--tc-line2);border-radius:18px;box-shadow:var(--tc-drawer-shadow);will-change:transform}
+  .tc-header .tc-nav{display:none;position:absolute;top:calc(100% + 8px);right:28px;left:auto;width:300px;margin:0;padding:8px;flex-direction:column;align-items:stretch;gap:2px;background:var(--tc-raise);border:1.5px solid var(--tc-line2);border-radius:18px;box-shadow:var(--tc-drawer-shadow);will-change:transform}
   .tc-header.tc-open .tc-nav{display:flex}
-  .tc-header .tc-nav a{display:flex;align-items:center;min-height:44px;padding:12px 14px;border-radius:12px;font-size:15px;line-height:20px}
+  .tc-header .tc-nav a{display:flex;align-items:center;min-height:44px;padding:12px 14px;border-radius:12px;font-size:16px;line-height:20px}
+  .tc-header .tc-nav a[aria-current="page"]{background:var(--tc-tint)}
+  .tc-header .tc-nav a[aria-current="page"]::after{left:auto;right:14px;top:50%;bottom:auto;width:8px;height:8px;margin-top:-4px;border-radius:50%}
 }
 @media (max-width:640px){
-  :root{--tc-header-h:63px}
-  .tc-header .tc-bar{height:62px;padding:0 14px;gap:8px}
-  .tc-header .tc-brand{gap:8px;font-size:16px;line-height:20px}
-  .tc-header .tc-brand img{width:31px;height:31px}
-  .tc-header .tc-theme,.tc-header .tc-menu{width:36px;height:36px}
-  .tc-header .tc-download{height:36px;gap:6px;padding:0 12px;font-size:12px;line-height:16px}
+  :root{--tc-header-h:65px}
+  .tc-header .tc-bar{height:64px;padding:0 16px;gap:8px}
+  .tc-header .tc-brand{gap:9px;font-size:18px;line-height:22px}
+  .tc-header .tc-brand img{width:32px;height:32px}
+  .tc-header .tc-theme,.tc-header .tc-menu{width:38px;height:38px}
+  .tc-header .tc-download{height:38px;gap:6px;padding:0 12px;font-size:13px;line-height:16px}
   .tc-header .tc-download svg{width:12px;height:12px}
   .tc-header .tc-nav{right:12px;left:12px;width:auto}
 }
 @media (max-width:380px){.tc-header .tc-download svg{display:none}}
 @media (max-width:340px){.tc-header .tc-word{display:none}}
 
-/* ---------- Footer (dark in both themes) ---------- */
-/* Its own compositing layer on every page: on a page with an animated background (code.trebell.dev) the browser would
-   otherwise merge the footer into a shared layer and antialias its text differently from the other pages. */
-.tc-footer{position:relative;z-index:1;background:var(--tc-foot-bg);color:#c9c7bf;transition:background-color .3s;will-change:transform}
-.tc-footer .tc-fin{max-width:1120px;margin:0 auto;padding:0 24px}
-.tc-footer .tc-fgrid{display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:30px;padding:56px 0 40px}
-.tc-footer .tc-fbrand{display:flex;align-items:center;gap:10px;width:max-content;border-radius:12px;color:#fff;text-decoration:none}
+/* ---------- Footer (deep royal in both themes) ---------- */
+/* Its own compositing layer on every page, so the browser draws its text the same way on every page. */
+.tc-footer{position:relative;z-index:1;background:var(--tc-foot-bg);color:#fbf6ea;transition:background-color .3s;will-change:transform}
+.tc-footer .tc-fin{max-width:1160px;margin:0 auto;padding:0 28px}
+.tc-footer .tc-fgrid{display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:30px;padding:60px 0 44px}
+.tc-footer .tc-fbrand{display:flex;align-items:center;gap:10px;width:max-content;border-radius:12px;color:#fbf6ea;text-decoration:none}
 /* The 96 px logo at every width: the 1254 px logo.png, scaled down this far on a page that also decodes large
    screenshots (code.trebell.dev), was not always drawn with the same filter. */
-.tc-footer .tc-fbrand img{display:block;flex:0 0 auto;width:36px;height:36px;max-width:none;border-radius:50%;object-fit:cover}
-.tc-footer .tc-fbrand b{display:block;font-family:Gabarito,Inter,ui-sans-serif,system-ui,sans-serif;font-size:19px;font-weight:800;line-height:20px;color:#fff}
-.tc-footer .tc-fabout{display:block;max-width:36ch;margin-top:12px;font-size:13.5px;line-height:22px;color:#a19f97}
-.tc-footer .tc-fhead{display:block;margin-bottom:14px;font-size:13px;font-weight:600;line-height:16px;color:#e4e2dc}
+.tc-footer .tc-fbrand img{display:block;flex:0 0 auto;width:38px;height:38px;max-width:none;border-radius:50%;object-fit:cover}
+.tc-footer .tc-fbrand b{display:block;font-size:21px;font-weight:800;line-height:22px;letter-spacing:-.02em;color:#fbf6ea}
+.tc-footer .tc-fabout{display:block;max-width:34ch;margin-top:14px;font-size:15px;line-height:23px;color:#bac6e6}
+.tc-footer .tc-fhead{display:block;margin-bottom:14px;font-size:15px;font-weight:700;line-height:20px;color:#ffcf63}
 .tc-footer .tc-flist{display:grid;gap:9px;list-style:none}
 .tc-footer .tc-flist li{display:flex;list-style:none}
-.tc-footer .tc-flist a{display:block;border-radius:4px;color:#a19f97;text-decoration:none;font-size:14px;font-weight:400;line-height:22px;transition:color .15s}
-.tc-footer .tc-flist a:hover{color:#fff}
-.tc-footer .tc-fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:18px 0 26px;border-top:1px solid rgba(255,255,255,.09);font-size:12.5px;font-weight:400;line-height:18px;color:#8c8a82}
+.tc-footer .tc-flist a{display:block;border-radius:4px;color:#bac6e6;text-decoration:none;font-size:15px;font-weight:400;line-height:22px;transition:color .15s}
+.tc-footer .tc-flist a:hover{color:#fbf6ea}
+.tc-footer .tc-fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:20px 0 28px;border-top:1px solid #1b3474;font-size:14px;font-weight:400;line-height:20px;color:#91a0cc}
 
 @media (max-width:1050px){
   .tc-footer .tc-fgrid{grid-template-columns:repeat(4,1fr);gap:36px 24px}
@@ -124,21 +126,21 @@ html{scrollbar-gutter:stable}
 }
 @media (max-width:640px){
   .tc-footer .tc-fin{padding:0 16px}
-  .tc-footer .tc-fgrid{grid-template-columns:1fr 1fr;gap:30px 16px;padding:40px 0 30px}
+  .tc-footer .tc-fgrid{grid-template-columns:1fr 1fr;gap:30px 16px;padding:44px 0 32px}
   .tc-footer .tc-fbrand img{width:34px;height:34px}
-  .tc-footer .tc-fabout{font-size:13px;line-height:20px}
+  .tc-footer .tc-fabout{font-size:14px;line-height:21px}
   .tc-footer .tc-fhead{margin-bottom:10px}
   .tc-footer .tc-flist{gap:8px}
-  .tc-footer .tc-flist a{font-size:13px;line-height:20px}
-  .tc-footer .tc-fbot{padding:16px 0 22px;font-size:11.5px;line-height:16px}
+  .tc-footer .tc-flist a{font-size:14px;line-height:21px}
+  .tc-footer .tc-fbot{padding:16px 0 22px;font-size:12.5px;line-height:18px}
 }
 
 @media (hover:none){
   .tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-line2)}
-  .tc-header .tc-download:hover{background:var(--tc-btn-bg)}
+  .tc-header .tc-download:hover{background:var(--tc-gold)}
 }
-/* Reduced motion: no transitions, and no animation values from a page's own reduced-motion rule (the homepage sets
-   animation-duration on every element), so the header and footer compute the same on every page. */
+/* Reduced motion: no transitions, and no animation values from a page's own reduced-motion rule, so the header and
+   footer compute the same on every page. */
 @media (prefers-reduced-motion:reduce){
   .tc-header,.tc-header *,.tc-footer,.tc-footer *{transition:none!important;animation:none!important}
 }

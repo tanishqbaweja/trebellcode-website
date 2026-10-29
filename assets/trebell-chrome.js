@@ -18,7 +18,7 @@
   function applyTheme(theme, persist) {
     root.setAttribute("data-theme", theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "light" ? "#f7f5f1" : "#131312");
+    if (meta) meta.setAttribute("content", theme === "light" ? "#faf6ec" : "#0b1d4d");
     if (persist) { try { localStorage.setItem(KEY, theme); } catch (e) {} }
     if (themeButton) {
       var label = theme === "light" ? "Switch to dark mode" : "Switch to light mode";

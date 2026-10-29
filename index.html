@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trebell | Developer Tools Company Behind Trebell Code</title>
 <meta name="description" content="Trebell is a developer-tools company building Trebell Code, a free desktop workspace for AI coding agents, for reliable, provider-agnostic software engineering with measurable quality and cost.">
-<meta name="theme-color" id="metaTheme" content="#0b1d4d">
+<meta name="theme-color" id="metaTheme" content="#131312">
 <link rel="canonical" href="https://trebell.dev/">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch.png">
@@ -110,169 +110,214 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* trebell.dev home. Royal ink and gold, from the logo's headphones and crowns; paper type. One family, Bricolage Grotesque,
-   with JetBrains Mono only for figures. The header and footer are the shared site chrome: /assets/trebell-chrome.css. */
+/* ============ TOKENS: DARK DEFAULT ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   color-scheme:dark;
-  --bg:#0b1d4d; --deep:#081538; --raise:#102663; --line:#25418c; --line-soft:#1b3474;
-  --ink:#fbf6ea; --mut:#bac6e6; --dim:#91a0cc;
-  --gold:#ffc23d; --gold-hover:#ffd166; --gold-ink:#1f1500; --gold-text:#ffcf63;
-  --track:#1b3474; --shot-line:#2c4ea3; --shot-shadow:0 44px 80px -46px rgba(3,8,30,.85);
-  --font:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --bg:#131312; --card:#1b1b19; --ink:#ecebe6; --mut:#a9a79f; --dim:#8a887e;
+  --line:#2c2c29; --line2:#3c3b37;
+  --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -14px rgba(0,0,0,.55);
+  --sh-lg:0 2px 4px rgba(0,0,0,.4),0 22px 48px -16px rgba(0,0,0,.6);
+  --trackbg:#242422; --well:#171716;
+  --accent:#5fbf85; --amber:#e0a84a; --green:#5fbf85;
+  --btn-bg:#ecebe6; --btn-ink:#131312; --btn-hover:#ffffff;
+  --disp:'Gabarito',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
 }
 html[data-theme="light"]{
   color-scheme:light;
-  --bg:#faf6ec; --deep:#f1ead8; --raise:#ffffff; --line:#ddd5c1; --line-soft:#e9e2d0;
-  --ink:#0b1d4d; --mut:#3f4d77; --dim:#5a6790;
-  --gold:#ffc23d; --gold-hover:#ffcd57; --gold-ink:#1f1500; --gold-text:#7f5400;
-  --track:#e9e2d0; --shot-line:#d6cdb8; --shot-shadow:0 44px 80px -52px rgba(11,29,77,.45);
+  --bg:#f7f5f1; --card:#ffffff; --ink:#1b1a17; --mut:#5c5a53; --dim:#6b6961;
+  --line:#e7e3db; --line2:#d8d3c9;
+  --sh:0 1px 2px rgba(27,26,23,.05),0 14px 34px -14px rgba(27,26,23,.14);
+  --sh-lg:0 2px 4px rgba(27,26,23,.06),0 22px 48px -16px rgba(27,26,23,.2);
+  --trackbg:#efece6; --well:#f3f1ec;
+  --accent:#1e7a4a; --amber:#a8670f; --green:#1e7a4a;
+  --btn-bg:#1b1a17; --btn-ink:#f7f5f1; --btn-hover:#000000;
 }
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-optical-sizing:auto;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}
-::selection{background:var(--gold);color:var(--gold-ink)}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-:focus-visible{outline:2.5px solid var(--gold-text);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1160px;margin:0 auto;padding-inline:28px;position:relative;z-index:1}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px;position:relative;z-index:1}
 .mono{font-family:var(--mono)}
-h1,h2,h3{font-family:var(--font);text-wrap:balance}
-h2{font-weight:800;font-size:clamp(2.1rem,4.3vw,3.4rem);letter-spacing:-.022em;line-height:1.04}
-h3{font-weight:700;letter-spacing:-.012em;line-height:1.2}
 
-/* ============ BUTTONS ============ */
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;min-height:52px;padding:0 22px;border-radius:12px;
-  border:1.5px solid var(--line);cursor:pointer;transition:background-color .2s,border-color .2s}
-.btn-pri{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
-.btn-pri:hover{background:var(--gold-hover);border-color:var(--gold-hover)}
-.btn-out{color:var(--ink)}
+/* ============ BUTTONS (the header and footer are the shared site chrome: /assets/trebell-chrome.css) ============ */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:11px 20px;border-radius:999px;
+  border:1.5px solid transparent;cursor:pointer;transition:background-color .2s,border-color .2s}
+.btn-pri{background:var(--btn-bg);color:var(--btn-ink)}
+.btn-pri:hover{background:var(--btn-hover)}
+.btn-pri .ar{transition:transform .2s}.btn-pri:hover .ar{transform:translateX(3px)}
+.btn-out{border-color:var(--line2);color:var(--ink);background:var(--card)}
 .btn-out:hover{border-color:var(--mut)}
-.btn-sm{min-height:44px;padding:0 17px;font-size:15px}
+.btn-sm{padding:8px 15px;font-size:13.5px}
 
 /* ============ HERO ============ */
-.hero{padding-block:146px 96px;position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
-h1{font-weight:800;font-size:clamp(3.2rem,7.2vw,6.2rem);line-height:.96;letter-spacing:-.026em;margin-bottom:26px}
-.lede{font-size:clamp(17px,1.7vw,19px);color:var(--mut);max-width:54ch;margin-bottom:30px}
+.hero{padding:150px 0 80px;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+.hero-kicker{margin-bottom:16px;font-size:15px;font-weight:600;color:var(--mut)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(3rem,7vw,5.2rem);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+.lede{font-size:clamp(16px,1.8vw,19px);color:var(--mut);max-width:54ch;margin-bottom:30px;font-weight:400}
 .lede b{color:var(--ink);font-weight:600}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.hero-fine{margin-top:18px;max-width:52ch;font-size:15px;color:var(--mut)}
-.logo-card{position:relative}
-.logo-card img{width:100%;height:auto;border-radius:12px;border:1px solid var(--shot-line);box-shadow:var(--shot-shadow)}
-.logo-card .product-shot-light{display:none}
-html[data-theme="light"] .logo-card .product-shot-dark{display:none}
-html[data-theme="light"] .logo-card .product-shot-light{display:block}
-.logo-card figcaption{font-size:15px;color:var(--mut);padding-top:16px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.logo-card{order:2}}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.statpills{display:flex;gap:10px;flex-wrap:wrap}
+.spill{display:inline-flex;align-items:center;font-size:13px;font-weight:500;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--mut)}
+.logo-card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--sh-lg);position:relative}
+.logo-card img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+.product-shot-light{display:none}
+html[data-theme="light"] .product-shot-dark{display:none}
+html[data-theme="light"] .product-shot-light{display:block}
+.logo-card figcaption{font-size:13px;color:var(--dim);padding-top:14px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.logo-card{max-width:none;order:2}}
 
-/* ============ SECTIONS ============ */
-section{padding-block:96px;position:relative;z-index:1}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:20px 56px;margin-bottom:44px}
-.sec-note{color:var(--mut);font-size:17px;max-width:46ch}
+/* ============ SECTIONS: UNIFORM 80/80 RHYTHM ============ */
+section{padding-block:80px;position:relative;z-index:1}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.sec-eye{font-size:14px;font-weight:600;color:var(--mut);margin-bottom:12px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.015em;line-height:1.1}
+.sec-note{color:var(--mut);font-size:14.5px;max-width:38ch}
 
-/* ============ COMPANY OVERVIEW: a deep band ============ */
-.company-intro{padding:0;background:var(--deep);max-width:none}
-.company-shell{max-width:1160px;margin:0 auto;padding:96px 28px}
-.company-lead{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:48px}
-.company-lead p{color:var(--mut);font-size:17px;max-width:60ch}
-.company-lead p b{color:var(--ink);font-weight:600}
-.company-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 32px}
-.company-card{padding:24px 0 8px;border-top:1.5px solid var(--line)}
-.company-card h3{font-size:20px;margin-bottom:8px}
-.company-card p{color:var(--mut);font-size:15.5px;line-height:1.55}
-.team-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.team-links a{font-size:15px;font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
-.team-links a:hover{text-decoration-color:var(--ink)}
-@media(max-width:900px){.company-lead,.sec-head{grid-template-columns:1fr}.company-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}}
-@media(max-width:560px){.company-grid{grid-template-columns:1fr}}
+/* ============ COMPANY OVERVIEW ============ */
+.company-intro{padding-top:34px}
+.company-shell{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--sh)}
+.company-lead{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start;margin-bottom:26px}
+.company-lead p{color:var(--mut);font-size:16px;max-width:67ch}
+.company-lead p b{color:var(--ink);font-weight:650}
+.company-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.company-card{background:color-mix(in srgb,var(--bg) 48%,var(--card));border:1px solid var(--line);border-radius:16px;padding:18px}
+.company-card .label{font-size:12.5px;font-weight:600;color:var(--dim);margin-bottom:8px}
+.company-card h3{font-family:var(--disp);font-size:17px;line-height:1.15;margin-bottom:7px}
+.company-card p{color:var(--mut);font-size:12.8px;line-height:1.55}
+.team-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.team-links a{font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line2);border-radius:9px;padding:6px 10px;background:var(--card);transition:border-color .2s}
+.team-links a:hover{border-color:var(--mut)}
+@media(max-width:900px){.company-lead{grid-template-columns:1fr}.company-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.company-shell{padding:24px 18px}.company-grid{grid-template-columns:1fr}}
 
-/* ============ PRODUCTS ============ */
+/* ============ FLAGSHIPS ============ */
 .flags{display:grid;gap:28px}
-.flag{background:var(--raise);border:1.5px solid var(--line);border-radius:20px;overflow:hidden}
-.flag-top{display:flex;align-items:center;gap:14px;padding:22px 28px;border-bottom:1.5px solid var(--line)}
-.flag-top h3{font-weight:800;font-size:28px;letter-spacing:-.02em}
-.flag-top .repo{font-size:15px;color:var(--dim)}
+.flag{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh);overflow:hidden}
+.flag-top{display:flex;align-items:center;gap:14px;padding:22px 28px;border-bottom:1px solid var(--line)}
+.flag-top h3{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.01em}
+.flag-top .repo{font-size:12.5px;color:var(--dim)}
 .pills{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
-.pill{display:inline-flex;align-items:center;font-size:14px;font-weight:600;border-radius:999px;padding:4px 12px;border:1.5px solid var(--line);color:var(--mut)}
-.flag-body{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;padding:30px 28px 32px}
-.flag .tag{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:12px;letter-spacing:-.01em}
-.flag p.desc{color:var(--mut);font-size:16px;margin-bottom:18px}
+.pill{display:inline-flex;align-items:center;font-size:12.5px;font-weight:500;
+  border-radius:999px;padding:4px 12px;background:var(--card);border:1px solid var(--line2);color:var(--mut)}
+.flag-body{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;padding:30px 28px 32px}
+.flag .tag{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.flag p.desc{color:var(--mut);font-size:15px;margin-bottom:18px}
 .flag p.desc b{color:var(--ink);font-weight:600}
-.flag p.desc a{text-decoration-color:var(--gold)!important;text-decoration-thickness:2px!important}
-.feat{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:15.5px;color:var(--mut)}
-.feat li{padding-left:22px;position:relative}
-.feat li::before{content:'';position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.feat{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:14.5px;color:var(--mut)}
+.feat li{padding-left:20px;position:relative}
+.feat li::before{content:'';position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--dim)}
 .plats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.plat{font-size:14px;font-weight:600;color:var(--mut);border:1.5px solid var(--line);border-radius:8px;padding:3px 10px}
+.plat{font-size:12.5px;color:var(--dim);border:1px solid var(--line2);border-radius:8px;padding:4px 10px;background:var(--card)}
 .flag-cta{display:flex;gap:10px;flex-wrap:wrap}
-.vis{background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
-.vis-lab{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;color:var(--mut);margin-bottom:7px}
-.vis-lab b{color:var(--ink);font-family:var(--mono);font-size:14px;font-weight:600}
-.track{height:12px;border-radius:999px;background:var(--track);overflow:hidden;margin-bottom:16px}
+.vis{background:var(--well);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.vis-lab{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--dim);margin-bottom:6px}
+.vis-lab b{color:var(--ink);font-family:var(--mono);font-size:12.5px;font-weight:600}
+.track{height:12px;border-radius:999px;background:var(--trackbg);border:1px solid var(--line);overflow:hidden;margin-bottom:14px}
 .fill{height:100%;border-radius:999px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 .fill.waste{width:100%;background:var(--dim)}
-.fill.lean{width:6%;background:var(--gold)}
-.vis-note{font-size:14.5px;color:var(--mut);border-top:1.5px solid var(--line);padding-top:14px}
+.fill.lean{width:6%;background:var(--accent)}
+.vis-note{font-size:12.5px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
 .vis-note b{color:var(--ink)}
 .caps{display:flex;gap:8px;flex-wrap:wrap}
-.cap{font-size:14.5px;font-weight:600;border:1.5px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--mut)}
-.cap.on{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.cap{font-size:13px;font-weight:500;background:var(--card);border:1px solid var(--line2);border-radius:999px;padding:6px 13px;color:var(--mut)}
+.cap.on{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600}
 @media(max-width:920px){.flag-body{grid-template-columns:1fr}}
 
-/* ============ STARTUP PROGRAMS ============ */
-.program-trust{padding-block:8px 8px}
-.program-trust-card{display:grid;grid-template-columns:minmax(260px,.9fr) 1.35fr;gap:28px;align-items:center;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:26px 0}
-.program-trust-copy{display:grid;gap:6px}
-.program-trust-kicker{font-size:19px;font-weight:700;color:var(--ink)}
-.program-trust-copy p{font-size:15.5px;line-height:1.55;color:var(--mut);max-width:42ch}
-.program-names{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
-.program-name{display:flex;align-items:center;gap:10px;min-width:0;min-height:52px;padding:8px 10px;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);font-size:14.5px;font-weight:700;white-space:nowrap}
-.program-mark{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:9px;background:#fbf6ea}
+/* ============ STARTUP ECOSYSTEM ============ */
+.program-trust{padding-block:18px 8px}
+.program-trust-card{display:grid;grid-template-columns:minmax(260px,.9fr) 1.35fr;gap:28px;align-items:center;background:color-mix(in srgb,var(--card) 72%,transparent);border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.program-trust-copy{display:grid;gap:5px}
+.program-trust-kicker{font-size:13px;font-weight:600;color:var(--dim)}
+.program-trust-copy p{font-size:13px;line-height:1.55;color:var(--mut);max-width:42ch}
+.program-names{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;align-items:stretch}
+.program-name{display:flex;align-items:center;gap:9px;min-width:0;min-height:50px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg) 55%,transparent);color:color-mix(in srgb,var(--ink) 82%,var(--mut));font-family:var(--disp);font-size:12.5px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.program-mark{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:9px;background:color-mix(in srgb,var(--card) 88%,var(--bg));border:1px solid color-mix(in srgb,var(--line) 82%,transparent)}
 .program-mark img{display:block;max-width:21px;max-height:21px;width:auto;height:auto;object-fit:contain}
 .program-name.aws .program-mark img{max-width:24px;max-height:18px}
-.program-logo-dark{display:none!important}
-.program-logo-light{display:block!important}
+.program-logo-light{display:none!important}
+html[data-theme="light"] .program-logo-dark{display:none!important}
+html[data-theme="light"] .program-logo-light{display:block!important}
+html:not([data-theme="light"]) .program-mark{background:color-mix(in srgb,var(--card) 88%,white 4%);border-color:color-mix(in srgb,var(--line2) 88%,transparent)}
 .program-label{overflow:hidden;text-overflow:ellipsis}
-@media(max-width:980px){.program-trust-card{grid-template-columns:1fr;gap:18px}.program-names{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:980px){.program-trust-card{grid-template-columns:minmax(230px,.75fr) 1.25fr;gap:20px}.program-names{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.program-trust-card{grid-template-columns:1fr;gap:16px;padding:18px}.program-names{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.program-name{font-size:12.5px;padding:8px 9px}.program-mark{width:28px;height:28px;flex-basis:28px}.program-mark img{max-width:20px;max-height:20px}}
 
 /* ============ FOOTER: the shared chrome's, with this page's space above it ============ */
-body>.tc-footer{margin-top:40px}
+body>.tc-footer{margin-top:80px}
 
 /* ============ MOBILE ============ */
 @media(max-width:640px){
-  html{scroll-padding-top:76px}
-  body{font-size:16px}
+  html{scroll-padding-top:72px}
+  body{font-size:15px}
   .wrap{padding-inline:16px}
-  .hero{padding-block:100px 56px}
-  .hero-grid{gap:36px}
-  h1{font-size:clamp(3rem,15vw,3.8rem);margin-bottom:18px}
-  .lede{font-size:16.5px;margin-bottom:24px}
-  .hero-cta{display:grid;grid-template-columns:1fr;gap:10px}
-  .hero-cta .btn{justify-content:center}
-  section{padding-block:60px}
-  .company-shell{padding:60px 16px}
-  .sec-head{margin-bottom:28px}
-  h2{font-size:clamp(2rem,9vw,2.5rem)}
-  .flag{border-radius:18px}
-  .flag-top{display:grid;grid-template-columns:1fr;gap:8px;padding:18px}
-  .flag-top h3{font-size:24px}
-  .pills{margin:0}
-  .flag-body{gap:22px;padding:20px 18px 22px}
-  .flag-cta{display:grid;grid-template-columns:1fr}
-  .flag-cta .btn{justify-content:center}
-  .vis{padding:16px}
-  .program-names{gap:8px}
-  .program-name{font-size:13.5px;padding:8px}
-  body>.tc-footer{margin-top:24px}
+
+  .hero{padding:84px 16px 44px}
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .hero-grid>div{order:1;padding:23px 20px 20px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:0 18px 44px -32px rgba(0,0,0,.72)}
+  .logo-card{order:2;max-width:none;width:100%;justify-self:stretch;margin:0;padding:10px;border-radius:20px;box-shadow:0 14px 34px -28px rgba(0,0,0,.78)}
+  .logo-card img{width:100%;height:auto;object-fit:contain;border-radius:13px}
+  .logo-card figcaption{padding:9px 3px 1px;font-size:11.5px;line-height:1.5}
+  .hero-kicker{font-size:13px;margin-bottom:13px}
+  h1{font-size:clamp(2.85rem,13vw,3.25rem);line-height:.92;margin-bottom:16px;letter-spacing:-.055em}
+  .lede{font-size:14px;line-height:1.62;margin-bottom:20px;color:var(--mut)}
+  .hero-cta{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:8px;margin-bottom:17px}
+  .hero-cta .btn{justify-content:center;padding:10px 10px;font-size:12.5px;min-height:44px}
+  .statpills{display:flex;gap:7px;overflow-x:auto;margin:0 -20px;padding:2px 20px 3px;scroll-snap-type:x proximity;scrollbar-width:none}
+  .statpills::-webkit-scrollbar{display:none}
+  .spill{flex:0 0 auto;scroll-snap-align:start;min-width:max-content;padding:6px 11px;font-size:11.5px;line-height:1.25;justify-content:flex-start;background:color-mix(in srgb,var(--card) 82%,transparent)}
+
+  section{padding-block:48px}
+  .sec-head{display:grid;gap:12px;margin-bottom:24px}
+  .sec-eye{font-size:13px;margin-bottom:10px}
+  h2{font-size:clamp(2rem,9.5vw,2.4rem);line-height:1}
+  .sec-note{font-size:13px;line-height:1.55;max-width:31ch}
+
+  .flags{gap:16px}
+  .flag{border-radius:22px}
+  .flag-top{display:grid;grid-template-columns:1fr;gap:6px;padding:17px}
+  .flag-top h3{font-size:20px}
+  .flag-top .repo{font-size:11.5px}
+  .pills{grid-column:1/-1;margin:2px 0 0;gap:6px}
+  .pill{font-size:11px;padding:4px 9px}
+  .flag-body{grid-template-columns:1fr;gap:19px;padding:20px 17px 18px}
+  .flag .tag{font-size:14.5px;line-height:1.42}
+  .flag p.desc{font-size:13.5px;line-height:1.62}
+  .feat{font-size:13px;gap:7px}
+  .feat li{padding-left:18px}
+  .feat li::before{top:8px}
+  .plat{font-size:11px;padding:4px 8px}
+  .flag-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .flag-cta .btn{justify-content:center;padding:9px 8px;font-size:11.5px}
+  .vis{padding:16px;border-radius:16px}
+  .vis-lab{font-size:11px;gap:10px}
+  .vis-lab b{font-size:11px;white-space:nowrap}
+  .vis-note{font-size:11.5px;padding:9px 11px}
+  .cap{font-size:11.5px;padding:5px 10px}
+
+  body>.tc-footer{margin-top:40px}
 }
+@media(max-width:360px){
+  .hero-cta,.flag-cta{grid-template-columns:1fr}
+  .logo-card{padding:8px}
+  .hero-grid>div{padding-inline:17px}
+}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
-  html{scroll-behavior:auto}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
 }
 </style>
-<link rel="stylesheet" href="/assets/trebell-chrome.css?v=4">
+<link rel="stylesheet" href="/assets/trebell-chrome.css?v=3">
 <script>
 (function(){
   var t='dark';
@@ -308,15 +353,21 @@ body>.tc-footer{margin-top:40px}
 <div class="hero wrap" id="top">
   <div class="hero-grid">
     <div>
-      <h1>Trebell Code</h1>
-      <p class="lede"><b>Trebell is a small company that makes tools for software developers.</b> Our main product, Trebell Code, is a free desktop app for working with AI coding agents: Trebell Native, our own agent, plus Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity and Muse Code. They work in your real repositories, with a terminal, Git and a browser panel, and we measure whether the finished work is correct and what it cost.</p>
-      <div class="hero-cta">
-        <a class="btn btn-pri" href="https://code.trebell.dev/">Explore Trebell Code</a>
-        <a class="btn btn-out" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download for Windows</a>
+      <div class="hero-kicker rv">Developer tools from Trebell</div>
+      <h1 class="rv">Trebell Code</h1>
+      <p class="lede rv"><b>Trebell is a small company that makes tools for software developers.</b> Our main product, Trebell Code, is a free desktop app for working with AI coding agents: Trebell Native, our own agent, plus Codex, Claude Code, OpenCode, Cursor, Grok Build, Antigravity and Muse Code. They work in your real repositories, with a terminal, Git and a browser panel, and we measure whether the finished work is correct and what it cost.</p>
+      <div class="hero-cta rv">
+        <a class="btn btn-pri" href="/product/">Trebell Code overview <span class="ar">→</span></a>
+        <a class="btn btn-out" href="https://code.trebell.dev/">Open product site</a>
       </div>
-      <p class="hero-fine">Version 2.0.0 for Windows 10 and 11 (x64), free and Apache-2.0 licensed, with eight coding agents to choose from.</p>
+      <div class="statpills rv">
+        <span class="spill">Free, Apache-2.0 licensed</span>
+        <span class="spill">Version 2.0.0</span>
+        <span class="spill">Windows 10 and 11 (x64)</span>
+        <span class="spill">Works with 8 coding agents</span>
+      </div>
     </div>
-    <figure class="logo-card">
+    <figure class="logo-card rv">
       <img class="product-shot-dark" src="/assets/trebell-code-2-native-dark-1200.webp" srcset="/assets/trebell-code-2-native-dark-1200.webp 1200w, /assets/trebell-code-2-native-dark-2400.webp 2400w" sizes="(max-width: 900px) 92vw, 528px" width="1600" height="1000" alt="Trebell Code 2.0 in dark mode: a Trebell Native thread whose activity card lists the files it read and edited, with one edit's diff open, above the reply, and the Diff panel with the changed files beside it" decoding="async">
       <img class="product-shot-light" src="/assets/trebell-code-2-native-light-1200.webp" srcset="/assets/trebell-code-2-native-light-1200.webp 1200w, /assets/trebell-code-2-native-light-2400.webp 2400w" sizes="(max-width: 900px) 92vw, 528px" width="1600" height="1000" alt="Trebell Code 2.0 in light mode: a Trebell Native thread whose activity card lists the files it read and edited, with one edit's diff open, above the reply, and the Diff panel with the changed files beside it" loading="lazy" decoding="async">
       <figcaption>Trebell Code 2.0 on Windows, with a Trebell Native thread open.</figcaption>
@@ -326,27 +377,32 @@ body>.tc-footer{margin-top:40px}
 
 <!-- ============ COMPANY ============ -->
 <section id="company" class="company-intro wrap">
-  <div class="company-shell">
+  <div class="company-shell rv">
     <div class="company-lead">
       <div>
-        <h2>We make AI coding agents useful on real code.</h2>
+        <div class="sec-eye">Company</div>
+        <h2>What Trebell does</h2>
       </div>
       <p>We are an independent developer-tools company. <b>We build and maintain Trebell Code, our main product.</b> It gives you one desktop workspace for several coding agents and model providers, so you are not tied to one vendor, and it adds the context handling, tools, recovery and checks that help an agent finish the job properly.</p>
     </div>
     <div class="company-grid">
       <article class="company-card">
+        <div class="label">Product</div>
         <h3>The workspace</h3>
         <p>Repository context, a terminal, file editing, Git and pull requests, worktrees, previews and a browser panel, in one desktop app, around whichever coding agent you use.</p>
       </article>
       <article class="company-card">
-        <h3>Built for software developers</h3>
+        <div class="label">Who it's for</div>
+        <h3>Software developers</h3>
         <p>Developers who want coding agents working on real codebases, without giving up their choice of provider or the ability to see what the agent did.</p>
       </article>
       <article class="company-card">
+        <div class="label">Approach</div>
         <h3>Works with many providers</h3>
         <p>Trebell Code works with several agent runtimes and model providers, so your setup does not depend on a single AI company.</p>
       </article>
       <article class="company-card">
+        <div class="label">Benchmarks</div>
         <h3>We measure finished work</h3>
         <p>We count resolved tasks and API cost on fresh software-engineering tasks, graded by an independent verifier, instead of treating a low token count as success.</p>
       </article>
@@ -356,8 +412,9 @@ body>.tc-footer{margin-top:40px}
 
 <!-- ============ FLAGSHIPS ============ -->
 <section id="flagships" class="wrap">
-  <div class="sec-head">
+  <div class="sec-head rv">
     <div>
+      <div class="sec-eye">Products</div>
       <h2>What we make</h2>
     </div>
     <p class="sec-note">Trebell Code is our main product, now at version 2.0. We also make PDFOmni, a PDF editor that runs in your browser.</p>
@@ -365,7 +422,7 @@ body>.tc-footer{margin-top:40px}
 
   <div class="flags">
     <!-- TREBELL CODE -->
-    <article class="flag">
+    <article class="flag rv">
       <div class="flag-top">
         <div><h3>Trebell Code</h3><span class="repo">code.trebell.dev</span></div>
         <div class="pills"><span class="pill">Version 2.0.0</span><span class="pill">Apache-2.0</span></div>
@@ -386,7 +443,7 @@ body>.tc-footer{margin-top:40px}
             <span class="plat">Windows 10/11 (x64)</span><span class="plat">v2.0.0</span><span class="plat">Free</span>
           </div>
           <div class="flag-cta">
-            <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Explore Trebell Code</a>
+            <a class="btn btn-pri btn-sm" href="https://code.trebell.dev/">Explore Trebell Code <span class="ar">→</span></a>
             <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.0.0/Trebell-Code-Setup-2.0.0.exe" download="Trebell-Code-Setup-2.0.0.exe">Download for Windows</a>
             <a class="btn btn-out btn-sm" href="https://code.trebell.dev/#proof">Benchmarks</a>
           </div>
@@ -408,7 +465,7 @@ body>.tc-footer{margin-top:40px}
     </article>
 
     <!-- PDFOMNI -->
-    <article class="flag">
+    <article class="flag rv">
       <div class="flag-top">
         <div><h3>PDFOmni</h3><span class="repo">pdfomni.com · github: pdfomni</span></div>
         <div class="pills"><span class="pill">Runs in your browser</span><span class="pill">No account</span></div>
@@ -424,7 +481,7 @@ body>.tc-footer{margin-top:40px}
             <li>Free, with no account and no added watermark</li>
           </ul>
           <div class="flag-cta">
-            <a class="btn btn-pri btn-sm" href="https://pdfomni.com" target="_blank" rel="noopener">Open pdfomni.com ↗</a>
+            <a class="btn btn-pri btn-sm" href="https://pdfomni.com" target="_blank" rel="noopener">Open pdfomni.com <span class="ar">↗</span></a>
             <a class="btn btn-out btn-sm" href="https://github.com/tanishqbaweja/pdfomni" target="_blank" rel="noopener">Source</a>
           </div>
         </div>
@@ -441,7 +498,7 @@ body>.tc-footer{margin-top:40px}
 
 <!-- ============ STARTUP ECOSYSTEM ============ -->
 <section class="program-trust wrap" aria-label="Selected startup and developer programs">
-  <div class="program-trust-card">
+  <div class="program-trust-card rv">
     <div class="program-trust-copy">
       <div class="program-trust-kicker">Startup programs</div>
       <p>Trebell has been accepted into startup and developer programs from established infrastructure and developer platforms.</p>
@@ -461,17 +518,18 @@ body>.tc-footer{margin-top:40px}
 
 <!-- ============ COMPANY RESOURCES ============ -->
 <section class="wrap" id="resources">
-  <div class="sec-head">
+  <div class="sec-head rv">
     <div>
+      <div class="sec-eye">Company resources</div>
       <h2>The boring pages are public too.</h2>
     </div>
     <p class="sec-note">Product, team, pricing, security, privacy and support information should be easy to verify without emailing us first.</p>
   </div>
   <div class="company-grid">
-    <article class="company-card"><h3>Trebell Code</h3><p>See the product, what is new in 2.0, the harnesses it runs and how to download it, in one place.</p><div class="team-links"><a href="/product/">Product overview</a></div></article>
-    <article class="company-card"><h3>Security &amp; privacy</h3><p>Responsible disclosure, website data practices, licensing and legal information.</p><div class="team-links"><a href="/trust/">Trust center</a></div></article>
-    <article class="company-card"><h3>Team &amp; leadership</h3><p>Founder, current five-person core team, roles, founding date and public company contact.</p><div class="team-links"><a href="/about/">About Trebell</a></div></article>
-    <article class="company-card"><h3>Talk to the team</h3><p>Product support, partnerships, verification enquiries and security reports each have a clear route.</p><div class="team-links"><a href="/contact/">Contact Trebell</a></div></article>
+    <article class="company-card rv"><div class="label">Product</div><h3>Trebell Code</h3><p>See the product, what is new in 2.0, the harnesses it runs and how to download it, in one place.</p><div class="team-links"><a href="/product/">Product overview &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Trust</div><h3>Security &amp; privacy</h3><p>Responsible disclosure, website data practices, licensing and legal information.</p><div class="team-links"><a href="/trust/">Trust center &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Company</div><h3>Team &amp; leadership</h3><p>Founder, current five-person core team, roles, founding date and public company contact.</p><div class="team-links"><a href="/about/">About Trebell &rarr;</a></div></article>
+    <article class="company-card rv"><div class="label">Contact</div><h3>Talk to the team</h3><p>Product support, partnerships, verification enquiries and security reports each have a clear route.</p><div class="team-links"><a href="/contact/">Contact Trebell &rarr;</a></div></article>
   </div>
 </section>
 
@@ -521,14 +579,17 @@ body>.tc-footer{margin-top:40px}
 </ul>
 </div>
 </div>
-<div class="tc-fbot"><span>© 2026 Trebell. Founded in May 2026.</span><span>Trebell Code is free and Apache-2.0 licensed.</span></div>
+<div class="tc-fbot"><span>© 2026 Trebell · founded May 2026</span><span>Trebell Code · Apache-2.0 · trebell.dev</span></div>
 </div>
 </footer>
 
-<script src="/assets/trebell-chrome.js?v=3"></script>
+<script src="/assets/trebell-chrome.js?v=2"></script>
 <script>
 (function(){
-  // The benchmark bars fill once, when their card comes into view.
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(i%4)*60+'ms'; io.observe(el); });
   var fio=new IntersectionObserver(function(es){
     es.forEach(function(e){
       if(!e.isIntersecting) return;

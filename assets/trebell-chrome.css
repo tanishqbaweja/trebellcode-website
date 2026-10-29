@@ -6,16 +6,16 @@
 
 :root{
   --tc-header-h:69px;
-  --tc-bg:#141318;--tc-card:#1d1b24;--tc-ink:#f2eff8;--tc-mut:#a7a2b8;--tc-line:#2b2836;--tc-line2:#3b3748;
-  --tc-violet:#8b74ff;--tc-pink:#ff6ba1;--tc-scroll:#3b3748;--tc-tint:rgba(242,239,248,.06);
-  --tc-glow:rgba(139,116,255,.6);--tc-glow-hover:rgba(139,116,255,.65);--tc-drawer-shadow:0 18px 45px -18px rgba(0,0,0,.6);
-  --tc-foot-bg:#0f0e13;
+  --tc-bg:#131312;--tc-card:#1b1b19;--tc-ink:#ecebe6;--tc-mut:#a9a79f;--tc-line:#2c2c29;--tc-line2:#3c3b37;
+  --tc-accent:#5fbf85;--tc-scroll:#3c3b37;--tc-tint:rgba(236,235,230,.07);
+  --tc-btn-bg:#ecebe6;--tc-btn-ink:#131312;--tc-btn-hover:#ffffff;--tc-drawer-shadow:0 18px 45px -18px rgba(0,0,0,.6);
+  --tc-foot-bg:#0e0e0d;
 }
 :root[data-theme="light"]{
-  --tc-bg:#f7f5f1;--tc-card:#ffffff;--tc-ink:#17141f;--tc-mut:#5f5a6e;--tc-line:#e7e3db;--tc-line2:#d8d3c9;
-  --tc-violet:#6b4eff;--tc-pink:#ff4d8d;--tc-scroll:#cfc9be;--tc-tint:rgba(23,20,31,.06);
-  --tc-glow:rgba(107,78,255,.6);--tc-glow-hover:rgba(107,78,255,.65);--tc-drawer-shadow:0 22px 50px -22px rgba(30,35,70,.3);
-  --tc-foot-bg:#17141f;
+  --tc-bg:#f7f5f1;--tc-card:#ffffff;--tc-ink:#1b1a17;--tc-mut:#5c5a53;--tc-line:#e7e3db;--tc-line2:#d8d3c9;
+  --tc-accent:#1e7a4a;--tc-scroll:#cfc9be;--tc-tint:rgba(27,26,23,.06);
+  --tc-btn-bg:#1b1a17;--tc-btn-ink:#f7f5f1;--tc-btn-hover:#000000;--tc-drawer-shadow:0 22px 50px -22px rgba(40,36,28,.25);
+  --tc-foot-bg:#1b1a17;
 }
 
 /* One scrollbar on every page (the homepage's), so the header and footer sit at the same place on every page in browsers
@@ -26,7 +26,7 @@ html{scrollbar-gutter:stable}
 ::-webkit-scrollbar{width:11px}
 ::-webkit-scrollbar-track{background:var(--tc-bg)}
 ::-webkit-scrollbar-thumb{background:var(--tc-scroll);border:3px solid var(--tc-bg);border-radius:8px}
-::-webkit-scrollbar-thumb:hover{background:var(--tc-violet)}
+::-webkit-scrollbar-thumb:hover{background:var(--tc-mut)}
 
 /* ---------- Isolation from the page's stylesheet ---------- */
 .tc-header,.tc-footer{
@@ -42,9 +42,9 @@ html{scrollbar-gutter:stable}
 .tc-header *,.tc-header *::before,.tc-header *::after,.tc-footer *,.tc-footer *::before,.tc-footer *::after{
   box-sizing:border-box;margin:0;padding:0;border:0;
 }
-.tc-header ::selection,.tc-footer ::selection{background:var(--tc-violet);color:#fff}
-.tc-header a:focus-visible,.tc-header button:focus-visible{outline:2px solid var(--tc-violet);outline-offset:3px}
-.tc-footer a:focus-visible{outline:2px solid #8b74ff;outline-offset:3px}
+.tc-header ::selection,.tc-footer ::selection{background:color-mix(in srgb,var(--tc-accent) 35%,transparent);color:inherit}
+.tc-header a:focus-visible,.tc-header button:focus-visible{outline:2px solid var(--tc-accent);outline-offset:3px}
+.tc-footer a:focus-visible{outline:2px solid #5fbf85;outline-offset:3px}
 .tc-header :focus:not(:focus-visible),.tc-footer :focus:not(:focus-visible){outline:none}
 
 /* ---------- Header ---------- */
@@ -52,18 +52,17 @@ html{scrollbar-gutter:stable}
 .tc-header .tc-bar{display:flex;align-items:center;gap:12px;max-width:1120px;height:68px;margin:0 auto;padding:0 24px}
 .tc-header .tc-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;border-radius:12px;color:var(--tc-ink);text-decoration:none;font-family:Gabarito,Inter,ui-sans-serif,system-ui,sans-serif;font-size:19px;font-weight:800;line-height:24px;white-space:nowrap}
 .tc-header .tc-brand picture{display:block;flex:0 0 auto}
-.tc-header .tc-brand img{display:block;width:36px;height:36px;max-width:none;border:1px solid var(--tc-line2);border-radius:50%;object-fit:cover;transition:transform .3s}
-.tc-header .tc-brand:hover img{transform:rotate(-10deg) scale(1.07)}
+.tc-header .tc-brand img{display:block;width:36px;height:36px;max-width:none;border:1px solid var(--tc-line2);border-radius:50%;object-fit:cover}
 .tc-header .tc-word{display:block}
-.tc-header .tc-dot{color:var(--tc-pink)}
+.tc-header .tc-dot{color:var(--tc-accent)}
 
 .tc-header .tc-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .tc-header .tc-nav a{display:block;padding:8px 14px;border-radius:999px;background:transparent;color:var(--tc-mut);text-decoration:none;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;transition:color .18s,background-color .18s}
 .tc-header .tc-nav a:hover{color:var(--tc-ink);background:var(--tc-tint)}
 .tc-header .tc-nav a[aria-current="page"]{color:var(--tc-ink);background:var(--tc-tint)}
 
-.tc-header .tc-theme,.tc-header .tc-menu{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border:1px solid var(--tc-line2);border-radius:999px;background:var(--tc-card);color:var(--tc-ink);font:inherit;line-height:0;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color .2s,transform .2s}
-.tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-ink);transform:translateY(-2px)}
+.tc-header .tc-theme,.tc-header .tc-menu{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border:1px solid var(--tc-line2);border-radius:999px;background:var(--tc-card);color:var(--tc-ink);font:inherit;line-height:0;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color .2s}
+.tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-ink)}
 .tc-header .tc-theme svg,.tc-header .tc-menu svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tc-header .tc-theme .tc-moon{display:none}
 :root[data-theme="light"] .tc-header .tc-theme .tc-sun{display:none}
@@ -74,8 +73,8 @@ html{scrollbar-gutter:stable}
 .tc-header.tc-open .tc-menu .tc-burger{display:none}
 .tc-header.tc-open .tc-menu .tc-close{display:block}
 
-.tc-header .tc-download{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;height:40px;padding:0 16px;border-radius:999px;background:var(--tc-violet);color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;line-height:20px;white-space:nowrap;box-shadow:0 6px 18px -6px var(--tc-glow);transition:transform .2s,box-shadow .2s}
-.tc-header .tc-download:hover{transform:translateY(-2px);box-shadow:0 10px 24px -6px var(--tc-glow-hover)}
+.tc-header .tc-download{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;height:40px;padding:0 16px;border-radius:999px;background:var(--tc-btn-bg);color:var(--tc-btn-ink);text-decoration:none;font-size:13.5px;font-weight:600;line-height:20px;white-space:nowrap;transition:background-color .2s}
+.tc-header .tc-download:hover{background:var(--tc-btn-hover)}
 .tc-header .tc-download svg{display:block;flex:0 0 auto;width:14px;height:14px;fill:currentColor}
 
 /* Narrower than the five links need: they move into the menu, a drawer under the bar. The open drawer has its own
@@ -93,7 +92,7 @@ html{scrollbar-gutter:stable}
   .tc-header .tc-brand{gap:8px;font-size:16px;line-height:20px}
   .tc-header .tc-brand img{width:31px;height:31px}
   .tc-header .tc-theme,.tc-header .tc-menu{width:36px;height:36px}
-  .tc-header .tc-download{height:36px;gap:6px;padding:0 12px;font-size:12px;line-height:16px;box-shadow:none}
+  .tc-header .tc-download{height:36px;gap:6px;padding:0 12px;font-size:12px;line-height:16px}
   .tc-header .tc-download svg{width:12px;height:12px}
   .tc-header .tc-nav{right:12px;left:12px;width:auto}
 }
@@ -103,7 +102,7 @@ html{scrollbar-gutter:stable}
 /* ---------- Footer (dark in both themes) ---------- */
 /* Its own compositing layer on every page: on a page with an animated background (code.trebell.dev) the browser would
    otherwise merge the footer into a shared layer and antialias its text differently from the other pages. */
-.tc-footer{position:relative;z-index:1;background:var(--tc-foot-bg);color:#cfcbdb;transition:background-color .3s;will-change:transform}
+.tc-footer{position:relative;z-index:1;background:var(--tc-foot-bg);color:#c9c7bf;transition:background-color .3s;will-change:transform}
 .tc-footer .tc-fin{max-width:1120px;margin:0 auto;padding:0 24px}
 .tc-footer .tc-fgrid{display:grid;grid-template-columns:1.35fr repeat(4,1fr);gap:30px;padding:56px 0 40px}
 .tc-footer .tc-fbrand{display:flex;align-items:center;gap:10px;width:max-content;border-radius:12px;color:#fff;text-decoration:none}
@@ -111,13 +110,13 @@ html{scrollbar-gutter:stable}
    screenshots (code.trebell.dev), was not always drawn with the same filter. */
 .tc-footer .tc-fbrand img{display:block;flex:0 0 auto;width:36px;height:36px;max-width:none;border-radius:50%;object-fit:cover}
 .tc-footer .tc-fbrand b{display:block;font-family:Gabarito,Inter,ui-sans-serif,system-ui,sans-serif;font-size:19px;font-weight:800;line-height:20px;color:#fff}
-.tc-footer .tc-fabout{display:block;max-width:36ch;margin-top:12px;font-size:13.5px;line-height:22px;color:#a49fb5}
-.tc-footer .tc-fhead{display:block;margin-bottom:14px;font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;font-weight:700;line-height:16px;letter-spacing:.18em;text-transform:uppercase;color:#7d7890}
+.tc-footer .tc-fabout{display:block;max-width:36ch;margin-top:12px;font-size:13.5px;line-height:22px;color:#a19f97}
+.tc-footer .tc-fhead{display:block;margin-bottom:14px;font-size:13px;font-weight:600;line-height:16px;color:#e4e2dc}
 .tc-footer .tc-flist{display:grid;gap:9px;list-style:none}
 .tc-footer .tc-flist li{display:flex;list-style:none}
-.tc-footer .tc-flist a{display:block;border-radius:4px;color:#a49fb5;text-decoration:none;font-size:14px;font-weight:400;line-height:22px;transition:color .15s,transform .15s}
-.tc-footer .tc-flist a:hover{color:#fff;transform:translateX(3px)}
-.tc-footer .tc-fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:18px 0 26px;border-top:1px solid rgba(255,255,255,.09);font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;font-weight:500;line-height:18px;color:#7d7890}
+.tc-footer .tc-flist a{display:block;border-radius:4px;color:#a19f97;text-decoration:none;font-size:14px;font-weight:400;line-height:22px;transition:color .15s}
+.tc-footer .tc-flist a:hover{color:#fff}
+.tc-footer .tc-fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:18px 0 26px;border-top:1px solid rgba(255,255,255,.09);font-size:12.5px;font-weight:400;line-height:18px;color:#8c8a82}
 
 @media (max-width:1050px){
   .tc-footer .tc-fgrid{grid-template-columns:repeat(4,1fr);gap:36px 24px}
@@ -131,11 +130,12 @@ html{scrollbar-gutter:stable}
   .tc-footer .tc-fhead{margin-bottom:10px}
   .tc-footer .tc-flist{gap:8px}
   .tc-footer .tc-flist a{font-size:13px;line-height:20px}
-  .tc-footer .tc-fbot{padding:16px 0 22px;font-size:10px;line-height:16px}
+  .tc-footer .tc-fbot{padding:16px 0 22px;font-size:11.5px;line-height:16px}
 }
 
 @media (hover:none){
-  .tc-header .tc-brand:hover img,.tc-header .tc-theme:hover,.tc-header .tc-menu:hover,.tc-header .tc-download:hover,.tc-footer .tc-flist a:hover{transform:none}
+  .tc-header .tc-theme:hover,.tc-header .tc-menu:hover{border-color:var(--tc-line2)}
+  .tc-header .tc-download:hover{background:var(--tc-btn-bg)}
 }
 /* Reduced motion: no transitions, and no animation values from a page's own reduced-motion rule (the homepage sets
    animation-duration on every element), so the header and footer compute the same on every page. */

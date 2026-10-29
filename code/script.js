@@ -41,6 +41,9 @@ function setBenchmark(mode) {
   setWidth("bar-swe", data.ws);
   setWidth("bar-tb2", data.wt);
   setWidth("bar-tbpro", data.wp);
+  // Trebell Native's bars take the accent colour, Codex's the neutral one.
+  const ledger = document.querySelector(".ledger");
+  if (ledger) ledger.dataset.mode = mode;
   buttons.forEach((button) => {
     const active = button.dataset.benchmark === mode;
     button.classList.toggle("active", active);

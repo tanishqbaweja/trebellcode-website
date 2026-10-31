@@ -1,6 +1,6 @@
 # Trebell Code
 
-> Trebell Code is Trebell's flagship product: a free desktop workspace for AI coding agents. The current release is 2.1.0, for Windows 10 and 11 (x64).
+> Trebell Code is Trebell's flagship product: a free desktop workspace for AI coding agents. The current release is 2.1.1, for Windows 10 and 11 (x64).
 
 ## Company
 
@@ -23,9 +23,9 @@ Trebell is a founder-led developer-tools startup founded in May 2026.
 ## Product
 
 - Trebell Code: https://code.trebell.dev/
-- Current release: 2.1.0, Windows 10 and 11 (x64) installer
-- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.1.0/Trebell-Code-Setup-2.1.0.exe
-- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.1.0
+- Current release: 2.1.1, Windows 10 and 11 (x64) installer
+- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.1.1/Trebell-Code-Setup-2.1.1.exe
+- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.1.1
 - Price: free to download and use
 - Licensing and releases: https://trebell.dev/licensing/
 - Updates: from 2.0.0 on, the app checks the public releases repository for new versions; an update downloads and installs only when the user chooses.

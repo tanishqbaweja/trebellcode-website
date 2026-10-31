@@ -33,10 +33,10 @@ Trebell Code is developed and maintained by Trebell and is the company's primary
 
 - Company product overview: https://trebell.dev/product/
 - Product website: https://code.trebell.dev/
-- Current release: 2.1.0
+- Current release: 2.1.1
 - Platform: Windows 10 and 11 (x64)
-- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.1.0/Trebell-Code-Setup-2.1.0.exe
-- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.1.0
+- Download (starts the installer download): https://github.com/tanishqbaweja/trebellcode-releases/releases/download/v2.1.1/Trebell-Code-Setup-2.1.1.exe
+- Release notes: https://github.com/tanishqbaweja/trebellcode-releases/releases/tag/v2.1.1
 - Price: free to download and use
 - Licensing and releases: https://trebell.dev/licensing/
 - Category: desktop workspace for AI coding agents
